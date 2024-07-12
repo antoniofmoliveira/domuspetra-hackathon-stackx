@@ -23,6 +23,39 @@ img {
 
 /* navbar */
 
+.navbar {
+  background: #fff;
+  padding: 20px;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .main-menu ul {
+  display: flex;
+}
+
+.navbar ul li a {
+  padding: 10px 20px;
+  display: block;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.navbar ul li a i {
+  margin-right: 10px;
+}
+.navbar ul li:last-child a {
+  margin-left: 10px;
+}
+
+.navbar ul li a:hover {
+  color: var(--primary-color);
+}
+
 /* hero */
 
 /* footer goes here */
@@ -86,6 +119,20 @@ img {
 }
 
 /* text classes */
+
+.text-xxl {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 40px 0 20px;
+}
+
+.text-xl {
+  font-size: 2.2rem;
+  line-height: 1.4;
+  font-weight: normal;
+  margin: 40px 0 20px;
+}
 
 .text-lg {
   font-size: 1.8rem;
