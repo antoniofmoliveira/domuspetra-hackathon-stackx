@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -53,12 +54,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <p>Cabeçalho Geral</p>
-        <Image
-          src="/images/logo.png"
-          alt="Logo Domus Petra"
-          width={220}
-          height={41}
-        />
+        <Link href="/">
+          <Image
+            src="/images/logo.png"
+            alt="Logo Domus Petra"
+            width={220}
+            height={41}
+          />
+        </Link>
         {children}
         <div>
           <p>Rodapé Geral</p>
