@@ -1,0 +1,113 @@
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 20px;
+  padding: 20px;
+  background: linear-gradient(
+    to bottom,
+    rgba(145, 145, 145, 0.282),
+    rgba(36, 36, 36, 0.3)
+  );
+}
+
+body .container {
+  background-color: rgba(255, 255, 255, 0.75);
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  padding: 10px;
+  margin: 10px 10px;
+  border-radius: 20px;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+body .container form label {
+  display: grid;
+}
+
+body .container form input.input {
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+
+body .container form textarea.input {
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body .container form textarea.input {
+  border-radius: 10px;
+}
+
+.input-card {
+  display: grid;
+  justify-items: center;
+  align-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin: 10px 10px;
+  border-radius: 20px;
+  display: grid;
+  width: auto;
+  height: 97%;
+}
+
+.contacts-card {
+  display: grid;
+  justify-items: center;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin: 10px 10px;
+  border-radius: 20px;
+  display: grid;
+  width: auto;
+  height: 97%;
+}
+
+
+.card .contacts-name {
+  font-size: 1.5rem;
+}
+
+.card .contacts-info {
+  display: grid;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+ @media screen and (max-width: 1200px) {
+  body .container form label {
+    display: grid;
+  }
+} 
+
+@media screen and (max-width: 650px) {
+  body .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body .container form textarea.input {
+    width: 255px;
+  }
+} */
