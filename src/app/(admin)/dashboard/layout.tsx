@@ -15,9 +15,13 @@ export default function AdminLayout({
 }>) {
   return (
     <>
-      <p>Cabeçalho Administração</p>
-      <div className={inter.className}>{children}</div>
-      <p>Rodapé Administração</p>
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+          <p>Cabeçalho Administração</p>
+          <div className={inter.className}>{children}</div>
+          <p>Rodapé Administração</p>
+        </div>
+      </main>
     </>
   );
 }

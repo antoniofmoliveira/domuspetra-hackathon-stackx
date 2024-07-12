@@ -15,9 +15,14 @@ export default function PublicLayout({
 }>) {
   return (
     <>
-      <p>Cabeçalho Público</p>
-      <div className={inter.className}>{children}</div>
-      <p>Rodapé Público</p>
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+          <p>Cabeçalho Público</p>
+
+          <div className={inter.className}>{children}</div>
+          <p>Rodapé Público</p>
+        </div>
+      </main>
     </>
   );
 }
