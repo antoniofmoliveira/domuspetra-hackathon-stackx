@@ -227,7 +227,7 @@ img {
 
 .hamburger-button {
   display: none;
-  background: none;
+  background: #ccc;
   border: none;
   cursor: pointer;
   padding: 10px;
@@ -245,14 +245,15 @@ img {
 
 .mobile-menu {
   position: fixed;
-  top: 0;
-  right: -300px;
-  width: 250;
+  top: 0px;
+  right: -250px;
+  width: 200px;
   height: 100%;
-  z-index: 100;
+  z-index: 999;
   background-color: #fff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease-in-out;
+  background-color: #333;
 }
 
 .mobile-menu.active {
@@ -262,6 +263,7 @@ img {
 .mobile-menu ul {
   margin-top: 100px;
   padding-right: 10px;
+  padding-left: 10px;
 }
 
 .mobile-menu ul li {
@@ -269,8 +271,15 @@ img {
 }
 
 .mobile-menu ul li a {
+  color: #ccc;
   font-size: 20px;
-  transition: 0.3s;
+  transition: 0.5s;
+}
+
+.mobile-menu ul li a:hover {
+  color: var(--light-color);
+  font-size: 20px;
+  transition: 0.5s;
 }
 
 /* HTML CODE FOR HAMBURGER BUTTON AND MOBILE MENU */
@@ -308,6 +317,15 @@ document.addEventListener("DOMContentLoaded", () => {
 }); */
 
 /* Media Queries */
+@media (max-width: 1200px) {
+  .navbar .main-menu {
+    display: none;
+  }
+
+  .navbar .hamburger-button {
+    display: block;
+  }
+}
 
 @media (max-width: 960px) {
   /* Text */
