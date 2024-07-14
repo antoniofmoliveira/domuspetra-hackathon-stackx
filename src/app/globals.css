@@ -31,3 +31,25 @@ body {
     text-wrap: balance;
   }
 }
+
+div.post p {
+  margin-bottom: 1rem;
+}
+
+div.post h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+div.post h2 {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+div.post em {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+}

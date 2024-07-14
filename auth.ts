@@ -3,10 +3,16 @@ import { authConfig } from "@/auth.config";
 import Credentials from "next-auth/providers/credentials";
 import { z } from "zod";
 import { sql } from "@vercel/postgres";
-
-import type { User } from "@/app/lib/definitions";
 import bcrypt from "bcrypt";
 
+import type { User } from "@/model/definitions";
+
+/**
+ * obtém um User a partir do email
+ *
+ * @param email
+ * @returns
+ */
 async function getUser(email: string): Promise<User | undefined> {
   try {
     const user = await sql<User>`SELECT * FROM users WHERE email=${email}`;
@@ -17,6 +23,10 @@ async function getUser(email: string): Promise<User | undefined> {
   }
 }
 
+/**
+ * valida e compara passwords, disponibiliza configuração e funcções
+ * padrão signIn e signOut
+ */
 export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [
