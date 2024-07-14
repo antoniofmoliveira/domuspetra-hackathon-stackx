@@ -1,379 +1,103 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --primary-color: red;
-  --light-color: green;
-  --dark-color: #333;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background: #fff;
-}
-
-a {
-  text-decoration: none;
-  color: #333;
-}
-
-ul {
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-}
-
-/* navbar */
-
-.navbar {
-  background: var(--dark-color);
+  margin: 20px;
   padding: 20px;
+  background: linear-gradient(
+    to bottom,
+    rgba(145, 145, 145, 0.282),
+    rgba(36, 36, 36, 0.3)
+  );
 }
 
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar .main-menu ul {
-  display: flex;
-}
-
-.navbar .main-menu ul li a {
-  padding: 10px 20px;
-  display: block;
-  font-weight: 600;
-  transition: 0.5s;
-  color: #fff;
-}
-
-.navbar .main-menu ul li a i {
-  margin-right: 10px;
-}
-.navbar .main-menu ul li:last-child a {
-  margin-left: 10px;
-}
-
-.navbar .main-menu ul li a:hover {
-  color: var(--light-color);
-}
-
-/* hero */
-
-/* Footer */
-
-.footer {
-  padding: 40px;
-}
-
-.footer h4 {
-  margin-bottom: 10px;
-}
-
-.footer ul li {
-  line-height: 2.5;
-}
-
-.footer a {
-  color: #ccc;
-}
-
-.footer i {
-  font-size: 1.5rem;
-  margin-right: 10px;
-}
-
-.footer .footer-grid {
+body .container {
+  background-color: rgba(255, 255, 255, 0.75);
   display: grid;
-  grid-template-columns: 2fr repeat(4, 1fr);
-  gap: 30px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer .footer-grid .card {
-  margin: 20px 30px 30px 30px;
-  width: 250px;
-}
-
-.footer input[type="email"] {
-  width: 100%;
+  grid-template-columns: auto auto;
+  gap: 20px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 20px 0;
+  margin: 10px 10px;
+  border-radius: 20px;
+  align-items: center;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
 }
 
-/* containers normal and small */
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 15px;
+body .container form label {
+  display: grid;
 }
 
-.container-sm {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 15px;
+body .container form input.input {
+  padding: 5px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+  border-radius: 15px;
 }
 
-/* card */
+body .container form input.input button {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+}
+
+body .container form textarea.input {
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+body .container form textarea.input {
+  border-radius: 10px;
+}
 
 .card {
-  background: #fff;
-  color: #000;
-  border-radius: 10px;
+  display: grid;
+  justify-items: center;
+  background-color: black;
+  color: white;
   padding: 20px;
+  margin: 10px 10px;
+  border-radius: 20px;
+  display: grid;
+  width: auto;
+  height: 97%;
 }
 
-/* buttons */
-
-.btn {
-  display: inline-block;
-  padding: 13px 20px;
-  background: var(--light-color);
-  color: #333;
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  text-align: cente ovo Hello world warl #fff;
+.card .contacts-name {
+  font-size: 1.5rem;
 }
 
-.btn-dark {
-  background: var(--dark-color);
-  color: #fff;
-}
-
-.btn-block {
-  display: block;
-  width: 100%;
-}
-
-/* text classes */
-
-.text-xxl {
-  font-size: 3rem;
-  line-height: 1.2;
-  font-weight: 600;
-  margin: 40px 0 20px;
-}
-
-.text-xl {
-  font-size: 2.2rem;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 40px 0 20px;
-}
-
-.text-lg {
-  font-size: 1.8rem;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 30px 0 20px;
-}
-
-.text-md {
-  font-size: 1.2rem;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 20px 0 10px;
-}
-
-.text-sm {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 10px 0 5px;
-}
-
-.text-center {
+.card .contacts-info {
+  display: grid;
   text-align: center;
-}
-/* Background */
-
-.bg-primary {
-  background: var(--primary-color);
-  color: #fff;
+  font-size: 1.1rem;
 }
 
-.bg-light {
-  background: var(--light-color);
-  color: #333;
-}
+/* @media screen and (max-width: 1200px) {
+  body .container form label {
+    display: grid;
+  }
+} */
 
-.bg-dark {
-  background: var(--dark-color);
-  color: #fff;
-}
-
-.bg-black {
-  background: #000;
-  color: #fff;
-}
-
-/* Hamburger Button */
-/* HTML AND JS BELLOW, COPY AND PASTE */
-
-.hamburger-button {
-  display: none;
-  background: #ccc;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1000;
-}
-
-.hamburger-button .hamburger-line {
-  width: 30px;
-  height: 3px;
-  background: #333;
-  margin: 6px 0;
-}
-
-/* Mobile Menu */
-
-.mobile-menu {
-  position: fixed;
-  top: 0px;
-  right: -250px;
-  width: 200px;
-  height: 100%;
-  z-index: 999;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  transition: right 0.3s ease-in-out;
-  background-color: #333;
-}
-
-.mobile-menu.active {
-  right: 0;
-}
-
-.mobile-menu ul {
-  margin-top: 100px;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-.mobile-menu ul li {
-  margin: 10px 0;
-}
-
-.mobile-menu ul li a {
-  color: #ccc;
-  font-size: 20px;
-  transition: 0.5s;
-}
-
-.mobile-menu ul li a:hover {
-  color: var(--light-color);
-  font-size: 20px;
-  transition: 0.5s;
-}
-
-/* HTML CODE FOR HAMBURGER BUTTON AND MOBILE MENU */
-/* <!-- Hamburger Button -->
-  <button class="hamburger-button">
-    <div class="hamburger-line"></div>
-    <div class="hamburger-line"></div>
-    <div class="hamburger-line"></div>
-  </button>
-  <div class="mobile-menu">
-    <ul>
-      <li>
-        <a href="#">option1</a>
-      </li>
-      <li>
-        <a href="#">option2</a>
-      </li>
-      <li>
-        <a href="#">option...</a>
-      </li>
-      <li>
-        <a class="btn" href="#"><i class="fas fa-"iconCodeGoesHere"></i>last option</a>
-      </li>
-    </ul>
-  </div> */
-/* JS CODE FOR MOBILE MENU */
-/* 
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburgerButton = document.querySelector(".hamburger-button");
-  const mobileMenu = document.querySelector(".mobile-menu");
-
-  hamburgerButton.addEventListener("click", () =>
-    mobileMenu.classList.toggle("active")
-  );
-}); */
-
-/* Media Queries */
-@media (max-width: 1200px) {
-  .navbar .main-menu {
-    display: none;
+@media screen and (max-width: 650px) {
+  body .container {
+    display: flex;
+    flex-direction: column;
   }
 
-  .navbar .hamburger-button {
-    display: block;
-  }
-}
-
-@media (max-width: 960px) {
-  /* Text */
-
-  .text-xxl {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 670px) {
-  /* Navbar goes Hamburger comes */
-  .navbar .main-menu {
-    display: none;
-  }
-  .navbar .hamburger-button {
-    display: block;
-  }
-
-  /* Adjust Hero */
-
-  /* Adjust Footer */
-
-  .footer .footer-grid {
-    grid-template-columns: repeat(1, 1fr);
-    text-align: center;
-  }
-
-  .footer .card {
-    margin-right: 0;
-  }
-  /* Text */
-
-  .text-xl {
-    font-size: 1.9rem;
-  }
-
-  .text-lg {
-    font-size: 1.5rem;
-  }
-
-  .text-md {
-    font-size: 1.1rem;
-  }
-}
-@media (max-width: 500px) {
-  /* Text */
-
-  .text-xxl {
-    font-size: 2rem;
+  body .container form textarea.input {
+    width: 255px;
   }
 }
