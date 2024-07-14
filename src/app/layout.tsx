@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Footer from "./Footer";
+import Header from "./Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -53,35 +55,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <p>Cabeçalho Geral</p>
-        <Link href="/">
-          <Image
-            src="/images/logo.png"
-            alt="Logo Domus Petra"
-            width={220}
-            height={41}
-          />
-        </Link>
+        <Header/>
         {children}
         <div>
-          <p>Rodapé Geral</p>
           <table>
             <tbody>
               <tr>
-                <td>Hackathon StackX -&nbsp;</td>
-
-                <td>Feito com&nbsp;</td>
                 <td>
-                  <Image
-                    className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-                    src="/next.svg"
-                    alt="Next.js Logo"
-                    width={30}
-                    height={30}
-                    priority
-                  />
+                <Footer/>
                 </td>
-                <td>&nbsp;- &copy; Time Oliveiras</td>
               </tr>
             </tbody>
           </table>
