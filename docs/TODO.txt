@@ -1,0 +1,2 @@
+na implementação final atualizar conteúdo do arquivo .env
+ajustar next.config.mjs para o nome do servidor de blobs correto

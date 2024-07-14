@@ -3,10 +3,10 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-import AcmeLogo from "@/app/ui/acme-logo";
+import AcmeLogo from "@/app/components/domus-petra-logo";
 import { PowerIcon } from "@heroicons/react/24/outline";
 import { signOut } from "@/auth";
-import Par from "./components/par";
+import Par from "../../components/par";
 
 export const metadata: Metadata = {
   title: "Administração",

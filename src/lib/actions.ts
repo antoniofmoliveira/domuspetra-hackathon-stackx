@@ -3,6 +3,13 @@
 import { signIn } from "@/auth";
 import { AuthError } from "next-auth";
 
+/**
+ * Autentica o usuário a partir do componente de login
+ *
+ * @param prevState
+ * @param formData
+ * @returns
+ */
 export async function authenticate(
   prevState: string | undefined,
   formData: FormData
