@@ -1,0 +1,18 @@
+.Container{
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+.Container h2{
+    padding: 10px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+.Container p{
+    padding: 10px;
+    text-align: center;
+    color: lightgray;
+    font-size: 20px;
+}
