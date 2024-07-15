@@ -126,12 +126,23 @@ img {
   padding: 0 15px;
 }
 
+.container .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
 /* card */
-.container .landing .card {
+.container .card {
   background: #fff;
   color: #000;
   border-radius: 10px;
   padding: 20px;
+}
+
+/* container landing */
+.container-landing {
+  text-align: center;
+  justify-content: space-around;
 }
 
 /* buttons */
@@ -146,7 +157,7 @@ img {
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  text-align: cente ovo Hello world warl #fff;
+  text-align: center;
 }
 
 .btn:hover {
