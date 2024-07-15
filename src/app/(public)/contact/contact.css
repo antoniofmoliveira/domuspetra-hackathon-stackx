@@ -127,8 +127,7 @@ img {
 }
 
 /* card */
-
-.card {
+.container .landing .card {
   background: #fff;
   color: #000;
   border-radius: 10px;
@@ -141,13 +140,22 @@ img {
   display: inline-block;
   padding: 13px 20px;
   background: var(--light-color);
-  color: #333;
+  color: #fff;
   font-weight: 600;
   text-decoration: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
   cursor: pointer;
   text-align: cente ovo Hello world warl #fff;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
 }
 
 .btn-dark {
