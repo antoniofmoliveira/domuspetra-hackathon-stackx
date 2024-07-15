@@ -3,7 +3,8 @@ import Image from "next/image";
 import { Article } from "@/model/definitions";
 
 export default async function Post({ article }: { article: Article }) {
-  const blog = await fetch(article.content_url);
+  const url = new URL(article.content_url);
+  const blog = await fetch(url);
   const content = blog.text();
   let chtml = "";
 

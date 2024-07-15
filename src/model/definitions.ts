@@ -19,8 +19,8 @@ export type Article = {
   external_url: string | null; // eg. link to youtube
   title: string;
   summary: string;
-  content_url: string | null; // the url of the content
-  image_url: string | null; //the url of the blob of image
+  content_url: string; // the url of the content
+  image_url: string; //the url of the blob of image
   article_date: string;
   is_published: boolean; // can it be displayed?
   has_no_content: boolean; // there is no content. only show
