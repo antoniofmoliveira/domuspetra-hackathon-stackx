@@ -95,8 +95,6 @@ img {
   padding: 0 15px;
 }
 
-
-
 /* Footer */
 
 .footer {
@@ -133,13 +131,27 @@ img {
   width: 250px;
 }
 
-.footer input[type="email"] {
+/* input email form*/
+
+.container-email {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+  gap: 15px;
+}
+
+input[type="email"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 20px 0;
 }
+
+/* partners and clients */
 
 /* containers normal and small */
 
