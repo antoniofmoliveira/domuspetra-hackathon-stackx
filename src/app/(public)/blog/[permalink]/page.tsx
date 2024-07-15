@@ -2,7 +2,11 @@ import showdown from "showdown";
 import Image from "next/image";
 import { Article } from "@/model/definitions";
 
-export default async function Post(article: Article) {
+interface PageProps {
+  article: Article;
+}
+
+export default async function Post({ article }: PageProps) {
   const url_fetch = async (url: string) => {
     if (url == null) {
       return "";
