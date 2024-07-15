@@ -3,16 +3,27 @@ import Image from "next/image";
 import { Article } from "@/model/definitions";
 
 export default async function Post(article: Article) {
-  const url = new URL(article.content_url);
-  const blog = await fetch(url);
-  const content = blog.text();
+  const url_fetch = async (url: string) => {
+    if (url == null) {
+      return "";
+    }
+    const url_ok = new URL(url);
+
+    const blog = await fetch(url_ok);
+    const content = await blog.text();
+    const result = content;
+    return result;
+  };
+
+  const content = await url_fetch(article.content_url);
+  if (content === "") return;
   let chtml = "";
 
   if (article.content_url.endsWith(".md")) {
     const convert = new showdown.Converter();
-    chtml = convert.makeHtml(await content);
+    chtml = convert.makeHtml(content);
   } else {
-    chtml = await content;
+    chtml = content;
   }
 
   return (
