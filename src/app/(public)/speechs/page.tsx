@@ -1,3 +1,5 @@
-export default function Speechs() {
-  return <div>Speechs Page</div>;
+import Cards from "@/app/components/cards";
+
+export default async function Speechs() {
+  return <Cards category="speechs" />;
 }

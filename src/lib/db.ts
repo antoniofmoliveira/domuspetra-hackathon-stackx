@@ -118,7 +118,8 @@ export async function getArticles(
 ): Promise<Article[] | undefined> {
   try {
     const articles =
-      await sql<Article>`SELECT * FROM articles WHERE type = ${type} ORDER BY article_date DESC`;
+      await sql<Article>`SELECT * FROM articles WHERE type = ${type}
+      AND is_published=true ORDER BY article_date DESC`;
     return articles.rows;
   } catch (error) {
     console.error(`Failed to fetch article of type ${type}:`, error);
