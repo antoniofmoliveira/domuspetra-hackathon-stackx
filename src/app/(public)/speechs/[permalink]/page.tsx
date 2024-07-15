@@ -1,3 +1,3 @@
-export default function Speechs() {
+export default function Speech() {
   return <div>Speechs Page</div>;
 }
