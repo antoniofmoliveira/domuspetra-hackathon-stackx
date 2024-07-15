@@ -2,7 +2,7 @@ import showdown from "showdown";
 import Image from "next/image";
 import { Article } from "@/model/definitions";
 
-export default async function Post({ article }: { article: Article }) {
+export default async function Post(article: Article) {
   const url = new URL(article.content_url);
   const blog = await fetch(url);
   const content = blog.text();
