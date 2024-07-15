@@ -14,7 +14,7 @@ export type User = {
  */
 export type Article = {
   id: string;
-  type: string; // record, blog, training, consultancy, speechs
+  type: string; // record, blog, training, consultancy, speechs, about
   permalink: string; // the text in url
   external_url: string; // eg. link to youtube
   title: string;
