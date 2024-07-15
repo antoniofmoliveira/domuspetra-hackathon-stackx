@@ -9,7 +9,9 @@ interface PageProps {
 
 export default async function Post({ params: { permalink } }: PageProps) {
   const article: Article | undefined = await getArticleByPermalink(permalink);
+
   if (article === undefined) return;
+
   const url_fetch = async (url: string) => {
     if (url == null) {
       return "";

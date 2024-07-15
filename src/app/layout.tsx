@@ -3,8 +3,8 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import Footer from "./Footer";
-import Header from "./Header";
+// import Footer from "./Footer";
+// import Header from "./Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -55,15 +55,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header/>
+        {/* <Header/> */}
         {children}
         <div>
           <table>
             <tbody>
               <tr>
-                <td>
-                <Footer/>
-                </td>
+                <td>{/* <Footer/> */}</td>
               </tr>
             </tbody>
           </table>
