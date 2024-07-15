@@ -1,12 +1,15 @@
 import showdown from "showdown";
 import Image from "next/image";
 import { Article } from "@/model/definitions";
+import { getArticleByPermalink } from "@/lib/db";
 
 interface PageProps {
-  article: Article;
+  params: { permalink: string };
 }
 
-export default async function Post({ article }: PageProps) {
+export default async function Post({ params: { permalink } }: PageProps) {
+  const article: Article | undefined = await getArticleByPermalink(permalink);
+  if (article === undefined) return;
   const url_fetch = async (url: string) => {
     if (url == null) {
       return "";
