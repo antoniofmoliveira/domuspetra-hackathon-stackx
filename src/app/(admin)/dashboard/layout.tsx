@@ -25,7 +25,6 @@ export default function AdminLayout({
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <AdminHeader />
         <div className={inter.className}>{children}</div>
-        <Footer />
       </main>
     </>
   );

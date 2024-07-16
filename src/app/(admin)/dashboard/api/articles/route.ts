@@ -5,8 +5,8 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request): Promise<NextResponse> {
   const body = await request.json();
   const newPost = await createArticle(body);
-  console.log(JSON.stringify(newPost));
-  return NextResponse.json(`{}`);
+  //   console.log(JSON.stringify(newPost));
+  return NextResponse.json(newPost);
 }
 
 // /**

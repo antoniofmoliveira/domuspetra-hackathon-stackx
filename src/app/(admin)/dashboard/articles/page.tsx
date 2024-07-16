@@ -2,6 +2,8 @@
 
 import { Article, ArticleObj } from "@/model/definitions";
 import { PutBlobResult } from "@vercel/blob";
+import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import {
   ChangeEventHandler,
   FormEvent,
@@ -21,6 +23,7 @@ export default function ArticlesAdmin() {
   const [blobText, setBlobText] = useState<PutBlobResult | null>(null);
   const [article, setArticle] = useState<Article>(new ArticleObj());
 
+  const router = useRouter();
   /**
    * submissão de arquivo de imagem
    * @param event
@@ -82,6 +85,7 @@ export default function ArticlesAdmin() {
       },
       body: JSON.stringify(article),
     });
+    router.push(`/dashboard/articles/${article.permalink}`);
   };
 
   /**
@@ -150,14 +154,16 @@ export default function ArticlesAdmin() {
 
   return (
     <>
-      <div>
-        <table className="form">
-          <thead>
+      <table className="form">
+        <thead>
+          <tr>
             <td colSpan={2}>
               <div>Cadastrar um artigo</div>
             </td>
-          </thead>
-        </table>
+          </tr>
+        </thead>
+      </table>
+      <div>
         <form onSubmit={on_submit_image}>
           <table className="form">
             <tbody>
@@ -224,12 +230,15 @@ export default function ArticlesAdmin() {
               <tr>
                 <td colSpan={2}>Passo 3: Preencha os campos obrigatórios</td>
               </tr>
-
               <tr>
                 <td>
                   <label>Tipo de artigo</label>
                 </td>
-                <select id="article_type" onChange={on_change_select_handler}>
+                <select
+                  id="article_type"
+                  value={"blog"}
+                  onChange={on_change_select_handler}
+                >
                   <option value={"blog"}>Blog Post</option>
                   <option value={"record"}>Testemunho</option>
                   <option value={"training"}>Treinamento</option>
