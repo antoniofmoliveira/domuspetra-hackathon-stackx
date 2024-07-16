@@ -5,10 +5,10 @@ import { getArticleByPermalink } from "@/lib/db";
 
 interface PageProps {
   permalink: string;
-  footer: ({ title }: { title: string }) => JSX.Element;
+  footer_: ({ title }: { title: string }) => JSX.Element;
 }
 
-export default async function FullArticle({ permalink, footer }: PageProps) {
+export default async function FullArticle({ permalink, footer_ }: PageProps) {
   const article: Article | undefined = await getArticleByPermalink(permalink);
 
   if (article === undefined) return;
@@ -35,7 +35,7 @@ export default async function FullArticle({ permalink, footer }: PageProps) {
   } else {
     chtml = content;
   }
-
+  const title = article.title;
   return (
     <>
       <div className="articleImageDiv">
@@ -53,7 +53,7 @@ export default async function FullArticle({ permalink, footer }: PageProps) {
         className="article"
         dangerouslySetInnerHTML={{ __html: chtml }}
       ></div>
-      <footer title={article.title}></footer>
+      <div className="footer_">{footer_({ title })}</div>
     </>
   );
 }

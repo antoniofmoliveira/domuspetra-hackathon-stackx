@@ -8,7 +8,7 @@ interface PageProps {
 export default async function Speech({ params: { permalink } }: PageProps) {
   return (
     <>
-      <FullArticle permalink={permalink} footer={BlogFooter} />
+      <FullArticle permalink={permalink} footer_={BlogFooter} />
     </>
   );
 }

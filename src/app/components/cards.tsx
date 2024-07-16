@@ -10,12 +10,7 @@ const Cards = async ({ category }: CardsProp) => {
   return (
     <>
       {articles.map((article) => (
-        <Card
-          key={article.id}
-          img={article.image_url}
-          title={article.title}
-          subtitle={article.summary}
-        />
+        <Card key={article.id} article={article} />
       ))}
     </>
   );

@@ -8,7 +8,7 @@ interface PageProps {
 export default async function Training({ params: { permalink } }: PageProps) {
   return (
     <>
-      <FullArticle permalink={permalink} footer={TrainingFooter} />
+      <FullArticle permalink={permalink} footer_={TrainingFooter} />
     </>
   );
 }
