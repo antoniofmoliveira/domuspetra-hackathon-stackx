@@ -30,6 +30,10 @@ img {
   max-width: 100%;
 }
 
+.retrato {
+  max-width: 100px;
+}
+
 /* navbar */
 
 .navbar {
@@ -68,6 +72,29 @@ img {
 
 /* hero */
 
+/* testimonials */
+
+.container-testimonial {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* fabiano */
+
+.container-fabiano {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 /* Footer */
 
 .footer {
@@ -104,13 +131,27 @@ img {
   width: 250px;
 }
 
-.footer input[type="email"] {
+/* input email form*/
+
+.container-email {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+  gap: 15px;
+}
+
+input[type="email"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 20px 0;
 }
+
+/* partners and clients */
 
 /* containers normal and small */
 
@@ -126,13 +167,23 @@ img {
   padding: 0 15px;
 }
 
-/* card */
+.container .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 
-.card {
+/* card */
+.container .card {
   background: #fff;
   color: #000;
   border-radius: 10px;
   padding: 20px;
+}
+
+/* container landing */
+.container-landing {
+  text-align: center;
+  justify-content: space-around;
 }
 
 /* buttons */
@@ -141,13 +192,22 @@ img {
   display: inline-block;
   padding: 13px 20px;
   background: var(--light-color);
-  color: #333;
+  color: #fff;
   font-weight: 600;
   text-decoration: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
   cursor: pointer;
-  text-align: cente ovo Hello world warl #fff;
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
 }
 
 .btn-dark {
@@ -199,6 +259,10 @@ img {
 
 .text-center {
   text-align: center;
+}
+
+.text-bold {
+  font-weight: bolder;
 }
 /* Background */
 

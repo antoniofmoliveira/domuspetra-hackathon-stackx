@@ -1,3 +1,5 @@
-export default function Trainings() {
-  return <div>Training Page</div>;
+import Cards from "@/app/components/cards";
+
+export default async function Blogs() {
+  return <Cards category="training" />;
 }
