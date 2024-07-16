@@ -33,6 +33,9 @@ const Header = () => {
                 <a href="/training">Treinamento</a>
               </li>
               <li>
+                <a href="/consultancy">Consultoria</a>
+              </li>
+              <li>
                 <a href="/dashboard">Administração</a>
               </li>
             </ul>
@@ -63,6 +66,9 @@ const Header = () => {
               </li>
               <li>
                 <a href="/training">Treinamento</a>
+              </li>
+              <li>
+                <a href="/consultancy">Consultoria</a>
               </li>
               <li>
                 <a href="/dashboard">Administração</a>
