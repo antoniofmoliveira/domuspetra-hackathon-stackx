@@ -11,7 +11,7 @@ const ConsultancysBlock = () => {
         intelectual e o estabelecimento das melhores práticas de gestão.
       </p>
       <div className="btn btn-inverted text-2xl">
-        <Link href={"/consultancy"} className="text-amber-950 font-bold">LEIA MAIS</Link>
+        <Link href={"/consultancy"} className="items-center justify-center rounded-full text-white-950 font-bold bg-blue-600 p-2 m-auto shadow shadow-black">LEIA MAIS</Link>
       </div>
     </div>
   );

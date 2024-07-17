@@ -22,8 +22,8 @@ const TrainingsBlock = () => {
         redução de custos operacionais, aumento dos níveis de qualidade com
         melhoria dos processos e a promoção da felicidade no trabalho.
       </p>
-      <div className="btn btn-inverted">
-        <Link href={"/training"} className="text-amber-950 font-bold">LEIA MAIS</Link>
+      <div className="btn btn-inverted  ">
+        <Link href={"/training"} className="items-center justify-center rounded-full text-white-950 font-bold bg-blue-600 p-2 m-auto shadow shadow-black" >LEIA MAIS</Link>
       </div>
     </div>
   );
