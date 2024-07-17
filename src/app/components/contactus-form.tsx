@@ -11,7 +11,6 @@ interface PageProps {
 const ContactUsForm = ({ subject = "" }: PageProps) => {
   const [contact, setContact] = useState(new ContactObj(subject));
   const [resposta, setResposta] = useState("");
-  console.log(subject);
 
   const onChangeTextareaHandle: ChangeEventHandler<HTMLTextAreaElement> = (
     event
