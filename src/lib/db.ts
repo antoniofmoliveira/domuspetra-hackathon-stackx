@@ -1,7 +1,7 @@
 import { sql } from "@vercel/postgres";
 import bcrypt from "bcrypt";
 
-import { Article, ArticleObj, User } from "@/model/definitions";
+import { Article, ArticleObj, Contact, User } from "@/model/definitions";
 
 export { sql };
 
@@ -222,5 +222,41 @@ export async function createArticle(
   } catch (error) {
     console.error("Failed to update article:", error);
     throw new Error("Failed to update article.");
+  }
+}
+
+export async function createContact(
+  contact: Contact
+): Promise<Contact | undefined> {
+  try {
+    const result = await sql<Contact>`INSERT INTO contacts 
+            (name, email, tel, message)
+            VALUES (${contact.name}, ${contact.email}, ${contact.tel}, ${contact.message})
+            RETURNING *`;
+    return result.rows[0];
+  } catch (error) {
+    console.error("Failed to create contact:", error);
+    throw new Error("Failed to  create contact.");
+  }
+}
+
+export async function getContacts(): Promise<Contact[] | undefined> {
+  try {
+    const contacts =
+      await sql<Contact>`SELECT * FROM contacts where hide_contact=false ORDER BY contac_date desc `;
+    return contacts.rows;
+  } catch (error) {
+    console.error("Failed to fetch Contacts:", error);
+    throw new Error("Failed to fetch Contacts.");
+  }
+}
+
+export async function hideContact(contactId: string): Promise<void> {
+  try {
+    const contacts =
+      await sql<Contact>`UPDATE contacts set hide_contact=true where id=${contactId}`;
+  } catch (error) {
+    console.error("Failed to hide Contact:", error);
+    throw new Error("Failed to hide Contact.");
   }
 }

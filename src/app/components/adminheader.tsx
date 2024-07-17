@@ -1,8 +1,10 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import DomusPetraLogo from "./domus-petra-logo";
-import { signOut } from "@/auth";
 
 const AdminHeader = () => {
+  const btnRef = useRef<HTMLDivElement>(null);
+
   return (
     <div>
       {" "}
@@ -28,25 +30,29 @@ const AdminHeader = () => {
                 <a href="/dashboard/upload">Enviar arquivo</a>
               </li>
               <li>
-                <form
-                  action={async () => {
-                    "use server";
-                    await signOut({ redirect: true, redirectTo: "/" });
-                  }}
-                >
+                <form action="/dashboard/api/logoff" method="POST">
                   <button>Sign Out</button>
                 </form>
               </li>
             </ul>
           </div>
           {/* <!-- Hamburger Button --> */}
-          <button className="hamburger-button">
+          <button
+            className="hamburger-button"
+            onClick={(e) => {
+              if (btnRef.current!.style.right == "0px") {
+                btnRef.current!.style.right = "-250px";
+              } else {
+                btnRef.current!.style.right = "0px";
+              }
+            }}
+          >
             <div className="hamburger-line"></div>
             <div className="hamburger-line"></div>
             <div className="hamburger-line"></div>
           </button>
           {/* <!-- Mobile Menu --> */}
-          <div className="mobile-menu">
+          <div className="mobile-menu" ref={btnRef}>
             <ul>
               <li>
                 <a href="/dashboard">Dashboard</a>
@@ -61,12 +67,7 @@ const AdminHeader = () => {
                 <a href="/dashboard/upload">Enviar arquivo</a>
               </li>
               <li>
-                <form
-                  action={async () => {
-                    "use server";
-                    await signOut({ redirect: true, redirectTo: "/" });
-                  }}
-                >
+                <form action="/dashboard/api/logoff" method="POST">
                   <button>Sign Out</button>
                 </form>
               </li>

@@ -3,14 +3,8 @@ import Image from "next/image";
 import { useRef } from "react";
 
 export default function DomusPetraLogo() {
-  //   const ref = useRef<HTMLDivElement>(null);
-  //   let src = "/images/logos/domuspetralogo1w.png";
-  //   console.log(ref.current?.style.backgroundColor);
   return (
-    <div
-      //   ref={ref}
-      className="flex flex-row items-center leading-none dark:bg-black background-color=rgb(214, 219, 220) "
-    >
+    <div className="flex flex-row items-center leading-none dark:bg-black background-color=rgb(214, 219, 220) ">
       <picture>
         <source
           srcSet="/images/logos/domuspetralogo1w.png"
@@ -22,7 +16,6 @@ export default function DomusPetraLogo() {
         />
         <img src="/images/logos/domuspetralogo1b.png" alt="Logo Domus Petra" />
       </picture>
-      {/* <Image src={src} alt="Logo Domus Petra" width={550} height={100} /> */}
     </div>
   );
 }
