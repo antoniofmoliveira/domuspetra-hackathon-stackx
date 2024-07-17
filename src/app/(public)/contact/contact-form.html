@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="contact-form.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
+	<body>
+		<div class="contact-container">
+			<div
+				id="contact-form"
+				class="contact-form"
+			>
+				<div class="contact-form-text">
+					<h2>Fale conosco</h2>
+					<p>
+						Se você tem alguma dúvida, sugestão ou quer saber mais sobre nós,
+						entre em contato.
+					</p>
+				</div>
+				<form
+					id="contact-form-id"
+					class="contact-form-class"
+					method="post"
+					action="contact-form-process"
+				>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						class="contact-form-name"
+						placeholder="Seu nome"
+						required
+					/>
+					<div class="contact-form-data">
+						<input
+							type="email"
+							id="email"
+							name="email"
+							class="contact-form-email"
+							placeholder="Seu email"
+							required
+						/>
+						<input
+							type="tel"
+							id="telephone"
+							name="telephone"
+							class="contact-form-telephone"
+							placeholder="Seu telefone"
+						/>
+					</div>
+					<textarea
+						id="message"
+						name="message"
+						class="contact-form-message"
+						placeholder="Sua mensagem"
+						rows="5"
+						cols="30"
+					></textarea>
+					<button
+						type="submit"
+						id="contact-form-btn"
+						class="contact-form-btn"
+					>
+						<i class="fa-solid fa-share"></i>
+						ENVIAR MENSAGEM
+					</button>
+				</form>
+			</div>
+			<div class="contact-data">
+				<div class="contact-data-text">
+					<h1>Endereço</h1>
+					<p>Rua Tangará, 470 - Bairro Iririú Joinville - SC CEP: 89227-100</p>
+					<h1>WhatsApp</h1>
+					<p>+55 47 997071177</p>
+					<h1>E-mail</h1>
+					<p>contato@domuspetra.com.br</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
