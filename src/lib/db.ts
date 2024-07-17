@@ -127,6 +127,18 @@ export async function getArticles(
   }
 }
 
+export async function getLatestArticles(): Promise<Article[] | undefined> {
+  try {
+    const articles =
+      await sql<Article>`SELECT * FROM articles WHERE type in ('speechs', 'training', 'consultancy')
+        AND is_published=true ORDER BY article_date DESC LIMIT 4`;
+    return articles.rows;
+  } catch (error) {
+    console.error(`Failed to fetch latest article:`, error);
+    throw new Error(`Failed to fetch latest article.`);
+  }
+}
+
 /**
  *
  * @param permalink

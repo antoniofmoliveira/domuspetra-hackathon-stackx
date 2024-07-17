@@ -31,6 +31,16 @@ body {
     text-wrap: balance;
   }
 }
+div.record p {
+  /* margin-bottom: 1rem; */
+  font-size: 0.6rem;
+}
+
+div.record em {
+  /* margin-bottom: 1rem; */
+  font-size: 0.7rem;
+  font-weight: bold;
+}
 
 div.article p {
   margin-bottom: 1rem;
@@ -78,7 +88,7 @@ table.form select {
 
 /* #btnSend {} */
 .container {
-  max-width: 1100px;
+  /* max-width: 1100px; */
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -93,20 +103,63 @@ table.form select {
   display: grid;
   grid-template-columns: 1fr;
 }
+/* buttons */
+
+.btn {
+  display: inline-block;
+  padding: 13px 20px;
+  background: var(--light-color);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
 
 /* navbar */
 
 .navbar {
   background: var(--dark-color);
-  padding: 20px;
+  padding: 5px;
+  width: 100%;
 }
 
 .navbar .container {
+  width: 100%;
+  height: 130px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 10;
+  padding-bottom: 10;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+.navbar .main-menu {
+  color: rgb(101, 112, 114);
+}
 .navbar .main-menu ul {
   display: flex;
 }
@@ -115,8 +168,9 @@ table.form select {
   padding: 10px 20px;
   display: block;
   font-weight: 600;
+  font-size: 1.1rem;
   transition: 0.5s;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .navbar .main-menu ul li a i {
@@ -127,11 +181,10 @@ table.form select {
 }
 
 .navbar .main-menu ul li a:hover {
-  color: var(--light-color);
+  color: black;
 }
 
 /* Hamburger Button */
-/* HTML AND JS BELLOW, COPY AND PASTE */
 
 .hamburger-button {
   display: none;
@@ -158,7 +211,7 @@ table.form select {
   width: 200px;
   height: 100%;
   z-index: 999;
-  background-color: #fff;
+  /* background-color: #fff; */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease-in-out;
   background-color: #333;
@@ -194,6 +247,8 @@ table.form select {
 
 .footer {
   padding: 40px;
+  font-size: 0.6rem;
+  color: rgb(101, 112, 114);
 }
 
 .footer h4 {
@@ -205,7 +260,7 @@ table.form select {
 }
 
 .footer a {
-  color: #ccc;
+  /* color: #221f1f; */
 }
 
 .footer i {
@@ -224,4 +279,19 @@ table.form select {
 .footer .footer-grid .card {
   margin: 20px 30px 30px 30px;
   width: 250px;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .navbar .main-menu {
+    display: none;
+  }
+
+  .navbar .hamburger-button {
+    display: block;
+  }
+}
+
+.textshadow {
+  text-shadow: 1px 1px 1px #000;
 }

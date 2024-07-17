@@ -3,11 +3,9 @@ import Image from "next/image";
 
 export default function DomusPetraLogo() {
   return (
-    <div
-      className={`${lusitana.className} flex flex-row items-center leading-none text-white`}
-    >
+    <div className={`flex flex-row items-center leading-none`}>
       <Image
-        src="/images/logo.png"
+        src="/images/domuspetralogo1.png"
         alt="Logo Domus Petra"
         width={550}
         height={100}
