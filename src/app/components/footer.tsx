@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Footer = () => {
@@ -9,7 +10,12 @@ const Footer = () => {
           <div className="footer-grid">
             <div className="card">
               <a href="/">
-                <img src="/images/logo.png" alt="logo" />
+                <Image
+                  src="/images/logos/domuspetralogo1w.png"
+                  alt="Logo Domus Petra"
+                  width={200}
+                  height={100}
+                />
               </a>
             </div>
             <div>

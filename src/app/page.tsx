@@ -10,23 +10,16 @@ import {
   AwaitedReactNode,
 } from "react";
 import Header from "./components/header";
-
-const Par = ({ text, target }: { text: string; target: string }) => {
-  return (
-    <>
-      <p>
-        <Link href={target}>{text}</Link>
-      </p>
-    </>
-  );
-};
+import Landing from "./(public)/landing/page";
 
 export default function Home() {
   return (
     <>
       <Header />
       <main className="flex min-h-screen flex-col items-center justify-between p-2">
-        <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex"></div>
+        <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+          <Landing />
+        </div>
       </main>
     </>
   );

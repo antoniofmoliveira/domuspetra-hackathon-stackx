@@ -2,21 +2,23 @@
 import React, { useRef } from "react";
 import DomusPetraLogo from "./domus-petra-logo";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const btnRef = useRef<HTMLDivElement>(null);
   return (
     <div>
-      {" "}
       <nav className="navbar">
         <div className="container">
           <div>
-            <Image
-              src="/images/logo.png"
-              alt="Logo Domus Petra"
-              width={550}
-              height={100}
-            />
+            <Link href="/">
+              <Image
+                src="/images/logos/domuspetralogo1w.png"
+                alt="Logo Domus Petra"
+                width={450}
+                height={100}
+              />
+            </Link>
           </div>
 
           <div className="main-menu">
