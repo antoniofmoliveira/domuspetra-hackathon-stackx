@@ -3,8 +3,10 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-// import Footer from "./Footer";
-// import Header from "./Header";
+import Footer from "./components/footer";
+import "/public/css/fontawesome.css";
+import "/public/css/brands.css";
+import "/public/css/solid.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -55,18 +57,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <Header/> */}
         {children}
-        <div>
-          <table>
-            <tbody>
-              <tr>
-                <td>{/* <Footer/> */}</td>
-              </tr>
-            </tbody>
-          </table>
-          <p></p>
-        </div>
+        <Footer />
       </body>
     </html>
   );
