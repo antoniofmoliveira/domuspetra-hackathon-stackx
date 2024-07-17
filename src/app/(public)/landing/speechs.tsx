@@ -11,7 +11,7 @@ const SpeechsBlock = () => {
                 duradouro com alto potencial de mudanças.
             </p>
             <div className="btn btn-inverted">
-                <Link href={"/speechs"} className="items-center justify-center rounded-full text-white-950 font-bold bg-blue-600 p-2 m-auto shadow shadow-black">LEIA MAIS</Link>
+                <Link href={"/speechs"} className="items-center justify-center rounded-full text-white-950 font-bold bg-blue-600 p-2 pr-5 pl-5  m-auto shadow shadow-black"><i className="fa-solid fa-share"></i> LEIA MAIS</Link>
             </div>
         </div>
     )
