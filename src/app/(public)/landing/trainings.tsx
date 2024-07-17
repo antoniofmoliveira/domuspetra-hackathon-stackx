@@ -3,8 +3,8 @@ import React from "react";
 
 const TrainingsBlock = () => {
   return (
-    <div className="card text-center text-2xl border-2 border-slate-700 rounded-md  m-1">
-      <h1 className={"font-extrabold text-2xl"}>Treinamentos</h1>
+    <div className="text-center text-2xl border-hidden shadow-[0px_-1px_0px_0px_rgba(0,0,0,0.1)] shadow-zinc-400 m-1 p-1">
+      <h1 className={"font-extrabold text-3xl pt-2"}>Treinamentos</h1>
       <p className={"text-xl p-2"}>
         Os treinamentos visam capacitar os participantes de maneira plena e
         eficiente, utilizando técnicas e metodologias inovadoras como Design
@@ -23,7 +23,7 @@ const TrainingsBlock = () => {
         melhoria dos processos e a promoção da felicidade no trabalho.
       </p>
       <div className="btn btn-inverted">
-        <Link href={"/training"}>LEIA MAIS</Link>
+        <Link href={"/training"} className="text-amber-950 font-bold">LEIA MAIS</Link>
       </div>
     </div>
   );
