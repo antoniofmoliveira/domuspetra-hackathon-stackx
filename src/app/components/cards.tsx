@@ -9,9 +9,11 @@ const Cards = async ({ category }: CardsProp) => {
   if (articles === undefined) return <></>;
   return (
     <>
-      {articles.map((article) => (
-        <Card key={article.id} article={article} />
-      ))}
+      <div className="flex flex-wrap w-full flex-row justify-evenly">
+        {articles.map((article) => (
+          <Card key={article.id} article={article} />
+        ))}
+      </div>
     </>
   );
 };

@@ -32,6 +32,9 @@ export default async function FullArticle({ permalink, footer_ }: PageProps) {
   if (article.content_url.endsWith(".md")) {
     const convert = new showdown.Converter();
     chtml = convert.makeHtml(content);
+  }
+  if (article.content_url.endsWith(".txt")) {
+    chtml = `<pre class='articleInTxt'>${content}</pre>`;
   } else {
     chtml = content;
   }
