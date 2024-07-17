@@ -47,3 +47,13 @@ CREATE TABLE IF NOT EXISTS articles (
     has_no_content BOOLEAN DEFAULT FALSE,
     is_external_url_an_iframe BOOLEAN DEFAULT FALSE
     );
+
+CREATE TABLE IF NOT EXISTS contacts (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    tel TEXT NOT NULL,
+    message TEXT NOT NULL,
+    contact_date TIMESTAMP NOT NULL DEFAULT now(),
+    hide_contact  BOOLEAN DEFAULT FALSE
+    );
