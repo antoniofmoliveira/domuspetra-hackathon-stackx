@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import { useRef, useState } from "react";
 import "./Carousel.css";
 
@@ -68,14 +68,19 @@ function Carousel() {
           </div>
         </a>
         <a href={hrefRightBox}>
-          <div id="hero2" ref={ref2} className="hero">
-            <h5>{titleArray[rightBox]}</h5>
+          <div id="hero2" ref={ref2} className="carousel-hero">
+            <h5 className="carousel-title">{titleArray[rightBox]}</h5>
           </div>
         </a>
-        <button id="right" onClick={goFowards}>
-          {" "}
+
+        <button id="carousel-btn-right" onClick={goFowards}>
+          <i className="fa-solid fa-arrow-right"></i>
         </button>
-      </div>
+
+        <button id="carousel-btn-down" onClick={goFowards}>
+          <i className="fa-solid fa-arrow-down"></i>
+        </button>
+      </div >
     </>
   );
 }
