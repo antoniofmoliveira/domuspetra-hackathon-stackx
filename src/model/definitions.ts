@@ -47,7 +47,7 @@ export type Article = {
 
 export class ArticleObj implements Article {
   id = null;
-  type = "";
+  type = "blog";
   permalink = "";
   external_url = null;
   title = "";
@@ -55,7 +55,7 @@ export class ArticleObj implements Article {
   content_url = "";
   image_url = "";
   article_date = "";
-  is_published = false;
+  is_published = true;
   has_no_content = false;
   is_external_url_an_iframe = false;
 
