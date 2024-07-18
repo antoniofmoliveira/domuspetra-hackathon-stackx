@@ -154,17 +154,15 @@ export default function ArticlesAdmin() {
 
   return (
     <>
-      <div>
-        <table className="form">
-          <thead>
-            <tr>
-              <td colSpan={2}>
-                <div>Cadastrar um artigo</div>
-              </td>
-            </tr>
-          </thead>
-        </table>
-      </div>
+      <table className="form">
+        <thead>
+          <tr>
+            <td colSpan={2}>
+              <div>Cadastrar um artigo</div>
+            </td>
+          </tr>
+        </thead>
+      </table>
       <div>
         <form onSubmit={on_submit_image}>
           <table className="form">
@@ -241,9 +239,7 @@ export default function ArticlesAdmin() {
                   value={"blog"}
                   onChange={on_change_select_handler}
                 >
-                  <option value={"blog"} selected>
-                    Blog Post
-                  </option>
+                  <option value={"blog"}>Blog Post</option>
                   <option value={"record"}>Testemunho</option>
                   <option value={"training"}>Treinamento</option>
                   <option value={"consultancy"}>Consultoria</option>
@@ -344,9 +340,7 @@ export default function ArticlesAdmin() {
                     onChange={on_change_select_handler}
                   >
                     <option value={"false"}>Não</option>
-                    <option value={"true"} selected>
-                      Sim
-                    </option>
+                    <option value={"true"}>Sim</option>
                   </select>
                 </td>
                 <td>
@@ -355,9 +349,7 @@ export default function ArticlesAdmin() {
                     id="article_is_external_url_an_iframe"
                     onChange={on_change_select_handler}
                   >
-                    <option value={"false"} selected>
-                      Não
-                    </option>
+                    <option value={"false"}>Não</option>
                     <option value={"true"}>Sim</option>
                   </select>
                 </td>
