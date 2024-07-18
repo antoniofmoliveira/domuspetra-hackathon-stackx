@@ -1,3 +1,4 @@
+@media (width >1000px){
 #carousel-hero-all {
   display:  grid;
   grid-template-columns: repeat(4,1fr);
@@ -15,7 +16,6 @@
 .carousel-hero{
   width: 400px;
   height: 300px;
-
 }
 #hero1 {
   background-image: url("/images/heros/treinamentosHero.png");
@@ -63,4 +63,23 @@
   color: white;
   font-weight: bold;
   padding-top: 150px;
+}
+}
+@media (width <= 850px){
+  #carousel-btn-right,#carousel-btn-left, #hero2{
+    display: none;
+    visibility: hidden;
+  }
+  .carousel-hero{
+    width: 400px;
+    height: 300px;
+    margin: auto;
+  }
+  .carousel-title{
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    padding-top: 150px;
+  }
 }
