@@ -9,24 +9,6 @@ export type User = {
   rule: string;
 };
 
-export type Contact = {
-  id: string;
-  name: string;
-  email: string;
-  tel: string;
-  message: string;
-};
-
-export class ContactObj {
-  id: string = "";
-  name: string = "";
-  email: string = "";
-  tel: string = "";
-  message: string = "";
-  constructor(message: string) {
-    this.message = message;
-  }
-}
 /**
  * uma artigo de testemunho, blog, treinamento, consultoria ou palestra
  */
