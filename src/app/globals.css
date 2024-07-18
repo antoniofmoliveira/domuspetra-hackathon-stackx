@@ -307,4 +307,9 @@ table.form select {
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
   }
+  .contact li{
+    display: inline-block;
+  }
+  .contact{ text-align: center;
+  }
 }
