@@ -23,20 +23,20 @@
   flex-flow: column;
   justify-content: stretch;
   border: 2px;
-  box-shadow: 5px 5px gray;
+  box-shadow: 2px 2px 2px gray;
   border-radius: 5%;
   width: 300px;
   min-width: 300px;
   height: 500px;
-  background-color: rgb(219, 239, 246);
-  margin: 1rem;
+  background-color: rgb(225, 228, 228);
+  margin: 1rem ;
   padding: 5px;
 }
 .cardContainerImage {
   padding: 8px;
   padding-right: 10px;
   border-radius: 10%;
-  box-shadow: 2px 2px gray;
+  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.623);
 }
 .cardContainer h2 {
   font-weight: bold;
