@@ -1,3 +1,5 @@
-export default function Dashboard() {
-  return <div>Dashboard Page</div>;
+import { getContacts, hideContact } from "@/lib/db";
+
+export default async function Dashboard() {
+  return <></>;
 }

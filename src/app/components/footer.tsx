@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React from "react";
+import DomusPetraLogo from "./domus-petra-logo";
 
 const Footer = () => {
   return (
@@ -10,12 +10,7 @@ const Footer = () => {
           <div className="footer-grid">
             <div className="card">
               <a href="/">
-                <Image
-                  src="/images/logos/domuspetralogo1w.png"
-                  alt="Logo Domus Petra"
-                  width={200}
-                  height={100}
-                />
+                <DomusPetraLogo />
               </a>
             </div>
             <div>
@@ -66,7 +61,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div>
+            <div className="contact">
               <h4>Contato</h4>
               <ul>
                 <li>
