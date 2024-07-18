@@ -1,5 +1,5 @@
 "use client";
-import { useEffect,useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./Carousel.css";
 
 function Carousel() {
@@ -53,16 +53,15 @@ function Carousel() {
     ref1.current!.style.backgroundImage = `url("/images/heros/${pictureArray[leftBox]}")`;
     ref2.current!.style.backgroundImage = `url("/images/heros/${pictureArray[rightBox]}")`;
   };
-  useEffect(()=>{
-    setInterval(() => {
-      goFowards();
-    }, 4000);
-  })
   return (
     <>
+
       <div id="carousel-hero-all">
-        <button id="carousel-btn-left" onClick={goBackwards}><i className="fa-solid fa-arrow-left"></i></button>
-    
+        <button id="carousel-btn-up" onClick={goBackwards}><i className="fa-solid fa-arrow-up"></i>
+        </button>
+        <button id="carousel-btn-left" onClick={goBackwards}><i className="fa-solid fa-arrow-left"></i>
+        </button>
+
         <a href={hrefLeftBox}>
           <div id="hero1" ref={ref1} className="carousel-hero">
             <h5 className="carousel-title">{titleArray[leftBox]}</h5>
@@ -73,9 +72,13 @@ function Carousel() {
             <h5 className="carousel-title">{titleArray[rightBox]}</h5>
           </div>
         </a>
-    
+
         <button id="carousel-btn-right" onClick={goFowards}>
           <i className="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <button id="carousel-btn-down" onClick={goFowards}>
+          <i className="fa-solid fa-arrow-down"></i>
         </button>
       </div >
     </>

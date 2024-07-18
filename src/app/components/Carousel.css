@@ -1,24 +1,24 @@
-@media (width >1000px){
 #carousel-hero-all {
-  display:  grid;
-  grid-template-columns: repeat(4,1fr);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  
 }
 
 #carousel-hero-container {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  width:80%;
+  width: 80%;
 }
 
-.carousel-hero{
+.carousel-hero {
   width: 400px;
   height: 300px;
 }
+
 #hero1 {
   background-image: url("/images/heros/treinamentosHero.png");
+  object-fit: contain;
 
 }
 
@@ -27,7 +27,19 @@
   object-fit: contain;
 }
 
+#carousel-btn-up {
+  display: none;
+  font-size: 3rem;
+  color: black;
+  width: 95px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: rgba(200, 200, 200, 0.75);
+}
 
+#carousel-btn-up:hover {
+  box-shadow: -2px 2px 2px black;
+}
 
 #carousel-btn-left {
   font-size: 3rem;
@@ -57,29 +69,64 @@
 #carousel-btn-right:hover {
   box-shadow: 2px 2px 2px black;
 }
-.carousel-title{
+
+#carousel-btn-down {
+  display: none;
+  font-size: 3rem;
+  color: black;
+  width: 95px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: rgba(200, 200, 200, 0.75);
+}
+
+#carousel-btn-down:hover {
+  box-shadow: 2px 2px 2px black;
+}
+
+.carousel-title {
   text-align: center;
   font-size: 3rem;
   color: white;
   font-weight: bold;
   padding-top: 150px;
 }
-}
-@media (width <= 850px){
-  #carousel-btn-right,#carousel-btn-left, #hero2{
+
+@media (width < 1000px) {
+  #carousel-hero-all {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  #carousel-hero-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    width: 80%;
+    justify-items: center;
+  }
+
+  #carousel-btn-left {
     display: none;
-    visibility: hidden;
   }
-  .carousel-hero{
-    width: 400px;
+
+  #carousel-btn-right {
+    display: none;
+  }
+
+  #carousel-btn-up {
+    display: block;
+  }
+
+  #carousel-btn-down {
+    display: block;
+  }
+
+}
+
+@media (width < 500px) {
+  .carousel-hero {
+    width: 350px;
     height: 300px;
-    margin: auto;
-  }
-  .carousel-title{
-    text-align: center;
-    font-size: 3rem;
-    color: white;
-    font-weight: bold;
-    padding-top: 150px;
   }
 }
