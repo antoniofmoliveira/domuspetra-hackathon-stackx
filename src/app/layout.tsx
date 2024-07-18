@@ -55,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark:bg-black bg-white ">
+    <html lang="en">
       <body className={inter.className}>
         {children}
         <Footer />

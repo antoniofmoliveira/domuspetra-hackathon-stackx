@@ -5,11 +5,9 @@ import ConsultancysBlock from "./consultancys";
 import TrainingsBlock from "./trainings";
 import ProfileBlock from "./profile";
 import RecordsBlock from "./records";
-import Carousel from "@/app/components/Carousel";
 export default async function Landing() {
   return (
     <div>
-      <Carousel />
       {/*  */}
       <SpeechsBlock />
       {/*  */}

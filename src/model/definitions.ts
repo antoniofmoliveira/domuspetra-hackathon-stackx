@@ -9,24 +9,6 @@ export type User = {
   rule: string;
 };
 
-export type Contact = {
-  id: string;
-  name: string;
-  email: string;
-  tel: string;
-  message: string;
-};
-
-export class ContactObj {
-  id: string = "";
-  name: string = "";
-  email: string = "";
-  tel: string = "";
-  message: string = "";
-  constructor(message: string) {
-    this.message = message;
-  }
-}
 /**
  * uma artigo de testemunho, blog, treinamento, consultoria ou palestra
  */
@@ -47,7 +29,7 @@ export type Article = {
 
 export class ArticleObj implements Article {
   id = null;
-  type = "blog";
+  type = "";
   permalink = "";
   external_url = null;
   title = "";
@@ -55,7 +37,7 @@ export class ArticleObj implements Article {
   content_url = "";
   image_url = "";
   article_date = "";
-  is_published = true;
+  is_published = false;
   has_no_content = false;
   is_external_url_an_iframe = false;
 
