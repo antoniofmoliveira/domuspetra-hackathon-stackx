@@ -3,8 +3,8 @@ import React from "react";
 
 const ProfileBlock = () => {
   return (
-    <div className="card text-center text-2xl border-2 border-slate-700 rounded-md  m-1">
-      <h1 className={"font-extrabold text-2xl"}>Fabiano Dell&apos;Agnolo</h1>
+    <div className="text-center text-2xl border-hidden shadow-[0px_-1px_0px_0px_rgba(0,0,0,0.1)] shadow-zinc-400 m-1">
+      <h1 className={"font-extrabold text-3xl pt-2"}>Fabiano Dell&apos;Agnolo</h1>
       <p className={"text-xl p-2"}>
         Experiência por 20 anos na indústria, com ênfase no setor metal-mecânico
         e automotivo. Certificado Seis Sigma, ISO/TS 16949, ISO 9001 e ISO
@@ -35,7 +35,7 @@ const ProfileBlock = () => {
         fomentando o desenvolvimento tecnológico, inovação e empreendedorismo,
         tais como o programa JEDI - Jornada de Empreendedorismo, Desenvolvimento
         e Inovação (
-        <Link href={"http://jedi.joinvalle.com.br"}>
+        <Link href={"http://jedi.joinvalle.com.br"} className="underline text-blue-800">
           http://jedi.joinvalle.com.br
         </Link>
         ).
@@ -48,16 +48,16 @@ const ProfileBlock = () => {
         Competitividade tais como:
       </p>
       <ul>
-        <li className={"text-xl p-2"}>- Conselheiro do Join.Valle;</li>
-        <li className={"text-xl p-2"}>
+        <li className={"text-xl p-2 font-medium"}>- Conselheiro do Join.Valle;</li>
+        <li className={"text-xl p-2 font-medium"}>
           - Conselheiro do Instituto Ágora Tech Park;
         </li>
-        <li className={"text-xl p-2"}>- Diretor na Incubadora Softville;</li>
-        <li className={"text-xl p-2"}>
+        <li className={"text-xl p-2 font-medium"}>- Diretor na Incubadora Softville;</li>
+        <li className={"text-xl p-2 font-medium"}>
           - Presidente do COMCITI (Conselho Municipal de Ciências, Tecnologia e
           Inovação de Joinville);
         </li>
-        <li className={"text-xl p-2"}>- Colunista do portal NSC Tech.</li>
+        <li className={"text-xl p-2 font-medium"}>- Colunista do portal NSC Tech.</li>
       </ul>
     </div>
   );
