@@ -53,11 +53,10 @@ function Carousel() {
     ref1.current!.style.backgroundImage = `url("/images/heros/${pictureArray[leftBox]}")`;
     ref2.current!.style.backgroundImage = `url("/images/heros/${pictureArray[rightBox]}")`;
   };
-  useEffect(()=>{
-    setTimeout(() => {
+    setInterval(() => {
       goFowards();
-    }, 5000);
-  })
+    }, 3000);
+
   return (
     <>
       <div id="carousel-hero-all">
