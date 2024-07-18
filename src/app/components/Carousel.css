@@ -1,18 +1,19 @@
-.hero {
-  width: 250px;
-  height: 200px;
+#carousel-hero-all {
   display: grid;
-  float: left;
-  margin: -150px 50px;
-  grid-template-columns: 2fr;
-  align-items: center;
-  justify-items: center;
-  background-color: gray;
-  color: yellow;
-  text-shadow: 2px 2px 2px black;
-  font-weight: bold;
-  font-size: 4.5em;
-  font-family: poppins;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+#carousel-hero-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 80%;
+}
+
+.carousel-hero {
+  width: 400px;
+  height: 300px;
 }
 #hero1 {
   background-image: url("/images/heros/treinamentosHero.png");

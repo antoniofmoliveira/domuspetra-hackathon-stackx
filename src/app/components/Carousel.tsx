@@ -55,11 +55,16 @@ function Carousel() {
   };
   return (
     <>
-      <div id="line">
-        <button id="left" onClick={goBackwards}></button>
+
+      <div id="carousel-hero-all">
+        <button id="carousel-btn-up" onClick={goBackwards}><i className="fa-solid fa-arrow-up"></i>
+        </button>
+        <button id="carousel-btn-left" onClick={goBackwards}><i className="fa-solid fa-arrow-left"></i>
+        </button>
+
         <a href={hrefLeftBox}>
-          <div id="hero1" ref={ref1} className="hero">
-            <h5>{titleArray[leftBox]}</h5>
+          <div id="hero1" ref={ref1} className="carousel-hero">
+            <h5 className="carousel-title">{titleArray[leftBox]}</h5>
           </div>
         </a>
         <a href={hrefRightBox}>
