@@ -39,7 +39,7 @@ const RecordCard = async ({ article }: CardProp) => {
     <>
       <div className="cardContainer flex items-center w-[200] h-[200]">
         <Image
-          className="cardContainerImage  object-cover"
+          className="cardContainerImage  object-fill"
           src={article.image_url}
           alt={article.image_url}
           height={200}
