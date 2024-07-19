@@ -6,7 +6,7 @@ export default async function Contacts() {
   const contacts = await getContacts();
   //   let contacts: Contact[] = [];
 
-  //   const result = fetch("http://localhost:3000/api/contactlist", {
+  //   const result = fetch("https://domuspetra-hackathon-stackx.vercel.app//api/contactlist", {
   //     method: "GET",
   //     next: { revalidate: 60 },
   //     headers: {

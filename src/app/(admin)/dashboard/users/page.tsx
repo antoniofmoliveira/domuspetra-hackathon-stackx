@@ -21,9 +21,12 @@ function UserRow({ user }: UserRowProp) {
 }
 
 export default async function AdminUsers() {
-  const users = await fetch("http://localhost:3000/api/users", {
-    next: { tags: ["User"] },
-  });
+  const users = await fetch(
+    "https://domuspetra-hackathon-stackx.vercel.app/api/users",
+    {
+      next: { tags: ["User"] },
+    }
+  );
   const j = await users.json();
   //   console.log(j);
   const data = j;
