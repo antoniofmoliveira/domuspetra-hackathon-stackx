@@ -1,4 +1,5 @@
 import { Button } from "@/app/components/button";
+import { getUsers } from "@/lib/db";
 import { User } from "@/model/definitions";
 interface UserRowProp {
   user: User;
@@ -21,15 +22,16 @@ function UserRow({ user }: UserRowProp) {
 }
 
 export default async function AdminUsers() {
-  const users = await fetch(
-    "https://domuspetra-hackathon-stackx.vercel.app/api/users",
-    {
-      next: { tags: ["User"] },
-    }
-  );
-  const j = await users.json();
-  //   console.log(j);
-  const data = j;
+  const users = await getUsers();
+  //   const users = await fetch(
+  //     "https://domuspetra-hackathon-stackx.vercel.app/api/users",
+  //     {
+  //       next: { tags: ["User"] },
+  //     }
+  //   );
+  //   const j = await users.json();
+  //   //   console.log(j);
+  //   const data = j;
   return (
     <div>
       <table>
@@ -45,7 +47,7 @@ export default async function AdminUsers() {
           </tr>
         </thead>
         <tbody>
-          {data.map((user: User) => {
+          {users!.map((user: User) => {
             return <UserRow user={user} key={user.id} />;
           })}
         </tbody>
