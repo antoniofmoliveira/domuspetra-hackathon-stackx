@@ -1,71 +1,57 @@
 "use client";
-import React, {
-  ChangeEventHandler,
-  KeyboardEventHandler,
-  useRef,
-  useState,
-} from "react";
+import React, { ChangeEventHandler, useRef, useState } from "react";
 
 /**
  * Props
  */
-interface UserEditInPlaceProps {
+interface UserSelectInPlaceProps {
   userId: string;
   fieldName: string;
   value: string;
+  options: string[];
 }
 
 /**
  * componente que permite a edição de registros de usuário in place
  */
-const UserEditInPlace = ({
+const UserSelectInPlace = ({
   userId,
   fieldName,
   value,
-}: UserEditInPlaceProps) => {
+  options,
+}: UserSelectInPlaceProps) => {
   const [componentValue, setComponentValue] = useState(value);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const selectRef = useRef<HTMLSelectElement>(null);
 
   /**
    * trata o click no parágrafo
    */
   const onClickPHandler = () => {
     paragraphRef.current!.style.display = "none";
-    inputRef.current!.style.display = "block";
-  };
-
-  /**
-   * trata a tecla Enter no input
-   * @param event
-   */
-  const onKeyDownInputHandler: KeyboardEventHandler<HTMLInputElement> = (
-    event
-  ) => {
-    if (event.code === "Enter") {
-      paragraphRef.current!.style.display = "block";
-      inputRef.current!.style.display = "none";
-      saveUser();
-    }
+    selectRef.current!.style.display = "block";
   };
 
   /**
    * handler do input
    * @param event
    */
-  const onChangeInputHandler: ChangeEventHandler<HTMLInputElement> = (
+  const onChangeSelectHandler: ChangeEventHandler<HTMLSelectElement> = (
     event
   ) => {
     const value = event.target.value;
     setComponentValue(value);
+    saveUser();
   };
 
   /**
    * quando sai do input
    */
-  const onBlurInputHandler = () => {
+  const onBlurSelectHandler = () => {
+    setComponentValue(value);
     paragraphRef.current!.style.display = "block";
-    inputRef.current!.style.display = "none";
+    selectRef.current!.style.display = "none";
+    saveUser();
   };
 
   /**
@@ -91,17 +77,23 @@ const UserEditInPlace = ({
       <p ref={paragraphRef} onClick={onClickPHandler}>
         {componentValue}
       </p>
-      <input
-        className="display:none"
-        ref={inputRef}
-        onKeyDown={onKeyDownInputHandler}
-        onChange={onChangeInputHandler}
-        onBlur={onBlurInputHandler}
+
+      <select
+        ref={selectRef}
         value={componentValue}
+        onChange={onChangeSelectHandler}
         hidden
-      ></input>
+      >
+        {options.map((item) => {
+          return (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          );
+        })}
+      </select>
     </div>
   );
 };
 
-export default UserEditInPlace;
+export default UserSelectInPlace;

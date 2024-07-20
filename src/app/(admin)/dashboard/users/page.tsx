@@ -4,6 +4,7 @@ import UserForm from "@/app/components/UserForm";
 import { User, UserObj } from "@/model/definitions";
 import { revalidateTag } from "next/cache";
 import { headers } from "next/headers";
+import UserSelectInPlace from "../../../components/UserSelectInPlace";
 
 interface UserRowProp {
   user: User;
@@ -22,7 +23,14 @@ function UserRow({ user }: UserRowProp) {
           value={user.email}
         />
       </td>
-      <td className="p-1">{user.rule}</td>
+      <td className="p-1">
+        <UserSelectInPlace
+          userId={user.id}
+          fieldName="rule"
+          value={user.rule}
+          options={["editor", "admin"]}
+        />
+      </td>
       <td className="border-spacing-1 border-0 border-black p-2 rounded-md cursor-pointer">
         <Button>Alterar Senha</Button>
       </td>
