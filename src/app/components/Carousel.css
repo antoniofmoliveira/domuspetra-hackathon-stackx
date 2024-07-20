@@ -1,47 +1,132 @@
-.hero {
-  width: 250px;
-  height: 200px;
+#carousel-hero-all {
   display: grid;
-  float: left;
-  margin: -150px 50px;
-  grid-template-columns: 2fr;
-  align-items: center;
-  justify-items: center;
-  background-color: gray;
-  color: yellow;
-  text-shadow: 2px 2px 2px black;
-  font-weight: bold;
-  font-size: 4.5em;
-  font-family: poppins;
-}
-#hero1 {
-  background-image: url("/images/heros/treinamentosHero.png");
-}
-#hero2 {
-  background-image: url("/images/heros/blogHero.jpg");
-}
-#line {
-  /* não mexa nisso quebra tudo */
-  margin: 6rem 0px 0px 12rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-#left {
-  float: left;
-  box-shadow: 2px 2px 2px black;
-  background-image: url(/images/assets/leftArrow.jpg);
+#carousel-hero-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 80%;
+}
+
+.carousel-hero {
+  width: 400px;
+  height: 300px;
+}
+
+#hero1 {
+  background-image: url("/images/heros/treinamentosHero.png");
+  object-fit: contain;
+
+}
+
+#hero2 {
+  background-image: url("/images/heros/blogHero.jpg");
+  object-fit: contain;
+}
+
+#carousel-btn-up {
+  display: none;
+  font-size: 3rem;
+  color: black;
   width: 95px;
   height: 50px;
+  border-radius: 30px;
+  background-color: rgba(200, 200, 200, 0.75);
 }
-#left:hover {
-  box-shadow: 3px 3px 1px rgb(0, 0, 230);
+
+#carousel-btn-up:hover {
+  box-shadow: -2px 2px 2px black;
 }
-#right {
-  margin-top: 0px;
-  box-shadow: 2px 2px 2px black;
-  background-image: url(/images/assets/rightArrow.jpg);
+
+#carousel-btn-left {
+  font-size: 3rem;
+  color: black;
+  margin-top: 100%;
   width: 95px;
   height: 50px;
+  border-radius: 30px;
+  background-color: rgba(200, 200, 200, 0.75);
 }
-#right:hover {
-  box-shadow: -3px 3px 1px rgb(0, 0, 230);
+
+#carousel-btn-left:hover {
+  box-shadow: -2px 2px 2px black;
+}
+
+
+#carousel-btn-right {
+  font-size: 3rem;
+  color: black;
+  margin-top: 100%;
+  width: 95px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: rgba(200, 200, 200, 0.75);
+}
+
+#carousel-btn-right:hover {
+  box-shadow: 2px 2px 2px black;
+}
+
+#carousel-btn-down {
+  display: none;
+  font-size: 3rem;
+  color: black;
+  width: 95px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: rgba(200, 200, 200, 0.75);
+}
+
+#carousel-btn-down:hover {
+  box-shadow: 2px 2px 2px black;
+}
+
+.carousel-title {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+  padding-top: 150px;
+}
+
+@media (width < 1000px) {
+  #carousel-hero-all {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  #carousel-hero-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    width: 80%;
+    justify-items: center;
+  }
+
+  #carousel-btn-left {
+    display: none;
+  }
+
+  #carousel-btn-right {
+    display: none;
+  }
+
+  #carousel-btn-up {
+    display: block;
+  }
+
+  #carousel-btn-down {
+    display: block;
+  }
+
+}
+
+@media (width < 500px) {
+  .carousel-hero {
+    width: 350px;
+    height: 300px;
+  }
 }

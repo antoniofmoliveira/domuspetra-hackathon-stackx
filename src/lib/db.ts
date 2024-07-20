@@ -243,7 +243,7 @@ export async function createContact(
 export async function getContacts(): Promise<Contact[] | undefined> {
   try {
     const contacts =
-      await sql<Contact>`SELECT * FROM contacts where hide_contact=false ORDER BY contac_date desc `;
+      await sql<Contact>`SELECT * FROM contacts where hide_contact=false ORDER BY contact_date desc `;
     return contacts.rows;
   } catch (error) {
     console.error("Failed to fetch Contacts:", error);

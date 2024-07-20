@@ -65,7 +65,7 @@ div.article em {
   font-size: 1rem;
   font-weight: bold;
 }
-
+/* 
 table.form {
   width: 800;
   min-width: 800;
@@ -84,7 +84,7 @@ table.form option {
 table.form select {
   width: 100%;
   color: black;
-}
+} */
 
 /* #btnSend {} */
 .container {
@@ -294,4 +294,23 @@ table.form select {
 
 .textshadow {
   text-shadow: 1px 1px 1px #000;
+}
+
+@media (max-width: 1000px) {
+  .footer .footer-grid {
+    grid-template-columns: 2fr repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .footer .footer-grid {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+  .contact li {
+    display: inline-block;
+  }
+  .contact {
+    text-align: center;
+  }
 }
