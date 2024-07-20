@@ -253,9 +253,7 @@ export default function ArticlesAdmin() {
                       onChange={on_change_select_handler}
                       className="w-[95%]"
                     >
-                      <option value={"blog"} selected>
-                        Blog Post
-                      </option>
+                      <option value={"blog"}>Blog Post</option>
                       <option value={"record"}>Testemunho</option>
                       <option value={"training"}>Treinamento</option>
                       <option value={"consultancy"}>Consultoria</option>
@@ -361,11 +359,10 @@ export default function ArticlesAdmin() {
                       id="article_is_published"
                       onChange={on_change_select_handler}
                       className="p-1"
+                      value={"true"}
                     >
                       <option value={"false"}>Não</option>
-                      <option value={"true"} selected>
-                        Sim
-                      </option>
+                      <option value={"true"}>Sim</option>
                     </select>
                   </td>
                   <td>
@@ -374,10 +371,9 @@ export default function ArticlesAdmin() {
                       id="article_is_external_url_an_iframe"
                       onChange={on_change_select_handler}
                       className="p-1"
+                      value={"false"}
                     >
-                      <option value={"false"} selected>
-                        Não
-                      </option>
+                      <option value={"false"}>Não</option>
                       <option value={"true"}>Sim</option>
                     </select>
                   </td>

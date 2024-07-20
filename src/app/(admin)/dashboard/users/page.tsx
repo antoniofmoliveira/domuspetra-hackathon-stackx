@@ -1,6 +1,10 @@
 import { Button } from "@/app/components/button";
-import { getUsers } from "@/lib/db";
-import { User } from "@/model/definitions";
+import UserEditInPlace from "@/app/components/UserEditInPlace";
+import UserForm from "@/app/components/UserForm";
+import { User, UserObj } from "@/model/definitions";
+import { revalidateTag } from "next/cache";
+import { headers } from "next/headers";
+
 interface UserRowProp {
   user: User;
 }
@@ -8,12 +12,17 @@ function UserRow({ user }: UserRowProp) {
   return (
     <tr key={user.id}>
       <td className="p-1">{user.id}</td>
-      <td className="p-1">{user.name}</td>
-      <td className="p-1">{user.email}</td>
-      <td className="p-1">{user.rule}</td>
-      <td className="border-spacing-1 border-0 border-black p-2 rounded-md cursor-pointer">
-        <Button>Editar</Button>
+      <td className="p-1">
+        <UserEditInPlace userId={user.id} fieldName="name" value={user.name} />
       </td>
+      <td className="p-1">
+        <UserEditInPlace
+          userId={user.email}
+          fieldName="email"
+          value={user.email}
+        />
+      </td>
+      <td className="p-1">{user.rule}</td>
       <td className="border-spacing-1 border-0 border-black p-2 rounded-md cursor-pointer">
         <Button>Alterar Senha</Button>
       </td>
@@ -22,16 +31,24 @@ function UserRow({ user }: UserRowProp) {
 }
 
 export default async function AdminUsers() {
-  const users = await getUsers();
-  //   const users = await fetch(
-  //     "https://domuspetra-hackathon-stackx.vercel.app/api/users",
-  //     {
-  //       next: { tags: ["User"] },
-  //     }
-  //   );
-  //   const j = await users.json();
-  //   //   console.log(j);
-  //   const data = j;
+  const headersList = headers();
+
+  const domain = `${headersList.get("x-forwarded-proto")}://${headersList.get(
+    "x-forwarded-host"
+  )}`;
+
+  const f = async (basePath: string) => {
+    const authorization: string | null = headers().get("authorization");
+    const users = await fetch(`${basePath}/api/users`, {
+      headers: { authorization: authorization || "" },
+      next: { tags: ["User"], revalidate: 60 },
+    });
+    const j = await users.json();
+    return j;
+  };
+
+  const data = await f(domain);
+  revalidateTag("User");
   return (
     <div>
       <table>
@@ -47,9 +64,10 @@ export default async function AdminUsers() {
           </tr>
         </thead>
         <tbody>
-          {users!.map((user: User) => {
+          {data!.map((user: User) => {
             return <UserRow user={user} key={user.id} />;
           })}
+          <UserForm />
         </tbody>
       </table>
     </div>

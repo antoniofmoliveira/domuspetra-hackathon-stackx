@@ -15,7 +15,7 @@ export default function UploadPage() {
   const [blob, setBlob] = useState<PutBlobResult | null>(null);
   return (
     <>
-      <h1>Upload seu arquivo</h1>
+      <h1 className="p-2 font-bold">Upload seu arquivo</h1>
 
       <form
         onSubmit={async (event) => {
@@ -40,17 +40,22 @@ export default function UploadPage() {
           setBlob(newBlob);
         }}
       >
-        <input
-          name="file"
-          ref={inputFileRef}
-          type="file"
-          required
-          className="flex h-10 items-center rounded-lg bg-blue-500 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
-        />
-        <Button type="submit">Upload</Button>
+        <div className="flex flex-row w-[350px]">
+          <input
+            name="file"
+            ref={inputFileRef}
+            type="file"
+            required
+            className="w-[75%] file:border-0 file:bg-blue-500 file:rounded-lg file:px-4 file:py-2 file:color-white file:hover:bg-blue-400 file:text-white flex h-10 items-center rounded-lg  px-4 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
+          />
+          <Button type="submit" className="p-2 font-bold">
+            Upload
+          </Button>
+        </div>
       </form>
+
       {blob && (
-        <div>
+        <div className="p-2 font-bold">
           Blob url: <a href={blob.url}>{blob.url}</a>
         </div>
       )}
