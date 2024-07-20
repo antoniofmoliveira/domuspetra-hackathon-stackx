@@ -6,12 +6,15 @@ import TrainingsBlock from "./trainings";
 import ProfileBlock from "./profile";
 import RecordsBlock from "./records";
 import Carousel from "@/app/components/Carousel";
+import Video from "@/app/components/video";
 export default async function Landing() {
   return (
     <div>
       <Carousel />
       {/*  */}
       <SpeechsBlock />
+      {/*  */}
+      <Video/>
       {/*  */}
       <ConsultancysBlock />
       {/*  */}
