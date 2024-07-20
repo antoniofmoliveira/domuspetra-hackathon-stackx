@@ -80,10 +80,8 @@ export default function UserForm() {
           <option value="admin">admin</option>
         </select>
       </td>
-      <td>
-        <td className="border-spacing-1 border-0 border-black p-2 rounded-md cursor-pointer">
-          <Button onClick={saveUser}>Enviar</Button>
-        </td>
+      <td className="border-spacing-1 border-0 border-black p-2 rounded-md cursor-pointer">
+        <Button onClick={saveUser}>Enviar</Button>
       </td>
     </tr>
   );

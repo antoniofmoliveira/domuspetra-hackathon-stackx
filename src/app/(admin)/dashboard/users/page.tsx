@@ -18,7 +18,7 @@ function UserRow({ user }: UserRowProp) {
       </td>
       <td className="p-1">
         <UserEditInPlace
-          userId={user.email}
+          userId={user.id}
           fieldName="email"
           value={user.email}
         />
