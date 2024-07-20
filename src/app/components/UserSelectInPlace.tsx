@@ -41,23 +41,13 @@ const UserSelectInPlace = ({
   ) => {
     const value = event.target.value;
     setComponentValue(value);
-    saveUser();
-  };
-
-  /**
-   * quando sai do input
-   */
-  const onBlurSelectHandler = () => {
-    setComponentValue(value);
-    paragraphRef.current!.style.display = "block";
-    selectRef.current!.style.display = "none";
-    saveUser();
+    saveUser(value);
   };
 
   /**
    * grava a edição
    */
-  const saveUser = async () => {
+  const saveUser = async (value: string) => {
     const response = await fetch(`/dashboard/api/userupdate`, {
       method: "POST",
       next: { tags: ["User"], revalidate: 60 },
@@ -67,7 +57,7 @@ const UserSelectInPlace = ({
       body: JSON.stringify({
         userId: userId,
         fieldName: fieldName,
-        value: componentValue,
+        value: value,
       }),
     }); //.then(() => revalidateTag("User"));
   };
