@@ -19,9 +19,9 @@ function ButtonHide({ contactId }: ButtonHideProps) {
       },
       body: JSON.stringify({ contactId: contactId }),
     }).then(() => {
-      //   router.refresh();
+      router.refresh();
     });
-    router.refresh();
+    // router.refresh();
   };
   return (
     <Button

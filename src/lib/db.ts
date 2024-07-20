@@ -42,7 +42,7 @@ export async function getUser(userId: string): Promise<User | undefined> {
  */
 export async function deleteUser(userId: string): Promise<void> {
   try {
-    const user = await sql`DELETE * FROM users WHERE id=${userId}`;
+    const user = await sql`DELETE FROM users WHERE id=${userId}`;
   } catch (error) {
     console.error("Failed to delete user:", error);
     throw new Error("Failed to delete user.");
@@ -79,10 +79,10 @@ export async function createUser(user: User): Promise<User | undefined> {
 export async function updateUser(user: User): Promise<User | undefined> {
   try {
     const result = await sql<User>`
-        UPDATE user 
-        SET name = ${user.name}, email = ${user.email}, rule = ${user.rule})
+        UPDATE users 
+        SET name = ${user.name}, email = ${user.email}, rule = ${user.rule}
         WHERE id=${user.id}
-        RETURNING id, name, email, password, rule`;
+        RETURNING *`;
     return result.rows[0];
   } catch (error) {
     console.error("Failed to update user:", error);
@@ -93,13 +93,13 @@ export async function updateUser(user: User): Promise<User | undefined> {
 /**
  * atualiza a password de um user
  *
- * @param user
+ * @param users
  */
 export async function updateUserPassword(user: User): Promise<void> {
   try {
     const hashedPassword = await bcrypt.hash(user.password, 10);
     const result = await sql`
-        UPDATE user 
+        UPDATE users
         set password = ${hashedPassword}
         WHERE id=${user.id}`;
   } catch (error) {
