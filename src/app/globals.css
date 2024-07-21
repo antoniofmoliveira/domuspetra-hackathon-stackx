@@ -31,19 +31,11 @@ body {
     text-wrap: balance;
   }
 }
-div.record p {
-  /* margin-bottom: 1rem; */
-  font-size: 0.6rem;
-}
-
-div.record em {
-  /* margin-bottom: 1rem; */
-  font-size: 0.7rem;
-  font-weight: bold;
-}
 
 div.article p {
   margin-bottom: 1rem;
+
+  /* color: gray; */
 }
 
 articleTitle div.article h1,
@@ -65,7 +57,7 @@ div.article em {
   font-size: 1rem;
   font-weight: bold;
 }
-
+/* 
 table.form {
   width: 800;
   min-width: 800;
@@ -84,7 +76,7 @@ table.form option {
 table.form select {
   width: 100%;
   color: black;
-}
+} */
 
 /* #btnSend {} */
 .container {
@@ -142,7 +134,7 @@ table.form select {
 .navbar {
   background: var(--dark-color);
   padding: 5px;
-  width: 100%;
+  width: 90%;
 }
 
 .navbar .container {
@@ -182,6 +174,7 @@ table.form select {
 
 .navbar .main-menu ul li a:hover {
   color: black;
+  text-shadow: 0px 5px 10px  rgba(0, 153, 255, 0.9);
 }
 
 /* Hamburger Button */
@@ -193,6 +186,7 @@ table.form select {
   cursor: pointer;
   padding: 10px;
   z-index: 1000;
+  border-radius: 5px;
 }
 
 .hamburger-button .hamburger-line {
@@ -200,6 +194,12 @@ table.form select {
   height: 3px;
   background: #333;
   margin: 6px 0;
+}
+
+.hamburger-button:hover {
+  box-shadow: 0px 5px 10px  rgba(0, 153, 255, 0.9);
+  background: rgba(255, 255, 255, 0.692);
+  transition: 0.5s;
 }
 
 /* Mobile Menu */
@@ -238,7 +238,8 @@ table.form select {
 }
 
 .mobile-menu ul li a:hover {
-  color: var(--light-color);
+  color: white;
+  text-shadow: 0px 5px 10px  rgba(0, 153, 255, 0.9);
   font-size: 20px;
   transition: 0.5s;
 }
@@ -259,8 +260,9 @@ table.form select {
   line-height: 2.5;
 }
 
-.footer a {
-  /* color: #221f1f; */
+.footer a:hover {
+  color: #221f1f;
+  text-shadow: 0px 5px 10px  rgba(0, 153, 255, 0.9);;
 }
 
 .footer i {
@@ -297,9 +299,9 @@ table.form select {
 }
 
 @media (max-width: 1000px) {
-  .footer .footer-grid{
-      grid-template-columns: 2fr repeat(1, 1fr);
-}
+  .footer .footer-grid {
+    grid-template-columns: 2fr repeat(1, 1fr);
+  }
 }
 
 @media (max-width: 550px) {
@@ -307,9 +309,10 @@ table.form select {
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
   }
-  .contact li{
+  .contact li {
     display: inline-block;
   }
-  .contact{ text-align: center;
+  .contact {
+    text-align: center;
   }
 }

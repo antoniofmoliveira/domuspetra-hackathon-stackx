@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import Footer from "./components/footer";
 import "/public/css/fontawesome.css";
 import "/public/css/brands.css";

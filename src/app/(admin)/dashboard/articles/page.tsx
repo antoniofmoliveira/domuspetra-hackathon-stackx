@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/app/components/button";
 import { Article, ArticleObj } from "@/model/definitions";
 import { PutBlobResult } from "@vercel/blob";
 import { redirect } from "next/navigation";
@@ -154,23 +155,15 @@ export default function ArticlesAdmin() {
 
   return (
     <>
-      <div>
-        <table className="form">
-          <thead>
-            <tr>
-              <td colSpan={2}>
-                <div>Cadastrar um artigo</div>
-              </td>
-            </tr>
-          </thead>
-        </table>
+      <div className=" flex flex-col">
+        <div className="p2 font-extrabold">Cadastrar um artigo</div>
       </div>
-      <div>
+      <div className="m-1 rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950   shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
         <form onSubmit={on_submit_image}>
           <table className="form">
             <tbody>
               <tr>
-                <td colSpan={2}>
+                <td colSpan={2} className="p-2 font-bold">
                   Passo 1: Envie uma imagem e receba o link a ser utilizado no
                   cadastro do artigo (jpg, png)
                 </td>
@@ -181,201 +174,219 @@ export default function ArticlesAdmin() {
                     name="fileImage"
                     ref={inputImageFileRef}
                     type="file"
+                    title="Selecione imagem"
                     required
+                    className="w-[75%] file:border-0 file:bg-blue-500 file:rounded-lg file:px-4 file:py-2 file:color-white file:hover:bg-blue-400 file:text-white flex h-10 items-center rounded-lg  px-4 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
                   />
                 </td>
                 <td>
-                  <button type="submit">Upload Image</button>
+                  <Button className="w-[130px]" type="submit">
+                    Envia arquivo
+                  </Button>
                 </td>
               </tr>
             </tbody>
           </table>
         </form>
-        <form onSubmit={on_submit_file}>
-          <table className="form">
-            <tbody>
-              <tr>
-                <td colSpan={2}>
-                  <hr />
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={2}>
-                  Passo 2: Envie uma arquivo com o conteúdo e receba o link a
-                  ser utilizado no cadastro do artigo (xml, html, txt, md)
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input
-                    name="fileContent"
-                    ref={inputContentFileRef}
-                    type="file"
-                    required
-                  />
-                </td>
-                <td>
-                  <button type="submit">Upload Conteúdo</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </form>
-        <form onSubmit={on_submit_article}>
-          <table className="form">
-            <tbody>
-              <tr>
-                <td colSpan={2}>
-                  <hr />
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={2}>Passo 3: Preencha os campos obrigatórios</td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Tipo de artigo</label>
-                </td>
-                <select
-                  id="article_type"
-                  value={"blog"}
-                  onChange={on_change_select_handler}
-                >
-                  <option value={"blog"} selected>
-                    Blog Post
-                  </option>
-                  <option value={"record"}>Testemunho</option>
-                  <option value={"training"}>Treinamento</option>
-                  <option value={"consultancy"}>Consultoria</option>
-                  <option value={"speechs"}>Palestra</option>
-                  <option value={"about"}>Sobre nós</option>
-                </select>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  <label>*Título:</label>
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="article_title"
-                    onChange={on_change_input_handler}
-                    placeholder="Título do artigo, obrigatório"
-                    required
-                  ></input>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>*Resumo:</label>
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="article_summary"
-                    onChange={on_change_input_handler}
-                    placeholder="Resumo do artigo, obrigatório"
-                    required
-                  ></input>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>*Permalink:</label>
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="article_permalink"
-                    onChange={on_change_input_handler}
-                    placeholder="permalink_em_letras_minusculas_sem_acento, obrigatório"
-                    required
-                  ></input>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>*Url da imagem:</label>
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="article_image_url"
-                    onChange={on_change_input_handler}
-                    value={blobImage?.url}
-                    placeholder="Url da imagem"
-                    required
-                  ></input>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Url do conteúdo:</label>
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="article_content_url"
-                    onChange={on_change_input_handler}
-                    value={blobText?.url}
-                    placeholder="Url do conteúdo"
-                  ></input>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Url externa:</label>
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="article_external_url"
-                    onChange={on_change_input_handler}
-                    placeholder="URL externa, se houver"
-                  ></input>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Publicar?:</label>
-                  <select
-                    id="article_is_published"
-                    onChange={on_change_select_handler}
-                  >
-                    <option value={"false"}>Não</option>
-                    <option value={"true"} selected>
-                      Sim
-                    </option>
-                  </select>
-                </td>
-                <td>
-                  <label>Colocar em iframe?:</label>
-                  <select
-                    id="article_is_external_url_an_iframe"
-                    onChange={on_change_select_handler}
-                  >
-                    <option value={"false"} selected>
-                      Não
-                    </option>
-                    <option value={"true"}>Sim</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={2}>
-                  <button
-                    type="submit"
-                    id="btnSend"
-                    className=" w-[150px] text-black flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-bold hover:bg-sky-100 hover:text-blue-600 md:flex-none  md:p-2 md:px-3"
-                  >
-                    Enviar
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </form>
+      </div>
+      <div>
+        <div className="m-1 rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950   shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
+          <form onSubmit={on_submit_file}>
+            <table className="form">
+              <tbody>
+                <tr>
+                  <td colSpan={2}>
+                    <hr />
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={2} className="p-2 font-bold">
+                    Passo 2: Envie uma arquivo com o conteúdo e receba o link a
+                    ser utilizado no cadastro do artigo (xml, html, txt, md)
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      name="fileContent"
+                      ref={inputContentFileRef}
+                      type="file"
+                      required
+                      className="w-[75%] file:border-0 file:bg-blue-500 file:rounded-lg file:px-4 file:py-2 file:color-white file:hover:bg-blue-400 file:text-white flex h-10 items-center rounded-lg  px-4 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
+                    />
+                  </td>
+                  <td>
+                    <Button className="w-[130px]" type="submit">
+                      Envia arquivo
+                    </Button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+        <div className="m-1 rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950   shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
+          <form onSubmit={on_submit_article}>
+            <table className="form">
+              <tbody>
+                <tr>
+                  <td colSpan={2} className="p-2 font-bold">
+                    Passo 3: Preencha os campos obrigatórios
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-1 w-[150px] min-w-[150px]">
+                    <label>Tipo de artigo</label>
+                  </td>
+                  <td className="p-1 w-[350px] min-w-[350px]">
+                    <select
+                      id="article_type"
+                      value={"blog"}
+                      onChange={on_change_select_handler}
+                      className="w-[95%]"
+                    >
+                      <option value={"blog"}>Blog Post</option>
+                      <option value={"record"}>Testemunho</option>
+                      <option value={"training"}>Treinamento</option>
+                      <option value={"consultancy"}>Consultoria</option>
+                      <option value={"speechs"}>Palestra</option>
+                      <option value={"about"}>Sobre nós</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label className="p-1">*Título:</label>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="article_title"
+                      onChange={on_change_input_handler}
+                      placeholder="Título do artigo, obrigatório"
+                      required
+                      className="p-1 w-[95%]"
+                    ></input>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label className="p-1">*Resumo:</label>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="article_summary"
+                      onChange={on_change_input_handler}
+                      placeholder="Resumo do artigo, obrigatório"
+                      required
+                      className="p-1 w-[95%]"
+                    ></input>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label className="p-1">*Permalink:</label>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="article_permalink"
+                      onChange={on_change_input_handler}
+                      placeholder="permalink_em_letras_minusculas_sem_acento, obrigatório"
+                      required
+                      className="p-1 w-[95%]"
+                    ></input>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label className="p-1">*Url da imagem:</label>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="article_image_url"
+                      onChange={on_change_input_handler}
+                      value={blobImage?.url}
+                      placeholder="Url da imagem"
+                      required
+                      className="p-1 w-[95%]"
+                    ></input>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label className="p-1">Url do conteúdo:</label>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="article_content_url"
+                      onChange={on_change_input_handler}
+                      value={blobText?.url}
+                      placeholder="Url do conteúdo"
+                      className="p-1 w-[95%]"
+                    ></input>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label className="p-1">Url externa:</label>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="article_external_url"
+                      onChange={on_change_input_handler}
+                      placeholder="URL externa, se houver"
+                      className="p-1 w-[95%]"
+                    ></input>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label className="p-1">Publicar?:</label>
+                  </td>
+                  <td>
+                    <select
+                      id="article_is_published"
+                      onChange={on_change_select_handler}
+                      className="p-1"
+                      value={"true"}
+                    >
+                      <option value={"false"}>Não</option>
+                      <option value={"true"}>Sim</option>
+                    </select>
+                    {/* <label className="p-1">Colocar em iframe?:</label>
+                    <select
+                      id="article_is_external_url_an_iframe"
+                      onChange={on_change_select_handler}
+                      className="p-1"
+                      value={"false"}
+                    >
+                      <option value={"false"}>Não</option>
+                      <option value={"true"}>Sim</option>
+                    </select> */}
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={2} className="p-1 align-middle ">
+                    <div>
+                      <Button
+                        type="submit"
+                        id="btnSend"
+                        className=" w-[150px] text-black flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-bold  hover:bg-blue-400 md:flex-none  md:p-2 md:px-3"
+                      >
+                        Enviar
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
       </div>
     </>
   );
