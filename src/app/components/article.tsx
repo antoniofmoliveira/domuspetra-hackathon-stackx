@@ -48,11 +48,10 @@ export default async function FullArticle({ permalink, footer_ }: PageProps) {
           }
         >
           <Image
-            className="relative rounded-2xl shadow-lg shadow-slate-500"
+            className="relative rounded-2xl shadow-lg shadow-slate-500 object-cover"
             src={article.image_url}
             alt="alt"
             fill={true}
-            objectFit="cover"
           />
           <div className="absolute top-0 let-0 w-[95%] h-[100%] content-center text-center">
             <div>

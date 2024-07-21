@@ -88,7 +88,11 @@ const UserEditInPlace = ({
 
   return (
     <div>
-      <p ref={paragraphRef} onClick={onClickPHandler}>
+      <p
+        ref={paragraphRef}
+        onClick={onClickPHandler}
+        title="2 cliques para editar"
+      >
         {componentValue}
       </p>
       <input

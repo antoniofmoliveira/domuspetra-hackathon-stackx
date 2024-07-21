@@ -155,18 +155,10 @@ export default function ArticlesAdmin() {
 
   return (
     <>
-      <div className="border-stone-900 border-2 flex flex-col">
-        {/* <table className="form">
-          <thead>
-            <tr> */}
-        {/* <td colSpan={2}> */}
+      <div className=" flex flex-col">
         <div className="p2 font-extrabold">Cadastrar um artigo</div>
-        {/* </td>
-            </tr>
-          </thead>
-        </table> */}
       </div>
-      <div className="m-1 shadow-lg rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950">
+      <div className="m-1 rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950   shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
         <form onSubmit={on_submit_image}>
           <table className="form">
             <tbody>
@@ -198,7 +190,7 @@ export default function ArticlesAdmin() {
         </form>
       </div>
       <div>
-        <div className="m-1 shadow-lg rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950">
+        <div className="m-1 rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950   shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
           <form onSubmit={on_submit_file}>
             <table className="form">
               <tbody>
@@ -233,7 +225,7 @@ export default function ArticlesAdmin() {
             </table>
           </form>
         </div>
-        <div className="m-1 shadow-lg rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950">
+        <div className="m-1 rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950   shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
           <form onSubmit={on_submit_article}>
             <table className="form">
               <tbody>
@@ -355,6 +347,8 @@ export default function ArticlesAdmin() {
                 <tr>
                   <td>
                     <label className="p-1">Publicar?:</label>
+                  </td>
+                  <td>
                     <select
                       id="article_is_published"
                       onChange={on_change_select_handler}
@@ -364,9 +358,7 @@ export default function ArticlesAdmin() {
                       <option value={"false"}>Não</option>
                       <option value={"true"}>Sim</option>
                     </select>
-                  </td>
-                  <td>
-                    <label className="p-1">Colocar em iframe?:</label>
+                    {/* <label className="p-1">Colocar em iframe?:</label>
                     <select
                       id="article_is_external_url_an_iframe"
                       onChange={on_change_select_handler}
@@ -375,7 +367,7 @@ export default function ArticlesAdmin() {
                     >
                       <option value={"false"}>Não</option>
                       <option value={"true"}>Sim</option>
-                    </select>
+                    </select> */}
                   </td>
                 </tr>
                 <tr>
