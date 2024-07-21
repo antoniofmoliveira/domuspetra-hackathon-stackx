@@ -1,8 +1,8 @@
-.container{
-    padding-top: 20px
+.container {
+  padding-top: 20px;
 }
-.video{
-    margin: auto;
-    width: 560px;
-    height: 316px;
+.video {
+  /* margin: auto; */
+  width: 560px;
+  height: 316px;
 }

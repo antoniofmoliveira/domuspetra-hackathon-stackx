@@ -9,11 +9,9 @@ const Header = () => {
     <div>
       <nav className="navbar">
         <div className="container">
-          <div>
-            <Link href="/">
-              <DomusPetraLogo />
-            </Link>
-          </div>
+          <Link href="/">
+            <DomusPetraLogo />
+          </Link>
 
           <div className="main-menu">
             <ul>

@@ -8,11 +8,9 @@ const Footer = () => {
       <footer className="footer bg-dark">
         <div className="container">
           <div className="footer-grid">
-            <div className="card">
-              <a href="/">
-                <DomusPetraLogo />
-              </a>
-            </div>
+            <a href="/">
+              <DomusPetraLogo />
+            </a>
             <div>
               <a href="tel:+55 47 997071177">
                 <i className="fab fa-whatsapp"></i>
