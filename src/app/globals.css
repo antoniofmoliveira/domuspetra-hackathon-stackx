@@ -134,7 +134,7 @@ table.form select {
 .navbar {
   background: var(--dark-color);
   padding: 5px;
-  width: 100%;
+  width: 90%;
 }
 
 .navbar .container {
