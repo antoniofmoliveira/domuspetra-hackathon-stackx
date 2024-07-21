@@ -11,7 +11,7 @@ interface UserRowProp {
 }
 function UserRow({ user }: UserRowProp) {
   return (
-    <tr key={user.id}>
+    <tr key={user.id} className=" shadow-2xl border-hidden shadow-zinc-400">
       <td className="p-1">{user.id}</td>
       <td className="p-1">
         <UserEditInPlace userId={user.id} fieldName="name" value={user.name} />
@@ -64,7 +64,7 @@ export default async function AdminUsers() {
           <tr>
             <td className="p-1 font-extrabold">Usuários</td>
           </tr>
-          <tr>
+          <tr className=" shadow-md border-hidden shadow-zinc-400">
             <td className="p=1 font-bold">Id</td>
             <td className="p=1 font-bold">Nome</td>
             <td className="p=1 font-bold">Email</td>

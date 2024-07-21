@@ -52,7 +52,7 @@ export default function UserForm() {
     router.push(`/dashboard/users`);
   };
   return (
-    <tr>
+    <tr className=" shadow-2xl border-hidden shadow-zinc-400">
       <td className="font-bold">Cadastre novo usuário</td>
       <td>
         <input
