@@ -15,7 +15,7 @@
   margin-bottom: 10px;
   margin-top: 10px;
   background-color: rgba(113, 113, 255, 1);
-  color: white;
+  /* color: white; */
   box-shadow: -1px 0px 5px 1px black;
   border-radius: 15px;
 }
@@ -41,7 +41,7 @@
   border-radius: 10px;
   box-shadow: -2px 0px 5px 0px black;
   background-color: rgba(55, 55, 55, 0.8);
-  color: white;
+  /* color: white; */
 }
 
 .contact-form-text {

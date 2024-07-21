@@ -1,25 +1,28 @@
-'use client'
-import { useRef, useState } from "react";
+"use client";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "./Carousel.css";
 
 function Carousel() {
   const [leftBox, setLeftBox] = useState(0);
   const [rightBox, setRightBox] = useState(1);
-  const pictureArray = [
-    "blogHero.jpg",
-    "consultoriaHero.jpg",
-    "palestrasHero.jpg ",
-    "treinamentosHero.png",
-  ];
+  const pictureArray: string[] = useMemo(
+    () => [
+      "blogHero.jpg",
+      "consultoriaHero.jpg",
+      "palestrasHero.jpg ",
+      "treinamentosHero.png",
+    ],
+    []
+  );
   const titleArray = ["Blog", "Consultoria", "Palestras", "Treinamentos"];
   const pages = ["blog", "consultancy", "speechs", "training"];
-  let hrefLeftBox = `./pages/${pages[leftBox]}`;
-  let hrefRightBox = `./pages/${pages[rightBox]}`;
+  let hrefLeftBox = `/${pages[leftBox]}`;
+  let hrefRightBox = `/${pages[rightBox]}`;
 
   const ref1 = useRef<HTMLDivElement | null>(null);
   const ref2 = useRef<HTMLDivElement | null>(null);
 
-  const goFowards = (): void => {
+  const goFowards = useCallback((): void => {
     if (leftBox == 0) {
       setRightBox(2);
       setLeftBox(1);
@@ -35,7 +38,8 @@ function Carousel() {
     }
     ref1.current!.style.backgroundImage = `url("/images/heros/${pictureArray[leftBox]}")`;
     ref2.current!.style.backgroundImage = `url("/images/heros/${pictureArray[rightBox]}")`;
-  };
+  }, [leftBox, pictureArray, rightBox]);
+
   const goBackwards = (): void => {
     if (leftBox == 0) {
       setRightBox(0);
@@ -53,23 +57,44 @@ function Carousel() {
     ref1.current!.style.backgroundImage = `url("/images/heros/${pictureArray[leftBox]}")`;
     ref2.current!.style.backgroundImage = `url("/images/heros/${pictureArray[rightBox]}")`;
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goFowards();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [goFowards]);
+
   return (
     <>
-
       <div id="carousel-hero-all">
-        <button id="carousel-btn-up" onClick={goBackwards}><i className="fa-solid fa-arrow-up"></i>
+        <button id="carousel-btn-up" onClick={goBackwards}>
+          <i className="fa-solid fa-arrow-up"></i>
         </button>
-        <button id="carousel-btn-left" onClick={goBackwards}><i className="fa-solid fa-arrow-left"></i>
+        <button id="carousel-btn-left" onClick={goBackwards}>
+          <i className="fa-solid fa-arrow-left"></i>
         </button>
 
         <a href={hrefLeftBox}>
-          <div id="hero1" ref={ref1} className="carousel-hero">
-            <h5 className="carousel-title">{titleArray[leftBox]}</h5>
+          <div
+            id="hero1"
+            ref={ref1}
+            className="carousel-hero rounded-3xl  shadow-2xl border-hidden shadow-zinc-400 m-1 hover:shadow-blue-400"
+          >
+            <h5 className="carousel-title textshadow text-3xl font-extrabold text-yellow-100">
+              {titleArray[leftBox]}
+            </h5>
           </div>
         </a>
         <a href={hrefRightBox}>
-          <div id="hero2" ref={ref2} className="carousel-hero">
-            <h5 className="carousel-title">{titleArray[rightBox]}</h5>
+          <div
+            id="hero2"
+            ref={ref2}
+            className="carousel-hero rounded-3xl  shadow-2xl border-hidden shadow-zinc-400 m-1 hover:shadow-blue-400"
+          >
+            <h5 className="carousel-title textshadow text-3xl font-extrabold text-yellow-100">
+              {titleArray[rightBox]}
+            </h5>
           </div>
         </a>
 
@@ -80,7 +105,7 @@ function Carousel() {
         <button id="carousel-btn-down" onClick={goFowards}>
           <i className="fa-solid fa-arrow-down"></i>
         </button>
-      </div >
+      </div>
     </>
   );
 }
