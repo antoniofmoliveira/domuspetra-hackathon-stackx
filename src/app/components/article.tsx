@@ -41,31 +41,39 @@ export default async function FullArticle({ permalink, footer_ }: PageProps) {
   const title = article.title;
   return (
     <>
-      <div className={"relative p-6 ml-6 rounded-lg  w-[95vw]  h-[15vw]"}>
-        <Image
-          className="relative rounded-2xl shadow-lg shadow-slate-500"
-          src={article.image_url}
-          alt="alt"
-          fill={true}
-          objectFit="cover"
-        />
-        <div className="absolute top-0 let-0 w-[97%] h-[100%] content-center text-center">
-          <div>
-            <p className="textshadow text-3xl font-extrabold text-yellow-100">
-              {article.title}
-            </p>
+      <div className="ml-6 mr-6 w-[90%] max-w-[90%]">
+        <div
+          className={
+            "relative p-6 ml-6 rounded-lg  w-[90%] max-w-[90%]  h-[15vw]"
+          }
+        >
+          <Image
+            className="relative rounded-2xl shadow-lg shadow-slate-500"
+            src={article.image_url}
+            alt="alt"
+            fill={true}
+            objectFit="cover"
+          />
+          <div className="absolute top-0 let-0 w-[95%] h-[100%] content-center text-center">
+            <div>
+              <p className="textshadow text-3xl font-extrabold text-yellow-100">
+                {article.title}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="articleSummary pt-6 m-1 ml-6 w-[95vw]">
-        {article.summary}
+        <div className="articleSummary pt-6 m-1 ml-6 w-[90%] max-w-[90%]">
+          {article.summary}
+        </div>
+        <div
+          className="article p-1 m-1 ml-6 mr-6 w-[90%] max-w-[90%]"
+          dangerouslySetInnerHTML={{ __html: chtml }}
+        ></div>
+        <div className="footer_  p-1 m-1 ml-6 mr-6 w-[90%] max-w-[90%]">
+          {footer_({ title })}
+        </div>
       </div>
-      <div
-        className="article p-1 m-1 ml-6 w-[95vw]"
-        dangerouslySetInnerHTML={{ __html: chtml }}
-      ></div>
-      <div className="footer_  p-1 m-1 ml-6 w-[95vw]">{footer_({ title })}</div>
     </>
   );
 }

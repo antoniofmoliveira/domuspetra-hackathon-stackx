@@ -9,7 +9,7 @@ const RecordsCards = async ({ category }: CardsProp) => {
   if (articles === undefined) return <></>;
   return (
     <>
-      <div className="flex flex-wrap w-full flex-row justify-evenly">
+      <div className="flex flex-wrap w-full flex-row justify-evenly  mt-6 mb-6">
         {articles.map((article) => (
           <RecordCard key={article.id} article={article} />
         ))}

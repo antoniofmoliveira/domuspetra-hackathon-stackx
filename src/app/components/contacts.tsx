@@ -1,23 +1,27 @@
-import { getContacts } from "@/lib/db";
 import ButtonHide from "./ButtonHide";
 import { Contact } from "@/model/definitions";
+import { headers } from "next/headers";
+import { revalidateTag } from "next/cache";
 
 export default async function Contacts() {
-  const contacts = await getContacts();
-  //   let contacts: Contact[] = [];
+  const headersList = headers();
 
-  //   const result = fetch("https://domuspetra-hackathon-stackx.vercel.app//api/contactlist", {
-  //     method: "GET",
-  //     next: { revalidate: 60 },
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     // body: JSON.stringify({}),
-  //   }).then(async (res) => {
-  //     // console.log(res);
-  //     const j = await res.json();
-  //     contacts = j as unknown as Contact[];
-  //   });
+  const domain = `${headersList.get("x-forwarded-proto")}://${headersList.get(
+    "x-forwarded-host"
+  )}`;
+
+  const f = async (basePath: string) => {
+    const authorization: string | null = headers().get("authorization");
+    const users = await fetch(`${basePath}/api/contactlist`, {
+      headers: { authorization: authorization || "" },
+      next: { tags: ["Contact"], revalidate: 60 },
+    });
+    const j = await users.json();
+    return j;
+  };
+
+  const contacts: Contact[] = await f(domain);
+  revalidateTag("Contact");
 
   return (
     <div>
@@ -37,7 +41,7 @@ export default async function Contacts() {
         </thead>
         <tbody>
           {contacts != undefined ? (
-            contacts!.map((item) => {
+            contacts!.map((item: Contact) => {
               return (
                 <tr key={item.id}>
                   <td className="p-1">{item.name}</td>

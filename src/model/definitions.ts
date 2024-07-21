@@ -9,6 +9,14 @@ export type User = {
   rule: string;
 };
 
+export class UserObj {
+  id: string = "";
+  name: string = "";
+  email: string = "";
+  password: string = "";
+  rule: string = "editor";
+}
+
 export type Contact = {
   id: string;
   name: string;

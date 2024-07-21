@@ -30,7 +30,7 @@ const AdminHeader = () => {
                 <a href="/dashboard/upload">Enviar arquivo</a>
               </li>
               <li>
-                <form action="/dashboard/api/logoff" method="POST">
+                <form action="/api/logoff" method="POST">
                   <button>Sign Out</button>
                 </form>
               </li>
@@ -67,7 +67,7 @@ const AdminHeader = () => {
                 <a href="/dashboard/upload">Enviar arquivo</a>
               </li>
               <li>
-                <form action="/dashboard/api/logoff" method="POST">
+                <form action="/api/logoff" method="POST">
                   <button>Sign Out</button>
                 </form>
               </li>
