@@ -32,7 +32,7 @@ export default async function Contacts() {
               Solicitações de contato
             </td>
           </tr>
-          <tr>
+          <tr className=" shadow-md border-hidden shadow-zinc-400">
             <td className="font-bold">Nome</td>
             <td className="font-bold">Email</td>
             <td className="font-bold">Telefone</td>
@@ -43,7 +43,10 @@ export default async function Contacts() {
           {contacts != undefined ? (
             contacts!.map((item: Contact) => {
               return (
-                <tr key={item.id}>
+                <tr
+                  key={item.id}
+                  className=" shadow-md border-hidden shadow-zinc-400"
+                >
                   <td className="p-1">{item.name}</td>
                   <td className="p-1">
                     <a
