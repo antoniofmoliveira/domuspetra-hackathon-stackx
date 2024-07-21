@@ -31,19 +31,11 @@ body {
     text-wrap: balance;
   }
 }
-div.record p {
-  /* margin-bottom: 1rem; */
-  font-size: 0.6rem;
-}
-
-div.record em {
-  /* margin-bottom: 1rem; */
-  font-size: 0.7rem;
-  font-weight: bold;
-}
 
 div.article p {
   margin-bottom: 1rem;
+
+  /* color: gray; */
 }
 
 articleTitle div.article h1,

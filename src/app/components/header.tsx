@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef } from "react";
 import DomusPetraLogo from "./domus-petra-logo";
-import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => {

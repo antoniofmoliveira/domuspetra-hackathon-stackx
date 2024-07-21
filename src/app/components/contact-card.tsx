@@ -4,7 +4,7 @@ import "./contact-form.css";
 function ContactCard() {
   return (
     <div className="contact-data">
-      <div className="contact-data-text">
+      <div className="contact-data-text dark:bg-black bg-white">
         <h1>Endereço</h1>
         <p>Rua Tangará, 470 - Bairro Iririú Joinville - SC CEP: 89227-100</p>
         <h1>WhatsApp</h1>
