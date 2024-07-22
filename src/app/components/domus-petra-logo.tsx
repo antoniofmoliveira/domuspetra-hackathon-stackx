@@ -14,3 +14,20 @@ export default function DomusPetraLogo() {
     </div>
   );
 }
+
+export function DomusPetraLogoSmall() {
+  return (
+    <div className={"w-full"}>
+      <p
+        className={`${rockFont.className} 
+          text-2xl md:text-3xl lg:text-4xl
+          dark:text-slate-200 text-black 
+          w-full
+          bg-transparent
+           rounded-lg p-3 shadow-xl md:shadow-xl lg:shadow-xl border-hidden shadow-zinc-400 hover:shadow-blue-400`}
+      >
+        DOMUS&nbsp;Petra
+      </p>
+    </div>
+  );
+}
