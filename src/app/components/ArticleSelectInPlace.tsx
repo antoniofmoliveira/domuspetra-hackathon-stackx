@@ -86,7 +86,7 @@ const ArticleSelectInPlace = ({
       </p>
 
       <select
-        className="hidden dark:text-black"
+        className="hidden dark:text-black text-black"
         ref={selectRef}
         value={componentValue}
         onChange={onChangeSelectHandler}
@@ -95,7 +95,11 @@ const ArticleSelectInPlace = ({
       >
         {options.map((item) => {
           return (
-            <option key={item.key} value={item.key}>
+            <option
+              key={item.key}
+              value={item.key}
+              className=" dark:text-black text-black"
+            >
               {item.value}
             </option>
           );
