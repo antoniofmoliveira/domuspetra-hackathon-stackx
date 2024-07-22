@@ -127,6 +127,17 @@ export async function getArticles(
   }
 }
 
+export async function getAllArticles(): Promise<Article[] | undefined> {
+  try {
+    const articles =
+      await sql<Article>`SELECT * FROM articles ORDER BY article_date DESC`;
+    return articles.rows;
+  } catch (error) {
+    console.error(`Failed to fetch all articles:`, error);
+    throw new Error(`Failed to fetch all articles}.`);
+  }
+}
+
 export async function getLatestArticles(): Promise<Article[] | undefined> {
   try {
     const articles =

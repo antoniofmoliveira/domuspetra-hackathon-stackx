@@ -1,14 +1,3 @@
-import Link from "next/link";
-
-import { PowerIcon } from "@heroicons/react/24/outline";
-
-import {
-  ReactElement,
-  JSXElementConstructor,
-  ReactNode,
-  ReactPortal,
-  AwaitedReactNode,
-} from "react";
 import Header from "./components/header";
 import LandingPage from "./(public)/landing/page";
 
