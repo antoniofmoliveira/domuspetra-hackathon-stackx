@@ -1,0 +1,8 @@
+div.record p {
+  font-size: 0.6rem;
+}
+
+div.record em {
+  font-size: 0.7rem;
+  font-weight: bold;
+}

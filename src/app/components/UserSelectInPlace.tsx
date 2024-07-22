@@ -9,6 +9,7 @@ interface UserSelectInPlaceProps {
   fieldName: string;
   value: string;
   options: string[];
+  tag: string;
 }
 
 /**
@@ -19,6 +20,7 @@ const UserSelectInPlace = ({
   fieldName,
   value,
   options,
+  tag,
 }: UserSelectInPlaceProps) => {
   const [componentValue, setComponentValue] = useState(value);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
@@ -42,6 +44,12 @@ const UserSelectInPlace = ({
     const value = event.target.value;
     setComponentValue(value);
     saveUser(value);
+    onBlurSelectHandler();
+  };
+
+  const onBlurSelectHandler = () => {
+    paragraphRef.current!.style.display = "block";
+    selectRef.current!.style.display = "none";
   };
 
   /**
@@ -69,13 +77,16 @@ const UserSelectInPlace = ({
         onClick={onClickPHandler}
         title="2 cliques para editar"
       >
+        <em>{tag}:&nbsp;</em>
         {componentValue}
       </p>
 
       <select
+        className="display:none dark:text-black"
         ref={selectRef}
         value={componentValue}
         onChange={onChangeSelectHandler}
+        onBlur={onBlurSelectHandler}
         hidden
       >
         {options.map((item) => {

@@ -1,9 +1,5 @@
 "use client";
 
-import { Button } from "@/app/components/button";
-import { Article, ArticleObj } from "@/model/definitions";
-import { PutBlobResult } from "@vercel/blob";
-import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
 import {
   ChangeEventHandler,
@@ -12,6 +8,10 @@ import {
   useRef,
   useState,
 } from "react";
+import { PutBlobResult } from "@vercel/blob";
+
+import { Button } from "@/app/components/button";
+import { Article, ArticleObj } from "@/model/definitions";
 
 /**
  * formulário para envio de artigos, imagens e arquivos
@@ -154,7 +154,9 @@ export default function ArticlesAdmin() {
   };
 
   return (
-    <>
+    <div
+      className={"flex flex-col content-center sm:w-[85%] w-full items-center"}
+    >
       <div className=" flex flex-col">
         <div className="p2 font-extrabold">Cadastrar um artigo</div>
       </div>
@@ -388,6 +390,6 @@ export default function ArticlesAdmin() {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
-import { createArticle, createUser } from "@/lib/db";
-import { Article } from "@/model/definitions";
 import { NextResponse } from "next/server";
+
+import { createUser } from "@/lib/db";
 
 export async function POST(request: Request): Promise<NextResponse> {
   const body = await request.json();

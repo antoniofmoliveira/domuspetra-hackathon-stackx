@@ -13,6 +13,7 @@ interface UserEditInPlaceProps {
   userId: string;
   fieldName: string;
   value: string;
+  tag: string;
 }
 
 /**
@@ -22,6 +23,7 @@ const UserEditInPlace = ({
   userId,
   fieldName,
   value,
+  tag,
 }: UserEditInPlaceProps) => {
   const [componentValue, setComponentValue] = useState(value);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
@@ -91,12 +93,13 @@ const UserEditInPlace = ({
       <p
         ref={paragraphRef}
         onClick={onClickPHandler}
-        title="2 cliques para editar"
+        title="2 cliques para editar, Enter para gravar"
       >
+        <em>{tag}:&nbsp;</em>
         {componentValue}
       </p>
       <input
-        className="display:none"
+        className="display:none dark:text-black"
         ref={inputRef}
         onKeyDown={onKeyDownInputHandler}
         onChange={onChangeInputHandler}

@@ -7,7 +7,7 @@ const Header = () => {
   const btnRef = useRef<HTMLDivElement>(null);
   return (
     <div>
-      <nav className="navbar">
+      <nav className="navbar bg-slate-800">
         <div className="container">
           <Link href="/">
             <DomusPetraLogo />

@@ -1,8 +1,9 @@
-import bcrypt from "bcrypt";
 import { db } from "@vercel/postgres";
+import bcrypt from "bcrypt";
 
 import { users } from "@/util/placeholder-data";
 
+// TODO eliminar este na produção
 const client = await db.connect();
 
 /** cria tabela users e carrega com dados fake */
@@ -37,7 +38,7 @@ async function seedUsers() {
  *
  * @returns
  */
-export async function GET() {
+export async function GETT() {
   try {
     await client.sql`BEGIN`;
     await seedUsers();
