@@ -38,7 +38,7 @@ async function seedUsers() {
  *
  * @returns
  */
-export async function GETT() {
+export async function GET() {
   try {
     await client.sql`BEGIN`;
     await seedUsers();
