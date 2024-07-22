@@ -1,5 +1,6 @@
-import { hideContact } from "@/lib/db";
 import { NextResponse } from "next/server";
+
+import { hideContact } from "@/lib/db";
 
 export async function POST(request: Request): Promise<NextResponse> {
   const body = await request.json();

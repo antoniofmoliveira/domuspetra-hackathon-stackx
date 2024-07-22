@@ -52,37 +52,51 @@ export default function UserForm() {
     router.push(`/dashboard/users`);
   };
   return (
-    <tr className=" shadow-2xl border-hidden shadow-zinc-400">
-      <td className="font-bold">Cadastre novo usuário</td>
-      <td>
-        <input
-          id="newName"
-          type="text"
-          required
-          onChange={on_change_input_handler}
-          value={user.name}
-          placeholder="Nome do novo usuário"
-        />
-      </td>
-      <td>
-        <input
-          id="newEmail"
-          type="email"
-          required
-          onChange={on_change_input_handler}
-          value={user.email}
-          placeholder="Email do novo usuário"
-        />
-      </td>
-      <td>
-        <select id="newRule" value="editor" onChange={on_change_select_handler}>
-          <option value="editor">editor</option>
-          <option value="admin">admin</option>
-        </select>
-      </td>
-      <td className="border-spacing-1 border-0 border-black p-2 rounded-md cursor-pointer">
-        <Button onClick={saveUser}>Enviar</Button>
-      </td>
-    </tr>
+    <>
+      <tr className=" shadow-2xl border-hidden shadow-zinc-400">
+        <td className="font-bold">Cadastre novo usuário</td>
+      </tr>
+      <tr>
+        <td>
+          <p className="m-1">
+            Nome:&nbsp;
+            <input
+              id="newName"
+              type="text"
+              required
+              onChange={on_change_input_handler}
+              value={user.name}
+              placeholder="Nome do novo usuário"
+            />
+          </p>
+          <p className="m-1">
+            Email:&nbsp;&nbsp;
+            <input
+              id="newEmail"
+              type="email"
+              required
+              onChange={on_change_input_handler}
+              value={user.email}
+              placeholder="Email do novo usuário"
+            />
+          </p>
+          <p className="m-1">
+            Autorização:&nbsp;
+            <select
+              className="m-1 dark:text-black"
+              id="newRule"
+              value="editor"
+              onChange={on_change_select_handler}
+            >
+              <option value="editor">editor</option>
+              <option value="admin">admin</option>
+            </select>
+          </p>
+          <div className={"flex flex-col content-center w-full items-center"}>
+            <Button onClick={saveUser}>Enviar</Button>
+          </div>
+        </td>
+      </tr>
+    </>
   );
 }

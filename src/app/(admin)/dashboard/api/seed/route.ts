@@ -1,8 +1,9 @@
-import bcrypt from "bcrypt";
 import { db } from "@vercel/postgres";
+import bcrypt from "bcrypt";
 
 import { users } from "@/util/placeholder-data";
 
+// TODO eliminar este na produção
 const client = await db.connect();
 
 /** cria tabela users e carrega com dados fake */

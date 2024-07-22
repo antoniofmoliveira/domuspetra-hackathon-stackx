@@ -1,5 +1,4 @@
-import Contacts from "@/app/components/contacts";
-import { getContacts, hideContact } from "@/lib/db";
+import Contacts from "@/app/components/Contacts";
 
 export default async function Dashboard() {
   return (

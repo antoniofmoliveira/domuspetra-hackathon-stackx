@@ -1,5 +1,6 @@
-import { hideContact, getContacts } from "@/lib/db";
 import { NextResponse } from "next/server";
+
+import { getContacts } from "@/lib/db";
 
 export async function POST(request: Request): Promise<NextResponse> {
   const contacts = getContacts();
