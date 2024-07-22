@@ -1,6 +1,6 @@
 import { getArticles } from "@/lib/db";
 import React from "react";
-import Card from "./card";
+import Card from "./Card";
 interface CardsProp {
   category: string;
 }

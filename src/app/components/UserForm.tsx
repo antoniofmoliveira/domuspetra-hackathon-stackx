@@ -1,7 +1,7 @@
 "use client";
 import { UserObj } from "@/model/definitions";
 import { ChangeEventHandler, useState } from "react";
-import { Button } from "./button";
+import { Button } from "./Button";
 import { useRouter } from "next/navigation";
 
 export default function UserForm() {

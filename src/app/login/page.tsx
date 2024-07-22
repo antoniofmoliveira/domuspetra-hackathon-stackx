@@ -1,5 +1,5 @@
-import { DomusPetraLogoSmall } from "@/app/components/domus-petra-logo";
-import LoginForm from "@/app/components/login-form";
+import { DomusPetraLogoSmall } from "@/app/components/ComusPetraLogo";
+import LoginForm from "@/app/components/LoginForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

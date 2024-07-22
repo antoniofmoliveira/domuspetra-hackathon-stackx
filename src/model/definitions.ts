@@ -68,32 +68,4 @@ export class ArticleObj implements Article {
   is_external_url_an_iframe = false;
 
   construtor() {}
-
-  //   constructor(
-  //     id: string,
-  //     type: string,
-  //     permalink: string,
-  //     external_url: string | null,
-  //     title: string,
-  //     summary: string,
-  //     content_url: string | null,
-  //     image_url: string | null,
-  //     article_date: string,
-  //     is_published: boolean,
-  //     has_no_content: boolean,
-  //     is_external_url_an_iframe: boolean
-  //   ) {
-  //     this.id = id;
-  //     this.type = type;
-  //     this.permalink = permalink;
-  //     this.external_url = external_url;
-  //     this.title = title;
-  //     this.summary = summary;
-  //     this.content_url = content_url;
-  //     this.image_url = image_url;
-  //     this.article_date = article_date;
-  //     this.is_published = is_published;
-  //     this.has_no_content = has_no_content;
-  //     this.is_external_url_an_iframe = is_external_url_an_iframe;
-  //   }
 }

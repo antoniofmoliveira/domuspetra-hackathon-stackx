@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import DomusPetraLogo from "./domus-petra-logo";
+import DomusPetraLogo from "./ComusPetraLogo";
 
 const AdminHeader = () => {
   const btnRef = useRef<HTMLDivElement>(null);

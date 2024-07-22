@@ -2,7 +2,7 @@
 
 import { useFormState, useFormStatus } from "react-dom";
 
-import { lusitana } from "@/app/components/fonts";
+import { lusitana } from "@/app/components/Fonts";
 import {
   AtSymbolIcon,
   KeyIcon,
@@ -10,7 +10,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
-import { Button } from "./button";
+import { Button } from "./Button";
 import { authenticate } from "@/lib/actions";
 
 export default function LoginForm() {

@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import type { PutBlobResult } from "@vercel/blob";
 
-import { Button } from "@/app/components/button";
+import { Button } from "@/app/components/Button";
 
 /**
  * upload de blobs de imagem e textos dos artigos

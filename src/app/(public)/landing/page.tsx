@@ -5,7 +5,7 @@ import TrainingsBlock from "./trainings";
 import ProfileBlock from "./profile";
 import RecordsBlock from "./records";
 import Carousel from "@/app/components/Carousel";
-import Video from "@/app/components/video";
+import Video from "@/app/components/Video";
 import { useRef } from "react";
 
 // TODO reabilitar records

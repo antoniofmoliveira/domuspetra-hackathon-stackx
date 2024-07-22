@@ -57,28 +57,7 @@ div.article em {
   font-size: 1rem;
   font-weight: bold;
 }
-/* 
-table.form {
-  width: 800;
-  min-width: 800;
-}
-table.form td {
-  width: 50%;
-}
-table.form input {
-  width: 100%;
-  color: black;
-}
-table.form option {
-  width: 100%;
-  color: black;
-}
-table.form select {
-  width: 100%;
-  color: black;
-} */
 
-/* #btnSend {} */
 .container {
   /* max-width: 1100px; */
   margin: 0 auto;

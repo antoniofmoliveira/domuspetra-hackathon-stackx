@@ -1,4 +1,4 @@
-import { rockFont } from "@/lib/fonts";
+import { rockFont } from "@/lib/localFonts";
 
 export default function DomusPetraLogo() {
   return (

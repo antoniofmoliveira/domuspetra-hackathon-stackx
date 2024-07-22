@@ -10,7 +10,7 @@ import {
 } from "react";
 import { PutBlobResult } from "@vercel/blob";
 
-import { Button } from "@/app/components/button";
+import { Button } from "@/app/components/Button";
 import { Article, ArticleObj } from "@/model/definitions";
 
 /**

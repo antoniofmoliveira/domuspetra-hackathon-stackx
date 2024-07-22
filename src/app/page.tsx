@@ -1,4 +1,4 @@
-import Header from "./components/header";
+import Header from "./components/Header";
 import LandingPage from "./(public)/landing/page";
 
 export default function Home() {

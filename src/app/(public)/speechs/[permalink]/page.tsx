@@ -1,5 +1,5 @@
-import FullArticle from "@/app/components/article";
-import SpeechFooter from "@/app/components/speechFooter";
+import FullArticle from "@/app/components/FullArticle";
+import SpeechFooter from "@/app/components/SpeechFooter";
 
 interface PageProps {
   params: { permalink: string };

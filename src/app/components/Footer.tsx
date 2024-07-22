@@ -1,5 +1,5 @@
 import React from "react";
-import DomusPetraLogo from "./domus-petra-logo";
+import DomusPetraLogo from "./ComusPetraLogo";
 
 const Footer = () => {
   return (

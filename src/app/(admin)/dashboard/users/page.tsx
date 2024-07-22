@@ -4,7 +4,7 @@ import UserSelectInPlace from "@/app/components/UserSelectInPlace";
 
 import { User } from "@/model/definitions";
 
-import { Button } from "@/app/components/button";
+import { Button } from "@/app/components/Button";
 import UserEditInPlace from "@/app/components/UserEditInPlace";
 import UserForm from "@/app/components/UserForm";
 interface UserRowProp {

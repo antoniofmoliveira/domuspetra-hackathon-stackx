@@ -2,7 +2,7 @@
 import React, { ChangeEventHandler, FormEventHandler, useState } from "react";
 import "./contact-form.css";
 import { ContactObj } from "@/model/definitions";
-import ContactCard from "./contact-card";
+import ContactCard from "./ContactCard";
 
 interface PageProps {
   subject?: string;
@@ -49,8 +49,8 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
   };
 
   return (
-    <div className="contact-container">
-      <div className="contact-form">
+    <div className="contact-container shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
+      <div className="contact-form ">
         <div className="contact-form-text">
           <h2>Fale conosco</h2>
           <p>
