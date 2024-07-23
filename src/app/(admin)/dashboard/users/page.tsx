@@ -37,9 +37,9 @@ function UserRow({ user }: UserRowProp) {
           value={user.rule}
           options={["editor", "admin"]}
         />
-        <div className={"flex flex-col content-center w-full items-center"}>
+        {/* <div className={"flex flex-col content-center w-full items-center"}>
           <Button>Alterar Senha</Button>
-        </div>
+        </div> */}
       </td>
     </tr>
   );
