@@ -25,7 +25,7 @@ export async function POST(request: Request): Promise<NextResponse> {
           const resend = new Resend(env.RESEND_KEY);
           const res = await resend.batch.send([
             {
-              from: "onboarding@resend.dev",
+              from: "domuspetra@resend.dev",
               to: `${env.RESEND_EMAIL}`,
               subject: "Novo Contato",
               html: `</p><p>Novo contato</p>
@@ -37,7 +37,7 @@ export async function POST(request: Request): Promise<NextResponse> {
 `,
             },
             {
-              from: "onboarding@resend.dev",
+              from: "domuspetra@resend.dev",
               to: `${newContact?.email}`,
               subject: "Domus Petra recebeu sua mensagem",
               html: `<p>${newContact?.name},</p>
