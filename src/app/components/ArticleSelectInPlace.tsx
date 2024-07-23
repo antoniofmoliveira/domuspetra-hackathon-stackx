@@ -26,7 +26,14 @@ const ArticleSelectInPlace = ({
   options,
   tag,
 }: ArticleSelectInPlaceProps) => {
+  let actualOption: Pairs | undefined = options.find(
+    (option) => option.value === value
+  );
+  if (!actualOption) actualOption = { key: "false", value: "Não" };
+  //   console.log(`actualOption ${actualOption.key}`);
   const [componentValue, setComponentValue] = useState(value);
+  const [componentDisplay, setComponentDisplay] = useState(actualOption!.value);
+
   const paragraphRef = useRef<HTMLParagraphElement>(null);
   const selectRef = useRef<HTMLSelectElement>(null);
 
@@ -46,6 +53,10 @@ const ArticleSelectInPlace = ({
     event
   ) => {
     const value = event.target.value;
+    console.log(`value: ${value}`);
+
+    // const option = options.find((pair) => (pair.value = value));
+    // console.log(`option ${{ option }}`);
     setComponentValue(value);
     saveUser(value);
     onBlurSelectHandler();
@@ -54,6 +65,7 @@ const ArticleSelectInPlace = ({
   const onBlurSelectHandler = () => {
     paragraphRef.current!.style.display = "block";
     selectRef.current!.style.display = "none";
+    // saveUser(value);
   };
 
   /**

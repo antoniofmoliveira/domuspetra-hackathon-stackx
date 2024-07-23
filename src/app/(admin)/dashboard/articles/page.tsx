@@ -267,7 +267,7 @@ export default function ArticlesAdmin() {
                       onChange={on_change_input_handler}
                       placeholder="Título do artigo, obrigatório"
                       required
-                      className="p-1 w-[95%]"
+                      className="p-1 w-[95%] dark:text-black text-black"
                     ></input>
                   </td>
                 </tr>
@@ -282,7 +282,7 @@ export default function ArticlesAdmin() {
                       onChange={on_change_input_handler}
                       placeholder="Resumo do artigo, obrigatório"
                       required
-                      className="p-1 w-[95%]"
+                      className="p-1 w-[95%] dark:text-black text-black"
                     ></input>
                   </td>
                 </tr>
@@ -297,7 +297,7 @@ export default function ArticlesAdmin() {
                       onChange={on_change_input_handler}
                       placeholder="permalink_em_letras_minusculas_sem_acento, obrigatório"
                       required
-                      className="p-1 w-[95%]"
+                      className="p-1 w-[95%] dark:text-black text-black"
                     ></input>
                   </td>
                 </tr>
@@ -313,7 +313,7 @@ export default function ArticlesAdmin() {
                       value={blobImage?.url}
                       placeholder="Url da imagem"
                       required
-                      className="p-1 w-[95%]"
+                      className="p-1 w-[95%] dark:text-black text-black"
                     ></input>
                   </td>
                 </tr>
@@ -328,7 +328,7 @@ export default function ArticlesAdmin() {
                       onChange={on_change_input_handler}
                       value={blobText?.url}
                       placeholder="Url do conteúdo"
-                      className="p-1 w-[95%]"
+                      className="p-1 w-[95%] dark:text-black text-black"
                     ></input>
                   </td>
                 </tr>
@@ -342,7 +342,7 @@ export default function ArticlesAdmin() {
                       id="article_external_url"
                       onChange={on_change_input_handler}
                       placeholder="URL externa, se houver"
-                      className="p-1 w-[95%]"
+                      className="p-1 w-[95%] dark:text-black text-black"
                     ></input>
                   </td>
                 </tr>

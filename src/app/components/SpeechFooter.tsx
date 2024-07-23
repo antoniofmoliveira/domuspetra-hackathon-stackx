@@ -8,18 +8,24 @@ const SpeechFooter = ({ title }: { title: string }): JSX.Element => {
       <p>
         Para consulta de palestra in company ou reservas para os próximos
         eventos, entre em contato pelo telefone:{" "}
-        <a href="tel:+554738047774">+55 (47) 38047774</a>{" "}
-        <a href="tel:+5547997071177">+55 (47) 997071177</a>
+        <a className={"text-blue-500 underline"} href="tel:+554738047774">
+          +55 (47) 38047774
+        </a>{" "}
+        <a className={"text-blue-500 underline"} href="tel:+5547997071177">
+          +55 (47) 997071177
+        </a>
       </p>
       <p>
         Ou ainda, envie um e-mail para:{" "}
-        <a href={mailto}>contato@domuspetra.com.br</a>
+        <a className={"text-blue-500 underline"} href={mailto}>
+          contato@domuspetra.com.br
+        </a>
       </p>
       <p>
-        <a href={contact_us}>
-          Clique aqui! (Preencha o formuário que entraremos em contato quando
-          realizarmos o próximo evento!)
-        </a>
+        <a className={"text-blue-500 underline"} href={contact_us}>
+          Clique aqui!
+        </a>{" "}
+        (Preencha o formuário que entraremos em contato!)
       </p>
     </div>
   );

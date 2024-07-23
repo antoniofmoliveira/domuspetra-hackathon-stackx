@@ -87,14 +87,14 @@ async function ArticlesList() {
                   <ArticleEditInPlace
                     tag="Url externa"
                     articleId={article.id!}
-                    fieldName="content_url"
+                    fieldName="external_url"
                     value={article.external_url ? article.external_url : ""}
                   />
                   <ArticleSelectInPlace
                     tag="Publicar?"
                     articleId={article.id!}
-                    fieldName="article_is_published"
-                    value={article.is_published ? "Sim" : "Não"}
+                    fieldName="is_published"
+                    value={`${article.is_published}`}
                     options={[
                       { key: "false", value: "Não" },
                       { key: "true", value: "Sim" },

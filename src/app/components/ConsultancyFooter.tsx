@@ -1,12 +1,12 @@
 import React from "react";
 
-const BlogFooter = ({ title }: { title: string }): JSX.Element => {
-  const mailto = `mailto:contato@domuspetra.com.br?subject=${title}&body=Gostaria de receber mais informações sobre o post ${title}`;
-  const contact_us = `/contact/?subject=post ${title}`;
+const ConsultancyFooter = ({ title }: { title: string }): JSX.Element => {
+  const mailto = `mailto:contato@domuspetra.com.br?subject=${title}&body=Gostaria de receber mais informações sobre a consultoria ${title}`;
+  const contact_us = `/contact/?subject=consultoria ${title}`;
   return (
-    <div className="blogFooter">
+    <div className="consultancyFooter">
       <p>
-        Entre em contato pelo telefone:&nbsp;
+        Para Consultoria entre em contato pelo telefone:{" "}
         <a className={"text-blue-500 underline"} href="tel:+554738047774">
           +55 (47) 38047774
         </a>{" "}
@@ -30,4 +30,4 @@ const BlogFooter = ({ title }: { title: string }): JSX.Element => {
   );
 };
 
-export default BlogFooter;
+export default ConsultancyFooter;
