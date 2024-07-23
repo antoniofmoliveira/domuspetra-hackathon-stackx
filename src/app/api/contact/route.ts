@@ -27,7 +27,7 @@ export async function POST(request: Request): Promise<NextResponse> {
             from: "onboarding@resend.dev",
             to: `${env.RESEND_EMAIL}`,
             subject: "Novo Contato",
-            html: `<p>Novo contato</p>
+            html: `<p></p>(TESTE DA EQUIPE OLIVEIRAS)</p><p>Novo contato</p>
 <p>Nome: ${newContact?.name}</p>
 <p>Email: ${newContact?.email}</p>
 <p>Tel: ${newContact?.tel}</p>
@@ -38,7 +38,7 @@ export async function POST(request: Request): Promise<NextResponse> {
             from: "onboarding@resend.dev",
             to: `${newContact?.email}`,
             subject: "Domus Petra recebeu sua mensagem",
-            html: `<p>${newContact?.name},</p>
+            html: `<p></p>(TESTE DA EQUIPE OLIVEIRAS)</p><p>${newContact?.name},</p>
             <p></p>Agradeceemos seu contato</p>
 <p>"""</p>
 <p>Mensagem: ${newContact?.message}</p>
