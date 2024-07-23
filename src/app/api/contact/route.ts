@@ -23,23 +23,25 @@ export async function POST(request: Request): Promise<NextResponse> {
           const newContact = await createContact(body);
           //
           const resend = new Resend(env.RESEND_KEY);
-          resend.emails.send({
-            from: "onboarding@resend.dev",
-            to: `${env.RESEND_EMAIL}`,
-            subject: "Novo Contato",
-            html: `<p></p>(TESTE DA EQUIPE OLIVEIRAS)</p><p>Novo contato</p>
+          const res = await resend.batch.send([
+            {
+              from: "onboarding@resend.dev",
+              to: `${env.RESEND_EMAIL}`,
+              subject: "Novo Contato",
+              html: `</p><p>Novo contato</p>
 <p>Nome: ${newContact?.name}</p>
 <p>Email: ${newContact?.email}</p>
 <p>Tel: ${newContact?.tel}</p>
 <p>Mensagem: ${newContact?.message}</p>
+<p>Equipe Oliveiras</p>
 `,
-          });
-          resend.emails.send({
-            from: "onboarding@resend.dev",
-            to: `${newContact?.email}`,
-            subject: "Domus Petra recebeu sua mensagem",
-            html: `<p></p>(TESTE DA EQUIPE OLIVEIRAS)</p><p>${newContact?.name},</p>
-            <p></p>Agradeceemos seu contato</p>
+            },
+            {
+              from: "onboarding@resend.dev",
+              to: `${newContact?.email}`,
+              subject: "Domus Petra recebeu sua mensagem",
+              html: `<p>${newContact?.name},</p>
+            <p></p>Agradecemos seu contato</p>
 <p>"""</p>
 <p>Mensagem: ${newContact?.message}</p>
 <p>"""</p>
@@ -47,8 +49,11 @@ export async function POST(request: Request): Promise<NextResponse> {
 <p>Em breve daremos retorno</p>
 <p></p>
 <p>Domus Petra</p>
+<p>Equipe Oliveiras</p>
 `,
-          });
+            },
+          ]);
+          console.log({ res });
           //
           return NextResponse.json({
             status: "success",

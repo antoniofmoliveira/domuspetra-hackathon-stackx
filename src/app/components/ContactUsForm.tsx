@@ -64,7 +64,7 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
         return;
       }
       executeRecaptcha("contactUsFormSubmit").then((gReCaptchaToken) => {
-        console.log(gReCaptchaToken, "response Google reCaptcha server");
+        // console.log(gReCaptchaToken, "response Google reCaptcha server");
         submitForm(gReCaptchaToken);
       });
     },

@@ -19,7 +19,7 @@ const RecordCard = async ({ article }: CardProp) => {
     const article = await fetch(url_ok);
     const content = await article.text();
     // const result = content;
-    console.log(content);
+    // console.log(content);
     return content;
   };
 
