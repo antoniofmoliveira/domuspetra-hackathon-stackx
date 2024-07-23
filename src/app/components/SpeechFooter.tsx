@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./SpeechFooter.css"
 const SpeechFooter = ({ title }: { title: string }): JSX.Element => {
   const mailto = `mailto:contato@domuspetra.com.br?subject=${title}&body=Gostaria de receber mais informações sobre a palestra ${title}`;
   const contact_us = `/contact/?subject=palestra ${title}`;

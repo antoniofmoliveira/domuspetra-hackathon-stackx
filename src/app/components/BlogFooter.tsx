@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./BlogFooter.css"
 const BlogFooter = ({ title }: { title: string }): JSX.Element => {
   const mailto = `mailto:contato@domuspetra.com.br?subject=${title}&body=Gostaria de receber mais informações sobre o post ${title}`;
   const contact_us = `/contact/?subject=post ${title}`;
