@@ -18,6 +18,9 @@ function AboutDev() {
       </p>
       <p>Google reCaptcha v3 label: DomusPetraHackaton</p>
       <p>
+        Envio de emails: <a href="http://resend.com">Resend</a>
+      </p>
+      <p>
         Video Editor:&nbsp;
         <a href={"https://www.flexclip.com/"}>FlexClip/</a>
       </p>

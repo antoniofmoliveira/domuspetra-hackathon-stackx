@@ -1,6 +1,7 @@
 import { createContact } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { env } from "process";
+import { Resend } from "resend";
 
 export async function POST(request: Request): Promise<NextResponse> {
   const body = await request.json();
@@ -20,6 +21,35 @@ export async function POST(request: Request): Promise<NextResponse> {
         );
         if (reCaptchaRes?.score > 0.5) {
           const newContact = await createContact(body);
+          //
+          const resend = new Resend(env.RESEND_KEY);
+          resend.emails.send({
+            from: "onboarding@resend.dev",
+            to: `${env.RESEND_EMAIL}`,
+            subject: "Novo Contato",
+            html: `<p>Novo contato</p>
+<p>Nome: ${newContact?.name}</p>
+<p>Email: ${newContact?.email}</p>
+<p>Tel: ${newContact?.tel}</p>
+<p>Mensagem: ${newContact?.message}</p>
+`,
+          });
+          resend.emails.send({
+            from: "onboarding@resend.dev",
+            to: `${newContact?.email}`,
+            subject: "Domus Petra recebeu sua mensagem",
+            html: `<p>${newContact?.name},</p>
+            <p></p>Agradeceemos seu contato</p>
+<p>"""</p>
+<p>Mensagem: ${newContact?.message}</p>
+<p>"""</p>
+<p></p>
+<p>Em breve daremos retorno</p>
+<p></p>
+<p>Domus Petra</p>
+`,
+          });
+          //
           return NextResponse.json({
             status: "success",
             message: "Enquiry submitted successfully",
