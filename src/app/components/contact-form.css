@@ -2,19 +2,20 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   max-width: 950px;
-  height: auto;
-  margin: auto;
+  /* height: auto; */
+  /* margin: auto; */
 }
 
 .contact-data {
   display: grid;
   max-width: 500px;
-  min-width: 500px;
-  height: 450px;
+  /* min-width: 500px; */
+  /* height: 450px; */
+  height: 100%;
   grid-template-rows: repeat(1, 1fr);
   margin-left: -10px;
   margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top: 0px;
   background-color: rgba(113, 113, 255, 0.575);
   /* color: white; */
   box-shadow: -1px 0px 5px 1px black;
@@ -37,8 +38,8 @@
 }
 .contact-form {
   display: grid;
-  max-width: 600px;
-  min-width: 600px;
+  /* max-width: 600px; */
+  /* min-width: 600px; */
   margin: auto;
   padding: 10px;
   border: 1px solid gray;

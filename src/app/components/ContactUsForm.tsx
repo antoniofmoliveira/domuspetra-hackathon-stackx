@@ -73,7 +73,7 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
 
   return (
     <>
-      <div className="contact-container shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
+      <div className="contact-container shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400 rounded-2xl">
         <div className="contact-form ">
           <div className="contact-form-text">
             <h2>Fale conosco</h2>

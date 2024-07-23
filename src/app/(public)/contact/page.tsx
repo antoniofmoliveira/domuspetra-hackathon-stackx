@@ -1,5 +1,4 @@
 "use client";
-import ContactCard from "@/app/components/ContactCard";
 import ContactUsForm from "@/app/components/ContactUsForm";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
@@ -11,7 +10,7 @@ function ContactArgs() {
   const arg = param == null ? "" : param;
 
   return (
-    <div>
+    <div className="flex flex-col content-center w-full items-center mt-4">
       <GoogleReCaptchaProvider
         reCaptchaKey="6LeDjxYqAAAAAH6IpzXGJb0GVWR6KOcJn_HCUzS9"
         scriptProps={{

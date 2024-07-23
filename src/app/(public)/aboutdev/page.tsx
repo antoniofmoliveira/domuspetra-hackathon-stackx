@@ -56,6 +56,10 @@ function AboutDev() {
           a área de administração isolada completamente do resto do site. Só é
           possivel ir para o resto do site se fizer logout.
         </li>
+        <li className="m-auto p-1 pl-6 list-disc">
+          sitemap.xml estático. o custo do acesso dinâmico pode inviabilizar o
+          uso de hospedagem gratuita.
+        </li>
       </ul>
 
       <p>A equipe Oliveiras é formada por:</p>

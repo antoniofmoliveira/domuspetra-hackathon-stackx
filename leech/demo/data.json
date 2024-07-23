@@ -1,0 +1,13 @@
+{
+  "type": "blog",
+  "permalink": "lorem_ipsum_dolor_sit_amet",
+  "external_url": "",
+  "title": "Lorem ipsum dolor sit amet",
+  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "content_url": "",
+  "image_url": "",
+  "article_date": "2014-03-11 01-01-01",
+  "is_published": "true",
+  "has_no_content": "false",
+  "is_external_url_an_iframe": "false"
+}
