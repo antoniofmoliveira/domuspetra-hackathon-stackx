@@ -4,7 +4,60 @@ import React from "react";
 function AboutDev() {
   return (
     <div className="m-auto p-4">
-      <p>&copy;julho/2024</p>
+      <p className="m-auto p-4">
+        <em>Justificativa:</em>
+      </p>
+      <p className="m-auto p-4">
+        A necessidade de entregar o site publicado no prazo de 2 semanas com
+        controle de conteúdo tornou fácil a decisão de escolher o NextJs como
+        framework de desenvolvimento. A hospedagem oferecida pela Vercel
+        juntamento com o Postgres tornou-se uma escolha razoavelmente boa.
+      </p>
+      <p className="m-auto p-4">
+        E ainda pudemos utilizar o armazenamento de blobs da Vercel tornando
+        desnecessário o uso de outros sites para hospedar imagens.
+      </p>
+      <p className="m-auto p-4">
+        Também avaliamos que o site será operado por, provavelmente, apenas uma
+        ou duas pessoas.
+      </p>
+      <p className="m-auto p-2 pl-4">Restrições Atuais</p>
+      <ul className="m-auto p-4">
+        <li className="m-auto p-1 pl-6 list-disc">
+          há limite de acessos no site por causa da conta limitada (hobby)
+        </li>
+        <li className="m-auto p-1 pl-6 list-disc">
+          há limite no banco de dados por causa da conta limitada (hobby)
+        </li>
+        <li className="m-auto p-1 pl-6 list-disc">
+          envio de email somente para o endereço antoniofmoliveira@outlook.com
+          por causa da conta limitada e questão de segurança
+        </li>
+        <li className="m-auto p-1 pl-6 list-disc">
+          no máximo 100 emails por dia
+        </li>
+        <li className="m-auto p-1 pl-6 list-disc">
+          desabilitada a deleção de usuário por segurança (muitas pessoas
+          poderão entrar na área de admnistração para avaliar)
+        </li>
+        <li className="m-auto p-1 pl-6 list-disc">
+          desabilitada a alteração de senha por segurança (muitas pessoas
+          poderão entrar na área de admnistração para avaliar)
+        </li>
+        <li className="m-auto p-1 pl-6 list-disc">
+          desabilitada a deleção de artigo por segurança (muitas pessoas poderão
+          entrar na área de admnistração para avaliar)
+        </li>
+        <li className="m-auto p-1 pl-6 list-disc">
+          autenticação limitada a email e senha locais. Oauth pode ser
+          implementada depois para Google ou Github
+        </li>
+        <li className="m-auto p-1 pl-6 list-disc">
+          a área de administração isolada completamente do resto do site. Só é
+          possivel ir para o resto do site se fizer logout.
+        </li>
+      </ul>
+
       <p>A equipe Oliveiras é formada por:</p>
       <ImagemOliveiras />
       <br></br>
@@ -22,7 +75,7 @@ function AboutDev() {
       </p>
       <p>
         Video Editor:&nbsp;
-        <a href={"https://www.flexclip.com/"}>FlexClip/</a>
+        <a href={"https://www.flexclip.com/"}>FlexClip</a>
       </p>
       <br></br>
       <p>Fonts</p>
@@ -30,7 +83,7 @@ function AboutDev() {
         <li>Google Fonts</li>
         <li>
           Font Awesome{" "}
-          <a href={"https://fontawesome.com/"}>https://fontawesome.com/</a>
+          <a href={"https://fontawesome.com"}>https://fontawesome.com</a>
         </li>
         <li>
           Fontspace{" "}
@@ -55,7 +108,9 @@ function AboutDev() {
         "next-auth": "5.0.0-beta.19",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
+        "react-google-recaptcha-v3": "^1.10.1",
         "react-youtube": "^10.1.0",
+        "resend": "^3.5.0",
         "showdown": "^2.1.0",
         "zod": "^3.23.8"
         },
