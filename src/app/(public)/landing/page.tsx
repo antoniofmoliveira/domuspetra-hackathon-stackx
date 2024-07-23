@@ -1,41 +1,25 @@
-"use client";
 import SpeechsBlock from "./speechs";
 import ConsultancysBlock from "./consultancys";
 import TrainingsBlock from "./trainings";
 import ProfileBlock from "./profile";
 import RecordsBlock from "./records";
-import Carousel from "@/app/components/Carousel";
 import Video from "@/app/components/Video";
-import { useRef } from "react";
+import MainVideo from "@/app/components/MainVideo";
+import CardCarousel from "@/app/components/CardCarousel";
+import { getLatestArticles } from "@/lib/db";
 
-// TODO reabilitar records
-
-export default function LandingPagee() {
-  const ref = useRef<HTMLVideoElement>(null);
+export default async function LandingPagee() {
   return (
     <div>
+      <MainVideo />
       <div>
-        <video
-          ref={ref}
-          className="w-full h-auto rounded-lg shadow-2xl border-hidden shadow-zinc-400  mt-6 mb-6  hover:shadow-blue-400"
-          autoPlay={true}
-          muted={true}
-          onEnded={() => {
-            ref.current!.style.display = "none";
-          }}
-        >
-          <source type="video/mp4" src="/videos/domuspetravideo.mp4" />
-        </video>
-      </div>
-
-      <div>
-        <Carousel />
+        <CardCarousel articles={await getLatestArticles()} />
         <SpeechsBlock />
         <Video />
         <ConsultancysBlock />
         <TrainingsBlock />
         <ProfileBlock />
-        {/* <RecordsBlock /> */}
+        <RecordsBlock />
       </div>
     </div>
   );

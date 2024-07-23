@@ -38,11 +38,13 @@ const RecordCard = async ({ article }: CardProp) => {
   }
   return (
     <>
-      <div className="dark:text-white bg-gray-50 text-stone-950 flex flex-col justify-stretch items-center w-[300px] h-[500px] rounded-3xl border-2 border-stone-700  shadow-2xl border-hidden shadow-zinc-400 m-1 hover:shadow-blue-400">
+      <div className="dark:bg-gray-50 bg-gray-50 text-stone-950 flex flex-col justify-stretch items-center w-[300px] h-[400px] rounded-3xl border-stone-700  shadow-2xl border-hidden shadow-zinc-400 m-1 hover:shadow-blue-400">
         <Image
-          className="p-[8px] pr-[10px] h-[200px] w-[200px] rounded-lg object-cover"
+          className="p-[8px] pr-[10px] h-[200px] w-[200px] rounded-2xl object-cover"
           src={article.image_url}
           alt={article.image_url}
+          width={200}
+          height={200}
         />
         <div>
           <div className=" w-full h-full p-3">

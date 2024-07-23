@@ -1,8 +1,10 @@
 div.record p {
   font-size: 0.6rem;
+  color:black
 }
 
 div.record em {
   font-size: 0.7rem;
   font-weight: bold;
+  color:black
 }
