@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import "/public/css/fontawesome.css";
 import "/public/css/brands.css";
 import "/public/css/solid.css";
@@ -53,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark:bg-black bg-white ">
+    <html lang="en" className="dark:bg-slate-950 bg-gray-50 ">
       <body className={inter.className}>
         {children}
         <Footer />

@@ -2,7 +2,7 @@
 import React from "react";
 
 import { useRouter } from "next/navigation";
-import { Button } from "./button";
+import { Button } from "./Button";
 
 interface ButtonHideProps {
   contactId: string;

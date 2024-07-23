@@ -1,29 +1,26 @@
-import Cards from "@/app/components/cards";
-import Link from "next/link";
 import SpeechsBlock from "./speechs";
 import ConsultancysBlock from "./consultancys";
 import TrainingsBlock from "./trainings";
 import ProfileBlock from "./profile";
 import RecordsBlock from "./records";
-import Carousel from "@/app/components/Carousel";
-import Video from "@/app/components/video";
+import Video from "@/app/components/Video";
+import MainVideo from "@/app/components/MainVideo";
+import CardCarousel from "@/app/components/CardCarousel";
+import { getLatestArticles } from "@/lib/db";
 
-export default async function LandingPage() {
+export default async function LandingPagee() {
   return (
     <div>
-      <Carousel />
-      {/*  */}
-      <SpeechsBlock />
-      {/*  */}
-      <Video/>
-      {/*  */}
-      <ConsultancysBlock />
-      {/*  */}
-      <TrainingsBlock />
-      {/*  */}
-      <ProfileBlock />
-      {/*  */}
-      <RecordsBlock />
+      <MainVideo />
+      <div>
+        <CardCarousel articles={await getLatestArticles()} />
+        <SpeechsBlock />
+        <Video />
+        <ConsultancysBlock />
+        <TrainingsBlock />
+        <ProfileBlock />
+        <RecordsBlock />
+      </div>
     </div>
   );
 }

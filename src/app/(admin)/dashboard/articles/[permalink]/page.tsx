@@ -1,5 +1,5 @@
-import FullArticle from "@/app/components/article";
-import BlogFooter from "@/app/components/blogFooter";
+import FullArticle from "@/app/components/FullArticle";
+import BlogFooter from "@/app/components/BlogFooter";
 
 interface PageProps {
   params: { permalink: string };

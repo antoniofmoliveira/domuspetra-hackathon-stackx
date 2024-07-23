@@ -1,8 +1,9 @@
 "use client";
 
-import { Button } from "@/app/components/button";
-import type { PutBlobResult } from "@vercel/blob";
 import { useState, useRef } from "react";
+import type { PutBlobResult } from "@vercel/blob";
+
+import { Button } from "@/app/components/Button";
 
 /**
  * upload de blobs de imagem e textos dos artigos
@@ -16,17 +17,13 @@ export default function UploadPage() {
   return (
     <>
       <h1 className="p-2 font-bold">Upload seu arquivo</h1>
-
       <form
         onSubmit={async (event) => {
           event.preventDefault();
-
           if (!inputFileRef.current?.files) {
             throw new Error("Nenhum arquivo selecionado");
           }
-
           const file = inputFileRef.current.files[0];
-
           const response = await fetch(
             `/dashboard/api/upload?filename=${file.name}`,
             {
@@ -34,9 +31,7 @@ export default function UploadPage() {
               body: file,
             }
           );
-
           const newBlob = (await response.json()) as PutBlobResult;
-
           setBlob(newBlob);
         }}
       >
@@ -53,7 +48,6 @@ export default function UploadPage() {
           </Button>
         </div>
       </form>
-
       {blob && (
         <div className="p-2 font-bold">
           Blob url: <a href={blob.url}>{blob.url}</a>

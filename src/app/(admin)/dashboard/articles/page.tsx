@@ -1,9 +1,5 @@
 "use client";
 
-import { Button } from "@/app/components/button";
-import { Article, ArticleObj } from "@/model/definitions";
-import { PutBlobResult } from "@vercel/blob";
-import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
 import {
   ChangeEventHandler,
@@ -12,6 +8,10 @@ import {
   useRef,
   useState,
 } from "react";
+import { PutBlobResult } from "@vercel/blob";
+
+import { Button } from "@/app/components/Button";
+import { Article, ArticleObj } from "@/model/definitions";
 
 /**
  * formulário para envio de artigos, imagens e arquivos
@@ -154,7 +154,9 @@ export default function ArticlesAdmin() {
   };
 
   return (
-    <>
+    <div
+      className={"flex flex-col content-center sm:w-[85%] w-full items-center"}
+    >
       <div className=" flex flex-col">
         <div className="p2 font-extrabold">Cadastrar um artigo</div>
       </div>
@@ -238,7 +240,7 @@ export default function ArticlesAdmin() {
                   <td className="p-1 w-[150px] min-w-[150px]">
                     <label>Tipo de artigo</label>
                   </td>
-                  <td className="p-1 w-[350px] min-w-[350px]">
+                  <td className="p-1 w-[350px] min-w-[350px]  dark:text-black text-black">
                     <select
                       id="article_type"
                       value={"blog"}
@@ -352,7 +354,7 @@ export default function ArticlesAdmin() {
                     <select
                       id="article_is_published"
                       onChange={on_change_select_handler}
-                      className="p-1"
+                      className="p-1  dark:text-black text-black"
                       value={"true"}
                     >
                       <option value={"false"}>Não</option>
@@ -388,6 +390,6 @@ export default function ArticlesAdmin() {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }
