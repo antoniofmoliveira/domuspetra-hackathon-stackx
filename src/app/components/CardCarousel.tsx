@@ -24,7 +24,7 @@ const CardCarousel = ({ articles }: CardCarouselProp) => {
     false,
     false,
   ]);
-  const [initialCardVisible, setIntialCardVisible] = useState<number>(0);
+  const [initialCardVisible, setIntialCardVisible] = useState<number>(1);
   useEffect(() => {
     const interval = setInterval(() => {
       const finalCardVisible =
