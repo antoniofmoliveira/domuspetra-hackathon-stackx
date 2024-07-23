@@ -16,7 +16,7 @@ function AboutDev() {
       <p>
         Controle de versão: Git e <a href={"http://github.com"}>GitHub</a>{" "}
       </p>
-
+      <p>Google reCaptcha v3 label: DomusPetraHackaton</p>
       <p>
         Video Editor:&nbsp;
         <a href={"https://www.flexclip.com/"}>FlexClip/</a>
