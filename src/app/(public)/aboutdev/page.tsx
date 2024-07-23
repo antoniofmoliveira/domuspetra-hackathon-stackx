@@ -21,6 +21,15 @@ function AboutDev() {
         Também avaliamos que o site será operado por, provavelmente, apenas uma
         ou duas pessoas.
       </p>
+      <p className="m-auto p-4">
+        Usamos APIs disponíveis gratuitamente conforme abaixo, mas não
+        utilizamos componentes UI de terceiros. Todos os componentes UI foram
+        desenvolvidos pela equipe.
+      </p>
+      <p className="m-auto p-4">
+        Os serviços de sites de terceiros foram sempre utilizadas versões de
+        gratuitas, limitadas ou de demonstração.
+      </p>
       <p className="m-auto p-2 pl-4">Restrições Atuais</p>
       <ul className="m-auto p-4">
         <li className="m-auto p-1 pl-6 list-disc">
@@ -129,6 +138,86 @@ function AboutDev() {
         "tailwindcss": "^3.4.6",
         "typescript": "^5.5.3"
         }`}
+      </pre>
+      <br></br>
+      <p>
+        Check dos objetivos (nossa classificação quanto à
+        subjetividade/objetividade do requisito e situação da implementação do
+        requisito em nosso conceito)
+      </p>
+      <br></br>
+      <pre>
+        {`3. Objetivos
+
+● Desenvolver um site empresarial para uma empresa de Consultoria com a seguinte estrutura recomendada:
+    ○ Página inicial - (objetivo - check)
+        ■ Depoimentos de clientes - (objetivo - check)
+        ■ Serviços prestados - (objetivo - check)
+        ■ Conteúdos (blog) - (objetivo - check)
+        ■ Formulário de Contato facilitado para o coleta de leads - (objetivo - check)
+    ○ Sobre a empresa - (objetivo - check)
+    ○ Serviços
+        ■ Consultoria - (objetivo - check)
+        ■ Treinamentos - (objetivo - check)
+        ■ Palestras - (objetivo - check)
+    ○ Página de contato - (objetivo - check)
+    ○ Área para gerenciamento do conteúdo para o Blog - (objetivo - check)
+    ○ Seguir boas práticas para melhorar o SEO. - (objetivo - check)
+
+4. Critério de avaliação:
+
+Funcionalidade e Navegação
+    ●Navegação Intuitiva: Facilidade de encontrar informações. - (objetivo - check)
+    ●Links Funcionais: Todos os links internos e externos funcionam corretamente. - (objetivo - check)
+    ●Formulários: Formulários de contato e outros estão funcionando e são fáceis de usar. - (objetivo - check)
+    ●Responsividade: O site se adapta bem a diferentes dispositivos (desktop, tablet, mobile). - (objetivo - check)
+    ●Velocidade de Carregamento: O site carrega rapidamente. - (subjetivo - depende do tipo de hospedagem - check)
+    ●Extra - Funcionalidades Adicionais: Implementação de recursos extras (integração com instagram, etc.). - (objetivo - instagram não localizado - check)
+Design e Estética
+    ●Design Visual: O design é profissional. Lembre-se que é uma empresa de Consultoria.  - (subjetivo - check)
+    ●Consistência de Estilo: Coerência no uso de cores, fontes e estilos. - (objetivo - check)
+    ●Tipografia: Uso adequado e legível das fontes. - (objetivo - check)
+    ●Imagens de Alta Qualidade: Imagens claras e de alta resolução. - (objetivo - tem custo e licenças não coberto pelos proponentes - unchecked)
+    ●Ícones: Uso eficaz de ícones. - (objetivo - check)
+    ●Espaço em Branco: Uso apropriado de espaço em branco para melhorar a legibilidade. - (objetivo - check)
+    ●Layout: O layout é bem organizado e fácil de seguir. - (subjetivo - check)
+Conteúdo
+    ●Ortografia e Gramática: Texto sem erros gramaticais ou de digitação. - (objetivo - check)
+    ●Clareza das Seções: Informações claras e bem apresentadas. - (objetivo - check)
+    ●Call to Action: Chamadas para ação claras e eficazes. - (subjetivo - check)
+Experiência do Usuário (UX)
+    ●Facilidade de Uso: O site é fácil de navegar e usar. - (subjetivo - check)
+    ●Acessibilidade: O site é acessível para pessoas com deficiências. - (subjetivo - check)
+    ●Extras - Engajamento do Usuário: Funcionalidades que incentivam a interação do usuário. Principalmente no blog. - (subjetivo - check)
+SEO e Performance
+    ●SEO On-page: Uso eficaz de meta tags, títulos, descrições e palavras-chave. - (objetivo - check)
+    ●URLs Amigáveis: URLs legíveis e amigáveis para SEO. - (objetivo - check)
+    ●Sitemaps: Implementação de sitemaps XML. - (objetivo - check)
+    ●Tempo de Carregamento: Otimização de recursos para carregamento rápido. - (objetivo - check)
+Segurança
+    ●Proteção contra SPAM: Medidas de proteção contra SPAM nos formulários. - (objetivo - check)
+    ●Extras - Autenticação: Métodos seguros de autenticação para áreas restritas. - (objetivo - check)
+Tecnologias e Inovação
+    ●Uso de Tecnologias Modernas: Uso de tecnologias web modernas (HTML5, CSS3, etc.). - (objetivo - check)
+    ●Compatibilidade com Navegadores: Funciona bem nos principais navegadores. - (objetivo - check)
+    ●Extras - Integrações: Integrações com outras ferramentas e plataformas. - (?)
+    ●Extras - API: Uso de APIs, se aplicável. - (objetivo - check)
+Documentação e Manutenção
+    ●Documentação do Código: Código bem documentado. - (objetivo - check)
+    ●Facilidade de Manutenção: Facilidade para futuros desenvolvedores manterem o site. - (subjetivo - check)
+Apresentação do Projeto
+    ●Clareza da Apresentação: Clareza na apresentação do projeto para os jurados. - (subjetivo)
+    ●Demonstração de Funcionalidades: Demonstração eficaz das funcionalidades do site. - (objetivo)
+    ●Justificativa das Escolhas: Justificativa das escolhas de design e tecnologia. - (objetivo)
+    ●Github: Projeto deve estar estruturado dentro do GitHub com todo o conteúdo (commits, branches, versões...). - (objetivo - check)
+    ●Publicação: Para apresentação e avaliação, os sites devem ser entregues publicados. - (objetivo - check)
+
+5. Recursos e Ferramentas:
+    ● Ambiente de desenvolvimento (IDE de escolha dos participantes). - (objetivo - check)
+    ● Repositório GitHub para controle de versão (necessário compartilhar com a StackX). - (objetivo - check)
+    ● Ambiente de publicação (escolha dos participantes). - (objetivo - check)
+    ● Não podem ser utilizadas ferramentas como WIX, WordPress ou similares. - (objetivo - check)
+`}
       </pre>
     </div>
   );
