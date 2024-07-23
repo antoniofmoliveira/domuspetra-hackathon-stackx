@@ -141,8 +141,8 @@ export async function getAllArticles(): Promise<Article[] | undefined> {
 export async function getLatestArticles(): Promise<Article[] | undefined> {
   try {
     const articles =
-      await sql<Article>`SELECT * FROM articles WHERE type in ('speechs', 'training', 'consultancy')
-        AND is_published=true ORDER BY article_date DESC LIMIT 4`;
+      await sql<Article>`SELECT * FROM articles WHERE type in ('blog', 'speechs', 'training', 'consultancy')
+        AND is_published=true ORDER BY article_date DESC LIMIT 6`;
     return articles.rows;
   } catch (error) {
     console.error(`Failed to fetch latest article:`, error);
