@@ -179,7 +179,7 @@ Funcionalidade e Navegação
     ●Formulários: Formulários de contato e outros estão funcionando e são fáceis de usar. - (objetivo - check)
     ●Responsividade: O site se adapta bem a diferentes dispositivos (desktop, tablet, mobile). - (objetivo - check)
     ●Velocidade de Carregamento: O site carrega rapidamente. - (subjetivo - depende do tipo de hospedagem - check)
-    ●Extra - Funcionalidades Adicionais: Implementação de recursos extras (integração com instagram, etc.). - (objetivo - instagram não localizado - check)
+    ●Extra - Funcionalidades Adicionais: Implementação de recursos extras (integração com instagram, etc.). - (objetivo - check)
 Design e Estética
     ●Design Visual: O design é profissional. Lembre-se que é uma empresa de Consultoria.  - (subjetivo - check)
     ●Consistência de Estilo: Coerência no uso de cores, fontes e estilos. - (objetivo - check)
