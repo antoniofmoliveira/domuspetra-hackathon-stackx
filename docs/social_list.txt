@@ -1,9 +1,0 @@
-<ul class="social-list">
-<li><a title="WhatsApp" href="tel:+55 47 997071177" target="_blank"><i class="socicon-whatsapp"></i></a></li>
-<li><a title="Facebook" href="http://www.facebook.com/DomusPetra" target="_blank"><i class="socicon-facebook"></i></a></li>
-<li><a title="YouTube" href="https://www.youtube.com/channel/UCSdYfaq4yJ6TJHAq_mxzjig?view_as=subscriber" target="_blank"><i class="socicon-youtube"></i></a></li>
-<li><a title="Instagram" href="#fabianodellagnolo" target="_blank"><i class="socicon-instagram"></i></a></li>
-<li><a title="E-mail" href="mailto:contato@domuspetra.com.br" target="_blank"><i class="socicon-mail"></i></a></li>
-</ul>
-
-https://www.instagram.com/fabianodellagnolo/
