@@ -41,7 +41,7 @@ export default async function FullArticle({ permalink, footer_ }: PageProps) {
   const title = article.title;
   return (
     <>
-      <div className="ml-6 mr-6 w-[90%] max-w-[90%]">
+      <div className="ml-6 mr-6 mt-4 w-[90%] max-w-[90%]">
         <div
           className={
             "relative p-6 ml-6 rounded-lg  w-[90%] max-w-[90%]  h-[15vw]"
