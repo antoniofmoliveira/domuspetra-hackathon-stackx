@@ -4,13 +4,23 @@ import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import Link from "next/link";
 
+/**
+ * Renders a global error component.
+ *
+ * This component is rendered when the application throws an error.
+ *
+ * @param {Object} props - The component props.
+ * @param {Error & { digest?: string }} props.error - The error object.
+ * @param {() => void} props.reset - The reset function.
+ * @return {JSX.Element} The rendered global error component.
+ */
 export default function GlobalError({
   error,
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
-}) {
+}): JSX.Element {
   return (
     <html className="dark:bg-slate-700 bg-gray-50">
       <body>

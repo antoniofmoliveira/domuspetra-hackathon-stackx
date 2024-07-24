@@ -1,7 +1,13 @@
 import Image from "next/image";
 import React from "react";
-
-function ImagemOliveiras() {
+/**
+ * ImagemOliveiras component.
+ *
+ * This component displays an image of olive trees.
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
+function ImagemOliveiras(): JSX.Element {
   return (
     <div>
       <Image

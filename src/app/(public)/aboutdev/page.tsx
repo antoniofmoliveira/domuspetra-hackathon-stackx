@@ -1,6 +1,13 @@
 import ImagemOliveiras from "@/app/components/ImagemOliveiras";
 import Image from "next/image";
 import React from "react";
+/**
+ * AboutDev component
+ *
+ * This component renders the AboutDev page.
+ *
+ * @return {JSX.Element} The rendered component
+ */
 
 function AboutDev() {
   return (
@@ -73,7 +80,7 @@ function AboutDev() {
       <p>A equipe Oliveiras é formada por:</p>
       <ImagemOliveiras />
       <br></br>
-      <p>IDE: Visual Studio Code</p>
+      <p>IDE: Visual Studio Code usando Codeium para documentação</p>
       <p>
         Hospedagem e banco de dados:&nbsp;
         <a href={"http://vercel.com"}>Vercel</a> e Postgres

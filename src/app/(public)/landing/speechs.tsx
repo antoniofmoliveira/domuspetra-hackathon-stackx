@@ -1,6 +1,11 @@
 import Link from "next/link";
 import React from "react";
 
+/**
+ * The SpeechsBlock component is a block that displays the speeches section of the landing page.
+ *
+ * @return {JSX.Element} The rendered component.
+ */
 const SpeechsBlock = () => {
   return (
     <div className="rounded-3xl border-2 border-stone-700 text-center shadow-lg border-hidden shadow-zinc-400  mt-8 mb-6  hover:shadow-blue-200">

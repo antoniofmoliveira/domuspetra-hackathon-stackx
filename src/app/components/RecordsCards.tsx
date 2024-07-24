@@ -5,7 +5,17 @@ import RecordCard from "./RecordCard";
 interface CardsProp {
   category: string;
 }
-const RecordsCards = async ({ category }: CardsProp) => {
+
+/**
+ * Component to display cards of articles of a specific category.
+ *
+ * This component displays a list of cards of articles of a specific category.
+ *
+ * @param {CardsProp} props - The props for the component.
+ * @param {string} props.category - The category of the articles.
+ * @returns {Promise<JSX.Element>} The React component.
+ */
+const RecordsCards = async ({ category }: CardsProp): Promise<JSX.Element> => {
   const articles = await getArticles(category);
   if (articles === undefined)
     return (

@@ -2,6 +2,15 @@
 
 import { useRef } from "react";
 
+/**
+ * The main video component.
+ *
+ * This component displays a video player with a full-width and auto-height.
+ * It also includes a shadow effect and can be muted.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered component.
+ */
 function MainVideo() {
   const ref = useRef<HTMLVideoElement>(null);
   return (

@@ -14,6 +14,13 @@ interface PageProps {
   subject?: string;
 }
 
+/**
+ * ContactUsForm component
+ *
+ * @param {PageProps} props - Component props
+ * @param {string} [props.subject=""] - The subject of the contact form
+ * @returns {JSX.Element} - The rendered ContactUsForm component
+ */
 const ContactUsForm = ({ subject = "" }: PageProps) => {
   const [contact, setContact] = useState(new ContactObj(subject));
   const [resposta, setResposta] = useState("");
@@ -26,6 +33,13 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
     setContact((prevState) => ({ ...prevState, message: value }));
   };
 
+  /**
+   * Handles the change event of an input element and updates the contact state
+   * based on the element's id.
+   *
+   * @param {ChangeEvent<HTMLInputElement>} event - The change event object.
+   * @return {void}
+   */
   const onChangeInputHandle: ChangeEventHandler<HTMLInputElement> = (event) => {
     const value = event.target.value;
     const element = event.target.id;
@@ -43,6 +57,13 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
         break;
     }
   };
+
+  /**
+   * Submits the contact form to the server.
+   *
+   * @param {string} gReCaptchaToken - The Google reCAPTCHA token.
+   * @returns {Promise<void>} - A promise that resolves when the contact form is submitted.
+   */
   const submitForm = useCallback(
     async (gReCaptchaToken: string) => {
       const response = await fetch(`/api/contact`, {
@@ -56,6 +77,12 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
     [contact]
   );
 
+  /**
+   * Handles the submission of the contact form.
+   *
+   * @param {Event} e - The form submission event.
+   * @return {void} No return value.
+   */
   const handleSumitForm = useCallback(
     (e: { preventDefault: () => void }) => {
       e.preventDefault();

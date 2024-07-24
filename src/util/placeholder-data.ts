@@ -1,5 +1,14 @@
 /**
- * fake data para inicializar o bd
+ * Uma coleção de usuários falsos para serem usados como dados de placeholder.
+ *
+ * @typedef {Object} User
+ * @property {string} id - O ID do usuário.
+ * @property {string} name - O nome do usuário.
+ * @property {string} email - O email do usuário.
+ * @property {string} password - A senha do usuário.
+ * @property {string} rule - A regra do usuário.
+ *
+ * @type {User[]}
  */
 const users = [
   {

@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEventHandler, useRef, useState } from "react";
+import { ChangeEventHandler, useRef, useState } from "react";
 
 export interface Pairs {
   key: string;
@@ -17,7 +17,12 @@ interface ArticleSelectInPlaceProps {
 }
 
 /**
- * componente que permite a edição de registros de usuário in place
+ * Componente que permite a edição de registros de artigo in place
+ * @param articleId - Identificador do artigo
+ * @param fieldName - Nome do campo
+ * @param value - Valor atual do campo
+ * @param options - Opções disponíveis para o campo
+ * @param tag - Tag para revalidação de cache
  */
 const ArticleSelectInPlace = ({
   articleId,

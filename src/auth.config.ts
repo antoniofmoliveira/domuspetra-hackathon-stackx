@@ -1,8 +1,8 @@
 import type { NextAuthConfig } from "next-auth";
 
 /**
- * configuração padrão de autenticação
- * setado apenas para o path /dashboard
+ * Configuração padrão de autenticação
+ * @see {@link https://next-auth.js.org/configuration/options NextAuthConfig}
  */
 export const authConfig = {
   pages: {

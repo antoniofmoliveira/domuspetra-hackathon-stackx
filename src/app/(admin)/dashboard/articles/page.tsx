@@ -14,10 +14,15 @@ import { Button } from "@/app/components/Button";
 import { Article, ArticleObj } from "@/model/definitions";
 
 /**
- * formulário para envio de artigos, imagens e arquivos
- * @returns
+ * The admin page for managing articles
+ *
+ * This component displays a form for editing articles.
+ * The user can upload an image and content files and fill in
+ * the rest of the form to create a new article or edit an existing one.
+ *
+ * @returns {JSX.Element} The rendered component
  */
-export default function ArticlesAdmin() {
+export default function ArticlesAdmin(): JSX.Element {
   const inputImageFileRef = useRef<HTMLInputElement>(null);
   const inputContentFileRef = useRef<HTMLInputElement>(null);
   const [blobImage, setBlobImage] = useState<PutBlobResult | null>(null);
@@ -25,10 +30,7 @@ export default function ArticlesAdmin() {
   const [article, setArticle] = useState<Article>(new ArticleObj());
 
   const router = useRouter();
-  /**
-   * submissão de arquivo de imagem
-   * @param event
-   */
+
   const on_submit_image = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!inputImageFileRef.current?.files) {

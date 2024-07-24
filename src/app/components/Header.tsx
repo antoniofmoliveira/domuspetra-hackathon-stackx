@@ -4,6 +4,14 @@ import DomusPetraLogo from "./ComusPetraLogo";
 import Link from "next/link";
 import ShareBar from "./ShareBar";
 
+/**
+ * The header component.
+ *
+ * This component is used to render the site header.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered component.
+ */
 const Header = () => {
   const btnRef = useRef<HTMLDivElement>(null);
   return (

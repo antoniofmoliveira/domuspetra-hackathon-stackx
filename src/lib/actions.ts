@@ -4,11 +4,12 @@ import { signIn } from "@/auth";
 import { AuthError } from "next-auth";
 
 /**
- * Autentica o usuário a partir do componente de login
+ * Authenticates the user with the provided credentials.
  *
- * @param prevState
- * @param formData
- * @returns
+ * @param {string | undefined} prevState - The previous state of the user.
+ * @param {FormData} formData - The form data containing the user's credentials.
+ * @return {Promise<string>} A promise that resolves to a string indicating the result of the authentication.
+ * @throws {AuthError} If the authentication fails.
  */
 export async function authenticate(
   prevState: string | undefined,

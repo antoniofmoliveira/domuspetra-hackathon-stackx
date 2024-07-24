@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import Header from "./components/Header";
-
+/**
+ * Renders a global error component.
+ *
+ * @param {Object} props - The component props.
+ * @param {Error & { digest?: string }} props.error - The error object.
+ * @param {() => void} props.reset - The reset function.
+ * @return {JSX.Element} The rendered global error component.
+ */
 export default function GlobalError({
   error,
   reset,

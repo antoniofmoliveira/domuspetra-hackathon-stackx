@@ -3,7 +3,14 @@ import { revalidateTag } from "next/cache";
 
 import ButtonHide from "./ButtonHide";
 import { Contact } from "@/model/definitions";
-
+/**
+ * @function Contacts
+ * @description The contacts page of the application.
+ *
+ * This page displays all the contacts, sorted by date.
+ *
+ * @return {JSX.Element} The rendered component.
+ */
 export default async function Contacts() {
   const headersList = headers();
 

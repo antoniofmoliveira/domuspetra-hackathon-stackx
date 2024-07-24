@@ -3,6 +3,12 @@ import { NextResponse } from "next/server";
 import { env } from "process";
 import { Resend } from "resend";
 
+/**
+ * POST endpoint for contact form submission.
+ * @param {Request} request - The incoming request object.
+ * @returns {Promise<NextResponse>} - A promise that resolves to the response object.
+ */
+
 export async function POST(request: Request): Promise<NextResponse> {
   const body = await request.json();
   try {

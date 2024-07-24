@@ -6,12 +6,13 @@ import type { PutBlobResult } from "@vercel/blob";
 import { Button } from "@/app/components/Button";
 
 /**
- * upload de blobs de imagem e textos dos artigos
- * no caso de sucesso exibe a url do blob para informação no
- * registro do artigo
+ * UploadPage component
  *
- * */
-export default function UploadPage() {
+ * This component renders a form to upload a file to the server.
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
+export default function UploadPage(): JSX.Element {
   const inputFileRef = useRef<HTMLInputElement>(null);
   const [blob, setBlob] = useState<PutBlobResult | null>(null);
   return (

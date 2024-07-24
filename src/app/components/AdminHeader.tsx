@@ -1,7 +1,14 @@
 "use client";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import DomusPetraLogo from "./ComusPetraLogo";
-
+/**
+ * The admin header component.
+ *
+ * This component is used to render the admin header.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered component.
+ */
 const AdminHeader = () => {
   const btnRef = useRef<HTMLDivElement>(null);
 

@@ -6,7 +6,11 @@ import { users } from "@/util/placeholder-data";
 // TODO eliminar este na produção
 const client = await db.connect();
 
-/** cria tabela users e carrega com dados fake */
+/**
+ * This function seeds the database with placeholder users.
+ *
+ * @return {Promise<void>} A Promise that resolves when the seeding is complete.
+ */
 async function seedUsers() {
   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
   await client.sql`

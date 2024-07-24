@@ -2,10 +2,20 @@ import { DomusPetraLogoSmall } from "@/app/components/ComusPetraLogo";
 import LoginForm from "@/app/components/LoginForm";
 import { Metadata } from "next";
 
+/**
+ * Metadata for the login page
+ *
+ * @type {Metadata}
+ * @property {string} title - The title of the page
+ */
 export const metadata: Metadata = {
   title: "Login",
 };
-
+/**
+ * Renders the login page.
+ *
+ * @return {JSX.Element} The login page component.
+ */
 export default function LoginPage() {
   return (
     <main className="flex items-center justify-center md:h-screen ">

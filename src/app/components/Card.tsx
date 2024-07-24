@@ -8,6 +8,13 @@ type CardProp = {
   article: Article;
 };
 
+/**
+ * A React component representing a card.
+ *
+ * @param {Object} props - The component props.
+ * @param {Article} props.article - The article to display in the card.
+ * @return {JSX.Element} The rendered card component.
+ */
 const Card = ({ article }: CardProp) => {
   const href = `/${article.type}/${article.permalink}`;
   const ref = useRef(null);

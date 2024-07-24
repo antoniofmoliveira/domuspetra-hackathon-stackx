@@ -1,5 +1,11 @@
 import Cards from "@/app/components/Cards";
-
+/**
+ * Treinamentos page
+ *
+ * This page displays all the cards of the trainings, sorted by date.
+ *
+ * @return {JSX.Element} The rendered component.
+ */
 export default async function Blogs() {
   return (
     <>

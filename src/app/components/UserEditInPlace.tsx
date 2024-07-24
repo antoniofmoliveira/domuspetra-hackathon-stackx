@@ -17,7 +17,14 @@ interface UserEditInPlaceProps {
 }
 
 /**
- * componente que permite a edição de registros de usuário in place
+ * Component that allows the user to edit a field in place.
+ *
+ * @param {UserEditInPlaceProps} props - The properties of the component.
+ * @param {string} props.userId - The id of the user.
+ * @param {string} props.fieldName - The name of the field to be edited.
+ * @param {string} props.value - The current value of the field.
+ * @param {string} props.tag - The tag to revalidate when the edit is saved.
+ * @returns {JSX.Element} - The rendered component.
  */
 const UserEditInPlace = ({
   userId,

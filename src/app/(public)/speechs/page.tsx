@@ -1,5 +1,11 @@
 import Cards from "@/app/components/Cards";
-
+/**
+ * The public speeches page of the application.
+ *
+ * This page displays all the cards of the speeches.
+ *
+ * @return {JSX.Element} The rendered component.
+ */
 export default async function Speechs() {
   return (
     <>

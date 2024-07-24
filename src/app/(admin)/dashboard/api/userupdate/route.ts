@@ -2,6 +2,12 @@ import { NextResponse } from "next/server";
 
 import { getUser, updateUser, updateUserPassword } from "@/lib/db";
 
+/**
+ * POST handler for updating a user.
+ *
+ * @param {Request} request - The incoming request object.
+ * @return {Promise<NextResponse>} A Promise that resolves to the response object.
+ */
 export async function POST(request: Request): Promise<NextResponse> {
   const body = await request.json();
   const updatedUser = await getUser(body["userId"]);

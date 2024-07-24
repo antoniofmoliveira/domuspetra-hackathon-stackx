@@ -1,5 +1,12 @@
 import Cards from "@/app/components/Cards";
 import { revalidateTag } from "next/cache";
+/**
+ * The blogs page of the application.
+ *
+ * This page displays all the cards of the articles, sorted by date.
+ *
+ * @return {JSX.Element} The rendered component.
+ */
 
 export default async function Blogs() {
   revalidateTag("blog");

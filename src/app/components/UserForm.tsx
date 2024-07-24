@@ -4,6 +4,15 @@ import { ChangeEventHandler, useState } from "react";
 import { Button } from "./Button";
 import { useRouter } from "next/navigation";
 
+/**
+ * UserForm component
+ *
+ * This component is used to create a new user.
+ *
+ * @component
+ * @example
+ * <UserForm />
+ */
 export default function UserForm() {
   const [user, setUser] = useState(new UserObj());
   const router = useRouter();
