@@ -1,4 +1,5 @@
 import ImagemOliveiras from "@/app/components/ImagemOliveiras";
+import Image from "next/image";
 import React from "react";
 
 function AboutDev() {
@@ -218,6 +219,51 @@ Apresentação do Projeto
     ● Não podem ser utilizadas ferramentas como WIX, WordPress ou similares. - (objetivo - check)
 `}
       </pre>
+      <div className="m-6">
+        <p className="text-3xl">Outros logos criados</p>
+        <Image
+          src="/images/logos/domuspetralogo1b.png"
+          alt="alt"
+          width={800}
+          height={200}
+          className="m-6"
+        />
+        <Image
+          src="/images/logos/domuspetralogo2.png"
+          alt="alt"
+          width={800}
+          height={200}
+          className="m-6"
+        />
+        <Image
+          src="/images/logos/domuspetralogo3.png"
+          alt="alt"
+          width={800}
+          height={200}
+          className="m-6"
+        />
+        <Image
+          src="/images/logos/domuspetralogo4.png"
+          alt="alt"
+          width={800}
+          height={200}
+          className="m-6"
+        />
+        <Image
+          src="/images/logos/domuspetralogo5.png"
+          alt="alt"
+          width={800}
+          height={200}
+          className="m-6"
+        />
+        <Image
+          src="/images/logos/domuspetralogo6.png"
+          alt="alt"
+          width={800}
+          height={200}
+          className="m-6"
+        />
+      </div>
     </div>
   );
 }
