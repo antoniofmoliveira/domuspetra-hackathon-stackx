@@ -184,7 +184,7 @@ Design e Estética
     ●Design Visual: O design é profissional. Lembre-se que é uma empresa de Consultoria.  - (subjetivo - check)
     ●Consistência de Estilo: Coerência no uso de cores, fontes e estilos. - (objetivo - check)
     ●Tipografia: Uso adequado e legível das fontes. - (objetivo - check)
-    ●Imagens de Alta Qualidade: Imagens claras e de alta resolução. - (objetivo - tem custo e licenças não coberto pelos proponentes - unchecked)
+    ●Imagens de Alta Qualidade: Imagens claras e de alta resolução. - (objetivo - check)
     ●Ícones: Uso eficaz de ícones. - (objetivo - check)
     ●Espaço em Branco: Uso apropriado de espaço em branco para melhorar a legibilidade. - (objetivo - check)
     ●Layout: O layout é bem organizado e fácil de seguir. - (subjetivo - check)
@@ -194,7 +194,7 @@ Conteúdo
     ●Call to Action: Chamadas para ação claras e eficazes. - (subjetivo - check)
 Experiência do Usuário (UX)
     ●Facilidade de Uso: O site é fácil de navegar e usar. - (subjetivo - check)
-    ●Acessibilidade: O site é acessível para pessoas com deficiências. - (subjetivo - check)
+    ●Acessibilidade: O site é acessível para pessoas com deficiências. - (objetivo - ?)
     ●Extras - Engajamento do Usuário: Funcionalidades que incentivam a interação do usuário. Principalmente no blog. - (subjetivo - check)
 SEO e Performance
     ●SEO On-page: Uso eficaz de meta tags, títulos, descrições e palavras-chave. - (objetivo - check)
@@ -207,7 +207,7 @@ Segurança
 Tecnologias e Inovação
     ●Uso de Tecnologias Modernas: Uso de tecnologias web modernas (HTML5, CSS3, etc.). - (objetivo - check)
     ●Compatibilidade com Navegadores: Funciona bem nos principais navegadores. - (objetivo - check)
-    ●Extras - Integrações: Integrações com outras ferramentas e plataformas. - (?)
+    ●Extras - Integrações: Integrações com outras ferramentas e plataformas. - (objetivo - check)
     ●Extras - API: Uso de APIs, se aplicável. - (objetivo - check)
 Documentação e Manutenção
     ●Documentação do Código: Código bem documentado. - (objetivo - check)
