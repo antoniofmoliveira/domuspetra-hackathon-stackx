@@ -1,16 +1,16 @@
 import React from "react";
 
-interface GeraErroPageProps {
+interface GeraErroPageDProps {
   search: URLSearchParams;
 }
 
-function GeraErroPage({ search }: GeraErroPageProps) {
+function GeraErroDPage({ search }: GeraErroPageDProps) {
   const errorMessage = search.get("error");
   if (errorMessage) {
     throw new Error(errorMessage);
   }
 
-  return <div>GeraErroPage</div>;
+  return <div>GeraErroDPage</div>;
 }
 
-export default GeraErroPage;
+export default GeraErroDPage;
