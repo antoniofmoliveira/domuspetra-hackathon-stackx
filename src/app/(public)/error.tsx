@@ -3,7 +3,16 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import Link from "next/link";
-
+/**
+ * The error page component.
+ *
+ * This component is rendered when the application throws an error.
+ *
+ * @param {Object} props - The component props.
+ * @param {Error & { digest?: string }} props.error - The error object.
+ * @param {() => void} props.reset - The reset function.
+ * @return {JSX.Element} The rendered error page component.
+ */
 export default function GlobalError({
   error,
   reset,

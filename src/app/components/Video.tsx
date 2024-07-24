@@ -2,6 +2,11 @@
 
 import YouTube from "react-youtube";
 
+/**
+ * Video component
+ *
+ * @returns {JSX.Element} A component that displays a video from YouTube
+ */
 const Video = () => {
   const conteudo = (
     <div className=" mt-6 mb-6">

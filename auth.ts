@@ -8,10 +8,11 @@ import bcrypt from "bcrypt";
 import type { User } from "@/model/definitions";
 
 /**
- * obtém um User a partir do email
+ * Valida e compara a senha de um usuário com o email fornecido.
  *
- * @param email
- * @returns
+ * @param email O email do usuário.
+ * @returns Um objeto `Promise` que retorna o objeto `User` se a validação for bem-sucedida, caso contrário `undefined`.
+ * @throws Um erro se a busca do usuário falhar.
  */
 async function getUser(email: string): Promise<User | undefined> {
   try {
@@ -24,8 +25,11 @@ async function getUser(email: string): Promise<User | undefined> {
 }
 
 /**
- * valida e compara passwords, disponibiliza configuração e funcções
- * padrão signIn e signOut
+ * Compara as credenciais de login do usuário com as do banco de dados.
+ *
+ * @param credentials Um objeto com as credenciais de login do usuário: email e password.
+ * @returns Um objeto `Promise` que retorna o objeto `User` se a validação for bem-sucedida, caso contrário `undefined`.
+ * @throws Um erro se a busca do usuário falhar.
  */
 export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,

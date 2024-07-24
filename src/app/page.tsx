@@ -1,6 +1,10 @@
 import Header from "./components/Header";
 import LandingPage from "./(public)/landing/page";
-
+/**
+ * Renders the Home component.
+ *
+ * @return {JSX.Element} The rendered Home component.
+ */
 export default function Home() {
   return (
     <>

@@ -1,6 +1,15 @@
 import Link from "next/link";
 import React from "react";
 
+/**
+ * ConsultancysBlock component
+ *
+ * This component represents the "Consultorias" section of the landing page.
+ * It displays a rounded bordered div with a shadow. The div contains a title,
+ * some text, and a button that links to the "/consultancy" page.
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 const ConsultancysBlock = () => {
   return (
     <div className="rounded-3xl border-2 border-stone-700 text-center shadow-lg border-hidden shadow-zinc-400 mt-6 mb-6  hover:shadow-blue-200">

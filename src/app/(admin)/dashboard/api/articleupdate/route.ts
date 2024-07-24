@@ -2,6 +2,12 @@ import { NextResponse } from "next/server";
 
 import { getArticleById, updateArticle } from "@/lib/db";
 
+/**
+ * Handle POST request to update article
+ *
+ * @param {Request} request - the incoming request
+ * @return {Promise<NextResponse>} - a Promise that resolves to a NextResponse
+ */
 export async function POST(request: Request): Promise<NextResponse> {
   const body = await request.json();
   const updatedArticle = await getArticleById(body["articleId"]);

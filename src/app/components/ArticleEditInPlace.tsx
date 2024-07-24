@@ -1,14 +1,11 @@
 "use client";
-import React, {
+import {
   ChangeEventHandler,
   KeyboardEventHandler,
   useRef,
   useState,
 } from "react";
 
-/**
- * Props
- */
 interface ArticleEditInPlaceProps {
   articleId: string;
   fieldName: string;
@@ -17,7 +14,15 @@ interface ArticleEditInPlaceProps {
 }
 
 /**
- * componente que permite a edição de registros de usuário in place
+ * Component that allows the user to edit the text of a paragraph in place.
+ *
+ * @param {string} articleId - The id of the article to be edited.
+ * @param {string} fieldName - The name of the field to be edited (e.g. "title", "body").
+ * @param {string} value - The current value of the field.
+ * @param {string} tag - The tag to revalidate when the edit is saved.
+ *
+ * @example
+ * <ArticleEditInPlace articleId="1" fieldName="title" value="Old title" tag="Article" />
  */
 const ArticleEditInPlace = ({
   articleId,

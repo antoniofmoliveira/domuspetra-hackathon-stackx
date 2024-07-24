@@ -7,7 +7,11 @@ import "/public/css/brands.css";
 import "/public/css/solid.css";
 
 const inter = Inter({ subsets: ["latin"] });
-
+/**
+ * The metadata for the site, including the title, description, and keywords
+ *
+ * @type {Metadata}
+ */
 export const metadata: Metadata = {
   title: "Domus Petra ",
   description: `Treinamento de Ferramentas de Gestão capacita o participante a 
@@ -46,7 +50,13 @@ export const metadata: Metadata = {
     "melhoria",
   ],
 };
-
+/**
+ * Renders the root layout of the application.
+ *
+ * @param {Object} props - The properties for the component.
+ * @param {React.ReactNode} props.children - The child components to render.
+ * @return {JSX.Element} The root layout component.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -2,6 +2,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "./Carousel.css";
 
+/**
+ * A component that displays a carousel of images with titles and navigates between them.
+ *
+ * @return {JSX.Element} The carousel component.
+ */
+
 function Carousel() {
   const [leftBox, setLeftBox] = useState(0);
   const [rightBox, setRightBox] = useState(1);

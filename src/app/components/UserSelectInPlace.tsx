@@ -13,7 +13,18 @@ interface UserSelectInPlaceProps {
 }
 
 /**
- * componente que permite a edição de registros de usuário in place
+ * Component that allows the user to select a value from a list and save
+ * it to the server.
+ *
+ * @param {UserSelectInPlaceProps} props - The component props.
+ * @param {string} props.userId - The id of the user to be edited.
+ * @param {string} props.fieldName - The name of the field to be edited (e.g.
+ *   "name", "email").
+ * @param {string} props.value - The current value of the field.
+ * @param {string[]} props.options - The list of options to be displayed in the
+ *   select.
+ * @param {string} props.tag - The tag to revalidate when the edit is saved.
+ * @return {JSX.Element} The UserSelectInPlace component.
  */
 const UserSelectInPlace = ({
   userId,

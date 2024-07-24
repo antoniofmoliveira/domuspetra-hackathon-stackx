@@ -2,6 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+/**
+ * ProfileBlock component
+ *
+ * Renders a block of information about Fabiano Dell'Agnolo.
+ *
+ * @return {JSX.Element} A React element representing the ProfileBlock component.
+ */
 const ProfileBlock = () => {
   return (
     <div className="rounded-3xl border-2 border-stone-700 text-center shadow-lg border-hidden shadow-zinc-400  mt-6 mb-6 pb-3 hover:shadow-blue-200">

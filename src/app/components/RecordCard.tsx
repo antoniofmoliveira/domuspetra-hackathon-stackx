@@ -7,7 +7,16 @@ type CardProp = {
   article: Article;
 };
 
-const RecordCard = async ({ article }: CardProp) => {
+/**
+ * Component for rendering a record card.
+ *
+ * @param {Object} props - The props for the component.
+ * @param {Article} props.article - The article to render.
+ * @return {Promise<JSX.Element | undefined>} The rendered component or null.
+ */
+const RecordCard = async ({
+  article,
+}: CardProp): Promise<JSX.Element | undefined> => {
   if (article === undefined) return;
 
   const url_fetch = async (url: string) => {

@@ -1,5 +1,11 @@
 import { rockFont } from "@/lib/localFonts";
 
+/**
+ * Component for the logo of Comus Petra
+ *
+ * @component
+ * @return {JSX.Element} The logo component
+ */
 export default function DomusPetraLogo() {
   return (
     <div className="m-1 rounded-lg p-3 shadow-lg md:shadow-lg lg:shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200">
@@ -15,6 +21,12 @@ export default function DomusPetraLogo() {
   );
 }
 
+/**
+ * Component for the small version of the logo of Comus Petra
+ *
+ * @component
+ * @return {JSX.Element} The small logo component
+ */
 export function DomusPetraLogoSmall() {
   return (
     <div className={"w-full"}>

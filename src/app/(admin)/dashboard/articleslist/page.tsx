@@ -5,7 +5,12 @@ import { revalidateTag } from "next/cache";
 import { headers } from "next/headers";
 import { Pairs } from "../../../components/ArticleSelectInPlace";
 
-async function ArticlesList() {
+/**
+ * Renders the ArticlesList component
+ *
+ * @return {Promise<JSX.Element>} The rendered ArticlesList component
+ */
+async function ArticlesList(): Promise<JSX.Element> {
   const headersList = headers();
 
   const options = [

@@ -8,7 +8,16 @@ import { Article } from "@/model/definitions";
 interface CardCarouselProp {
   articles: Article[] | undefined;
 }
-
+/**
+ * CardCarousel component.
+ *
+ * This component takes an array of articles and renders them as a carousel.
+ *
+ * @prop {Article[] | undefined} articles - The array of articles to render
+ *
+ * @example
+ * <CardCarousel articles={articles} />
+ */
 const CardCarousel = ({ articles }: CardCarouselProp) => {
   const ref0 = useRef<HTMLDivElement | null>(null);
   const ref1 = useRef<HTMLDivElement | null>(null);

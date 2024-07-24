@@ -8,6 +8,14 @@ interface PageProps {
   footer_: ({ title }: { title: string }) => JSX.Element;
 }
 
+/**
+ * Renders a full article page with the specified permalink and a footer component.
+ *
+ * @param {PageProps} props - An object containing the permalink and a footer component function.
+ * @param {string} props.permalink - The permalink of the article to render.
+ * @param {({ title }: { title: string }) => JSX.Element} props.footer_ - A function that takes a title and returns a JSX element.
+ * @returns {Promise<JSX.Element | void>} A Promise that resolves to a JSX element or undefined if the article is not found.
+ */
 export default async function FullArticle({ permalink, footer_ }: PageProps) {
   const article: Article | undefined = await getArticleByPermalink(permalink);
 

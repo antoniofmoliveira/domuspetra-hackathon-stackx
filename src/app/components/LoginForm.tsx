@@ -13,6 +13,15 @@ import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { Button } from "./Button";
 import { authenticate } from "@/lib/actions";
 
+/**
+ * Renders the login form component.
+ *
+ * The login form component is responsible for rendering the login form and
+ * handling the form submission. It uses the `useFormState` and `useFormStatus`
+ * hooks from the `react-dom` library to handle form state and form status.
+ *
+ * @return {JSX.Element} The rendered login form component.
+ */
 export default function LoginForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
 

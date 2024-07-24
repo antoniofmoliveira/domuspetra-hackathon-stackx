@@ -15,6 +15,12 @@ import {
   TwitterIcon,
 } from "next-share";
 
+/**
+ * A component that provides social media share buttons for the current page.
+ *
+ * @component
+ * @return {JSX.Element} The rendered component.
+ */
 export default function ShareBar() {
   const pathname = usePathname();
   const domain = "https://domuspetra-hackathon-stackx.vercel.app"; // window.location.origin;

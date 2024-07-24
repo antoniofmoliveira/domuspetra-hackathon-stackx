@@ -1,6 +1,11 @@
 import React from "react";
 import DomusPetraLogo from "./ComusPetraLogo";
 
+/**
+ * Footer component for the website
+ *
+ * @returns {JSX.Element} The rendered footer component
+ */
 const Footer = () => {
   return (
     <div>

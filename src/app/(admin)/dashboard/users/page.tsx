@@ -7,10 +7,19 @@ import { User } from "@/model/definitions";
 import { Button } from "@/app/components/Button";
 import UserEditInPlace from "@/app/components/UserEditInPlace";
 import UserForm from "@/app/components/UserForm";
-interface UserRowProp {
+
+interface UserRowProps {
   user: User;
 }
-function UserRow({ user }: UserRowProp) {
+
+/**
+ * The component that renders a row in the user dashboard table.
+ *
+ * @param {UserRowProp} props - The properties of the component.
+ * @param {User} props.user - The user object to be displayed.
+ * @returns {JSX.Element} The rendered component.
+ */
+function UserRow({ user }: UserRowProps): JSX.Element {
   return (
     <tr key={user.id} className=" shadow-lg border-hidden shadow-zinc-400">
       <td className="p-1">

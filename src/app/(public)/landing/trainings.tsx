@@ -1,6 +1,13 @@
 import Link from "next/link";
 import React from "react";
-
+/**
+ * TrainingsBlock component
+ *
+ * This component renders a block of information about the training courses
+ * offered by Domus Petra.
+ *
+ * @return {JSX.Element} A React element representing the TrainingsBlock component.
+ */
 const TrainingsBlock = () => {
   return (
     <div className="rounded-3xl border-2 border-stone-700 text-center shadow-lg border-hidden shadow-zinc-400  mt-6 mb-6 hover:shadow-blue-200">

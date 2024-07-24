@@ -1,5 +1,11 @@
 import Cards from "@/app/components/Cards";
 
+/**
+ * Consultancy page
+ *
+ * @returns {Promise<JSX.Element>} The Consultancy page
+ */
+
 export default async function Consultancy() {
   return (
     <>

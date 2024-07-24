@@ -4,7 +4,14 @@ import Header from "@/app/components/Header";
 import Link from "next/link";
 import { useEffect } from "react";
 import "./globals.css";
-
+/**
+ * Renders an error page with a message and a link to the homepage.
+ *
+ * @param {Object} props - The props object.
+ * @param {Error & { digest?: string }} props.error - The error object.
+ * @param {() => void} props.reset - The reset function.
+ * @return {JSX.Element} The error page component.
+ */
 export default function Error({
   error,
   reset,

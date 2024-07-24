@@ -1,6 +1,13 @@
 import React from "react";
 import "./contact-form.css";
-
+/**
+ * ContactCard component
+ *
+ * This component displays the contact data of the company (address, phone and
+ * whatsapp) in a card.
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 function ContactCard() {
   return (
     <div className="contact-data">
