@@ -1,7 +1,8 @@
 "use client";
 
-import AdminHeader from "@/app/components/AdminHeader";
 import Footer from "@/app/components/Footer";
+import Header from "@/app/components/Header";
+import Link from "next/link";
 
 export default function GlobalError({
   error,
@@ -13,12 +14,21 @@ export default function GlobalError({
   return (
     <html className="dark:bg-slate-700 bg-gray-50">
       <body>
-        <AdminHeader />
+        <Header />
         <main className="flex min-h-screen flex-col items-center justify-between p-2 w-[95%]">
-          <div className="z-10 w-[95%] max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-            <h2>Alguma coisa não funcionou direito!</h2>
-            <button onClick={() => reset()}>Tente novamente</button>
-            <Footer />
+          <div className="z-10 w-[95%] max-w-5xl items-center justify-between font-mono text-sm  flex flex-col">
+            <h2 className="dark:text-white text-black text-3xl p-10">
+              Sentimos muito
+            </h2>
+            <h2 className="dark:text-white text-black text-3xl p-10">
+              Estamos experimentando instabilidades no site.
+            </h2>
+            <Link
+              href="/dashboard"
+              className="dark:text-white text-black text-xl p-10"
+            >
+              Volte à pagina principal clicando aqui
+            </Link>
           </div>
         </main>
       </body>

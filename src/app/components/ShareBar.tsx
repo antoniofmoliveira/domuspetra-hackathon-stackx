@@ -17,7 +17,7 @@ import {
 
 export default function ShareBar() {
   const pathname = usePathname();
-  const domain = window.location.origin;
+  const domain = "https://domuspetra-hackathon-stackx.vercel.app"; // window.location.origin;
   const url = `${domain}/${pathname}`;
   return (
     <div
