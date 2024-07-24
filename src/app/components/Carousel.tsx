@@ -79,7 +79,7 @@ function Carousel() {
           <div
             id="hero1"
             ref={ref1}
-            className="carousel-hero rounded-3xl  shadow-2xl border-hidden shadow-zinc-400 m-1 hover:shadow-blue-400"
+            className="carousel-hero rounded-3xl  shadow-lg border-hidden shadow-zinc-400 m-1 hover:shadow-blue-200"
           >
             <h5 className="carousel-title textshadow text-3xl font-extrabold text-yellow-100">
               {titleArray[leftBox]}
@@ -90,7 +90,7 @@ function Carousel() {
           <div
             id="hero2"
             ref={ref2}
-            className="carousel-hero rounded-3xl  shadow-2xl border-hidden shadow-zinc-400 m-1 hover:shadow-blue-400"
+            className="carousel-hero rounded-3xl  shadow-lg border-hidden shadow-zinc-400 m-1 hover:shadow-blue-200"
           >
             <h5 className="carousel-title textshadow text-3xl font-extrabold text-yellow-100">
               {titleArray[rightBox]}

@@ -53,7 +53,7 @@ export default function UserForm() {
   };
   return (
     <>
-      <tr className=" shadow-2xl border-hidden shadow-zinc-400">
+      <tr className=" shadow-lg border-hidden shadow-zinc-400">
         <td className="font-bold">Cadastre novo usuário</td>
       </tr>
       <tr>

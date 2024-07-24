@@ -2,7 +2,10 @@
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import ContactUsForm from "./ContactUsForm";
 
-function ContactSection() {
+interface ContactSectionProps {
+  title?: string;
+}
+function ContactSection({ title = "" }: ContactSectionProps) {
   return (
     <div className="flex flex-col content-center w-full items-center">
       <GoogleReCaptchaProvider
@@ -14,7 +17,7 @@ function ContactSection() {
           nonce: undefined,
         }}
       >
-        <ContactUsForm subject={""} />
+        <ContactUsForm subject={title} />
       </GoogleReCaptchaProvider>
     </div>
   );

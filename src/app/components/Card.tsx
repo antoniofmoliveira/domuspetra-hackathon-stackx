@@ -14,7 +14,7 @@ const Card = ({ article }: CardProp) => {
   const content = (
     <>
       <a href={href}>
-        <div className="cardContainer flex flex-col justify-stretch border-none rounded-[5%] w-[300px] min-w-[300px] h-[500px] bg-[rgb(225, 228, 228)] m-4 p-1  shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
+        <div className="cardContainer flex flex-col justify-stretch border-none rounded-[5%] w-[300px] min-w-[300px] h-[500px] bg-[rgb(225, 228, 228)] m-4 p-1  shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200">
           <Image
             className="cardContainerImage p-2 pr-[10px] h-[200px] rounded-[10%] shadow-lg border-hidden shadow-zinc-400"
             src={article.image_url}

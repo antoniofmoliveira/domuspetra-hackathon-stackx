@@ -3,7 +3,7 @@ import React from "react";
 
 const TrainingsBlock = () => {
   return (
-    <div className="rounded-3xl border-2 border-stone-700 text-center shadow-2xl border-hidden shadow-zinc-400  mt-6 mb-6 hover:shadow-blue-400">
+    <div className="rounded-3xl border-2 border-stone-700 text-center shadow-lg border-hidden shadow-zinc-400  mt-6 mb-6 hover:shadow-blue-200">
       <h1 className={"font-bold text-xl pt-2"}>Treinamentos</h1>
       <p className={"text-base p-2"}>
         Os treinamentos visam capacitar os participantes de maneira plena e

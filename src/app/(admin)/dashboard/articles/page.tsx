@@ -160,7 +160,7 @@ export default function ArticlesAdmin() {
       <div className=" flex flex-col">
         <div className="p2 font-extrabold">Cadastrar um artigo</div>
       </div>
-      <div className="m-1 rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950   shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
+      <div className="m-1 rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950   shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200">
         <form onSubmit={on_submit_image}>
           <table className="form">
             <tbody>
@@ -192,7 +192,7 @@ export default function ArticlesAdmin() {
         </form>
       </div>
       <div>
-        <div className="m-1 rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950   shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
+        <div className="m-1 rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950   shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200">
           <form onSubmit={on_submit_file}>
             <table className="form">
               <tbody>
@@ -227,7 +227,7 @@ export default function ArticlesAdmin() {
             </table>
           </form>
         </div>
-        <div className="m-1 rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950   shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
+        <div className="m-1 rounded-lg p-3 w-[500px] max-[500px] border-2 border-cyan-950   shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200">
           <form onSubmit={on_submit_article}>
             <table className="form">
               <tbody>

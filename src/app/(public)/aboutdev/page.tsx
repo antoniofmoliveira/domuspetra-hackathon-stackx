@@ -22,9 +22,7 @@ function AboutDev() {
         ou duas pessoas.
       </p>
       <p className="m-auto p-4">
-        Usamos APIs disponíveis gratuitamente conforme abaixo, mas não
-        utilizamos componentes UI de terceiros. Todos os componentes UI foram
-        desenvolvidos pela equipe.
+        Usamos APIs disponíveis gratuitamente conforme abaixo.
       </p>
       <p className="m-auto p-4">
         Os serviços de sites de terceiros foram sempre utilizadas versões de
@@ -119,6 +117,7 @@ function AboutDev() {
         "heroicons": "^2.1.5",
         "next": "14.2.5",
         "next-auth": "5.0.0-beta.19",
+        "next-share": "^0.27.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-google-recaptcha-v3": "^1.10.1",

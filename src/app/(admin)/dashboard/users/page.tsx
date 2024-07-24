@@ -12,7 +12,7 @@ interface UserRowProp {
 }
 function UserRow({ user }: UserRowProp) {
   return (
-    <tr key={user.id} className=" shadow-2xl border-hidden shadow-zinc-400">
+    <tr key={user.id} className=" shadow-lg border-hidden shadow-zinc-400">
       <td className="p-1">
         <p>
           <em>Id:&nbsp;</em>

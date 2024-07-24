@@ -44,7 +44,7 @@ async function ArticlesList() {
             return (
               <tr
                 key={article.id}
-                className=" shadow-2xl border-hidden shadow-zinc-400"
+                className=" shadow-lg border-hidden shadow-zinc-400"
               >
                 <td className="p-4">
                   <ArticleSelectInPlace

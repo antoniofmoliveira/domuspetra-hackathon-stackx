@@ -4,7 +4,7 @@ import React from "react";
 
 const ProfileBlock = () => {
   return (
-    <div className="rounded-3xl border-2 border-stone-700 text-center shadow-2xl border-hidden shadow-zinc-400  mt-6 mb-6 pb-3 hover:shadow-blue-400">
+    <div className="rounded-3xl border-2 border-stone-700 text-center shadow-lg border-hidden shadow-zinc-400  mt-6 mb-6 pb-3 hover:shadow-blue-200">
       <h1 className={"font-bold text-xl pt-2"}>Fabiano Dell&apos;Agnolo</h1>
       <div className="flex flex-row items-center text-justify">
         <Image

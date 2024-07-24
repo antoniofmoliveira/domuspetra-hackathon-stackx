@@ -8,7 +8,7 @@ function MainVideo() {
     <div>
       <video
         ref={ref}
-        className="w-full h-auto rounded-lg shadow-2xl border-hidden shadow-zinc-400  mt-6 mb-6  hover:shadow-blue-400"
+        className="w-full h-auto rounded-lg shadow-lg border-hidden shadow-zinc-400  mt-6 mb-6  hover:shadow-blue-200"
         autoPlay={true}
         muted={true}
         onEnded={() => {

@@ -2,7 +2,7 @@ import { rockFont } from "@/lib/localFonts";
 
 export default function DomusPetraLogo() {
   return (
-    <div className="m-1 rounded-lg p-3 shadow-xl md:shadow-xl lg:shadow-xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
+    <div className="m-1 rounded-lg p-3 shadow-lg md:shadow-lg lg:shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200">
       <p
         className={`${rockFont.className} 
         text-4xl md:text-5xl lg:text-6xl
@@ -24,7 +24,7 @@ export function DomusPetraLogoSmall() {
           dark:text-slate-200 text-black 
           w-full
           bg-transparent
-           rounded-lg p-3 shadow-xl md:shadow-xl lg:shadow-xl border-hidden shadow-zinc-400 hover:shadow-blue-400`}
+           rounded-lg p-3 shadow-lg md:shadow-lg lg:shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200`}
       >
         DOMUS&nbsp;Petra
       </p>

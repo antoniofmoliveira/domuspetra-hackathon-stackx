@@ -35,7 +35,7 @@ export default function UploadPage() {
           setBlob(newBlob);
         }}
       >
-        <div className="flex flex-row w-[350px] m-1 rounded-lg p-3   shadow-2xl border-hidden shadow-zinc-400 hover:shadow-blue-400">
+        <div className="flex flex-row w-[350px] m-1 rounded-lg p-3   shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200">
           <input
             name="file"
             ref={inputFileRef}

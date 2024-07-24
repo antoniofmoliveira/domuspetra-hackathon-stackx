@@ -11,7 +11,7 @@ export default function GlobalError({
   reset: () => void;
 }) {
   return (
-    <html className="dark:bg-slate-950 bg-gray-50">
+    <html className="dark:bg-slate-700 bg-gray-50">
       <body>
         <AdminHeader />
         <main className="flex min-h-screen flex-col items-center justify-between p-2 w-[95%]">

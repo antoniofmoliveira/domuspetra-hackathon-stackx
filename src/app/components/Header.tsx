@@ -2,44 +2,47 @@
 import React, { useRef } from "react";
 import DomusPetraLogo from "./ComusPetraLogo";
 import Link from "next/link";
+import ShareBar from "./ShareBar";
 
 const Header = () => {
   const btnRef = useRef<HTMLDivElement>(null);
   return (
     <div>
-      <nav className="navbar bg-slate-800 rounded-xl">
+      <nav className="navbar dark:bg-slate-800 bg-slate-300 rounded-xl">
         <div className="container">
           <Link href="/">
             <DomusPetraLogo />
           </Link>
-
-          <div className="main-menu">
-            <ul>
-              <li>
-                <a href="/about">Sobre</a>
-              </li>
-              <li>
-                <a href="/blog">Blog</a>
-              </li>
-              <li>
-                <a href="/contact">Contato</a>
-              </li>
-              {/* <li>
+          <div className="flex flex-col items-end">
+            <div className="main-menu">
+              <ul>
+                <li>
+                  <a href="/about">Sobre</a>
+                </li>
+                <li>
+                  <a href="/blog">Blog</a>
+                </li>
+                <li>
+                  <a href="/contact">Contato</a>
+                </li>
+                {/* <li>
                 <a href="/landing">Diferenciais</a>
               </li> */}
-              <li>
-                <a href="/speechs">Palestras</a>
-              </li>
-              <li>
-                <a href="/training">Treinamento</a>
-              </li>
-              <li>
-                <a href="/consultancy">Consultoria</a>
-              </li>
-              <li>
-                <a href="/dashboard">Administração</a>
-              </li>
-            </ul>
+                <li>
+                  <a href="/speechs">Palestras</a>
+                </li>
+                <li>
+                  <a href="/training">Treinamento</a>
+                </li>
+                <li>
+                  <a href="/consultancy">Consultoria</a>
+                </li>
+                <li>
+                  <a href="/dashboard">Administração</a>
+                </li>
+              </ul>
+            </div>
+            <ShareBar />
           </div>
           {/* <!-- Hamburger Button --> */}
           <button
