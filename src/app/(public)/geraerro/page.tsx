@@ -1,7 +1,14 @@
 import React from "react";
 
-function GeraErroPage() {
-  throw new Error("Teste de erro");
+interface GeraErroPageProps {
+  search: URLSearchParams;
+}
+
+function GeraErroPage({ search }: GeraErroPageProps) {
+  const errorMessage = search.get("error");
+  if (errorMessage) {
+    throw new Error(errorMessage);
+  }
 
   return <div>GeraErroPage</div>;
 }
