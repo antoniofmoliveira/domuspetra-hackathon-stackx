@@ -48,7 +48,7 @@ Understanding the proposal
 - generate traffic via social media sharing
 - ease of contact
 
-- maximum visibility: seo, sitemap.xml, urls and meaningful image names
+- maximum visibility: seo, sitemap.xml, urls and images with meaningful names
 
 Our solution
 
