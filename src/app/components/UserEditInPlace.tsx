@@ -33,14 +33,14 @@ const UserEditInPlace = ({
   tag,
 }: UserEditInPlaceProps) => {
   const [componentValue, setComponentValue] = useState(value);
-  const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   /**
    * trata o click no parágrafo
    */
   const onClickPHandler = () => {
-    paragraphRef.current!.style.display = "none";
+    buttonRef.current!.style.display = "none";
     inputRef.current!.style.display = "block";
   };
 
@@ -52,7 +52,7 @@ const UserEditInPlace = ({
     event
   ) => {
     if (event.code === "Enter") {
-      paragraphRef.current!.style.display = "block";
+      buttonRef.current!.style.display = "block";
       inputRef.current!.style.display = "none";
       saveUser();
     }
@@ -73,7 +73,7 @@ const UserEditInPlace = ({
    * quando sai do input
    */
   const onBlurInputHandler = () => {
-    paragraphRef.current!.style.display = "block";
+    buttonRef.current!.style.display = "block";
     inputRef.current!.style.display = "none";
   };
 
@@ -97,14 +97,15 @@ const UserEditInPlace = ({
 
   return (
     <div>
-      <p
-        ref={paragraphRef}
+      <button
+        className="text-left"
+        ref={buttonRef}
         onClick={onClickPHandler}
         title="2 cliques para editar, Enter para gravar"
       >
         <em>{tag}:&nbsp;</em>
         {componentValue}
-      </p>
+      </button>
       <input
         className="display:none dark:text-black"
         ref={inputRef}
