@@ -22,7 +22,7 @@ export default function GlobalError({
   reset: () => void;
 }): JSX.Element {
   return (
-    <html className="dark:bg-slate-700 bg-gray-50">
+    <html className="dark:bg-slate-700 bg-gray-50" lang="pt">
       <body>
         <Header />
         <main className="flex min-h-screen flex-col items-center justify-between p-2 w-[95%]">

@@ -39,14 +39,14 @@ const ArticleSelectInPlace = ({
   const [componentValue, setComponentValue] = useState(value);
   const [componentDisplay, setComponentDisplay] = useState(actualOption!.value);
 
-  const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const selectRef = useRef<HTMLSelectElement>(null);
 
   /**
    * trata o click no parágrafo
    */
   const onClickPHandler = () => {
-    paragraphRef.current!.style.display = "none";
+    buttonRef.current!.style.display = "none";
     selectRef.current!.style.display = "block";
   };
 
@@ -68,7 +68,7 @@ const ArticleSelectInPlace = ({
   };
 
   const onBlurSelectHandler = () => {
-    paragraphRef.current!.style.display = "block";
+    buttonRef.current!.style.display = "block";
     selectRef.current!.style.display = "none";
     // saveUser(value);
   };
@@ -93,14 +93,15 @@ const ArticleSelectInPlace = ({
 
   return (
     <div>
-      <p
-        ref={paragraphRef}
+      <button
+        className="text-left"
+        ref={buttonRef}
         onClick={onClickPHandler}
         title="2 cliques para editar"
       >
         <em>{tag}:&nbsp;</em>
         {componentValue}
-      </p>
+      </button>
 
       <select
         className="hidden dark:text-black text-black"

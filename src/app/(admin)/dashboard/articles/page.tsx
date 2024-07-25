@@ -240,7 +240,7 @@ export default function ArticlesAdmin(): JSX.Element {
                 </tr>
                 <tr>
                   <td className="p-1 w-[150px] min-w-[150px]">
-                    <label>Tipo de artigo</label>
+                    <label htmlFor="article_type">Tipo de artigo</label>
                   </td>
                   <td className="p-1 w-[350px] min-w-[350px]  dark:text-black text-black">
                     <select
@@ -260,7 +260,9 @@ export default function ArticlesAdmin(): JSX.Element {
                 </tr>
                 <tr>
                   <td>
-                    <label className="p-1">*Título:</label>
+                    <label htmlFor="article_title" className="p-1">
+                      *Título:
+                    </label>
                   </td>
                   <td>
                     <input
@@ -275,7 +277,9 @@ export default function ArticlesAdmin(): JSX.Element {
                 </tr>
                 <tr>
                   <td>
-                    <label className="p-1">*Resumo:</label>
+                    <label htmlFor="article_summary" className="p-1">
+                      *Resumo:
+                    </label>
                   </td>
                   <td>
                     <input
@@ -290,7 +294,9 @@ export default function ArticlesAdmin(): JSX.Element {
                 </tr>
                 <tr>
                   <td>
-                    <label className="p-1">*Permalink:</label>
+                    <label htmlFor="article_permalink" className="p-1">
+                      *Permalink:
+                    </label>
                   </td>
                   <td>
                     <input
@@ -305,7 +311,9 @@ export default function ArticlesAdmin(): JSX.Element {
                 </tr>
                 <tr>
                   <td>
-                    <label className="p-1">*Url da imagem:</label>
+                    <label htmlFor="article_image_url" className="p-1">
+                      *Url da imagem:
+                    </label>
                   </td>
                   <td>
                     <input
@@ -321,7 +329,9 @@ export default function ArticlesAdmin(): JSX.Element {
                 </tr>
                 <tr>
                   <td>
-                    <label className="p-1">Url do conteúdo:</label>
+                    <label htmlFor="article_content_url" className="p-1">
+                      Url do conteúdo:
+                    </label>
                   </td>
                   <td>
                     <input
@@ -336,7 +346,9 @@ export default function ArticlesAdmin(): JSX.Element {
                 </tr>
                 <tr>
                   <td>
-                    <label className="p-1">Url externa:</label>
+                    <label htmlFor="article_external_url" className="p-1">
+                      Url externa:
+                    </label>
                   </td>
                   <td>
                     <input
@@ -350,7 +362,9 @@ export default function ArticlesAdmin(): JSX.Element {
                 </tr>
                 <tr>
                   <td>
-                    <label className="p-1">Publicar?:</label>
+                    <label htmlFor="article_is_published" className="p-1">
+                      Publicar?:
+                    </label>
                   </td>
                   <td>
                     <select
