@@ -9,7 +9,7 @@ import React from "react";
  * @return {JSX.Element} The rendered component
  */
 
-function AboutDev() {
+function AboutDev(): JSX.Element {
   return (
     <div className="m-auto p-4">
       <p className="m-auto p-4">

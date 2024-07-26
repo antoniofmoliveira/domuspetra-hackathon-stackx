@@ -26,6 +26,7 @@ Rotina
 - gestão de contatos
 - gestão de usuários
 - gestão de artigos
+- edição de markdown com salvamento em arquivo
 
 Como implementamos
 
@@ -64,6 +65,7 @@ Routine
 - contact management
 - user management
 - article management
+- markdown editing with file saving
 
 How we implement
 
