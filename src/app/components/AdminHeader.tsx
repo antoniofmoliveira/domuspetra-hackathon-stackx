@@ -37,6 +37,9 @@ const AdminHeader = () => {
                 <a href="/dashboard/articles">Enviar artigos</a>
               </li>
               <li>
+                <a href="/dashboard/editor">Editor</a>
+              </li>
+              <li>
                 <a href="/dashboard/upload">Enviar arquivo</a>
               </li>
               <li>
@@ -72,6 +75,9 @@ const AdminHeader = () => {
               </li>{" "}
               <li>
                 <a href="/dashboard/articleslist">Artigos</a>
+              </li>
+              <li>
+                <a href="/dashboard/editor">Editor</a>
               </li>
               <li>
                 <a href="/dashboard/articles">Enviar artigos</a>
