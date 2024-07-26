@@ -62,14 +62,9 @@ export async function deleteUser(userId: string): Promise<void> {
  */
 export async function updateUser(user: User): Promise<User | undefined> {
   try {
-    const hashedPassword = user.password
-      ? await bcrypt.hash(user.password, 10)
-      : undefined;
     const result = await sql<User>`
         UPDATE users 
-        SET name = ${user.name}, email = ${user.email}, password = ${
-      hashedPassword ?? "$1"
-    }, rule = ${user.rule}
+        SET name = ${user.name}, email = ${user.email}, rule = ${user.rule}
         WHERE id=${user.id}
         RETURNING *`;
     return result.rows[0];

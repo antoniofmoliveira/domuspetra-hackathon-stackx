@@ -21,7 +21,10 @@ interface UserRowProps {
  */
 function UserRow({ user }: UserRowProps): JSX.Element {
   return (
-    <tr key={user.id} className=" shadow-lg border-hidden shadow-zinc-400">
+    <tr
+      key={user.id}
+      className="rounded-lg shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200"
+    >
       <td className="p-1">
         <p>
           <em>Id:&nbsp;</em>

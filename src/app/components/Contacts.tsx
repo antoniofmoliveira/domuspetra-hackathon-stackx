@@ -49,7 +49,7 @@ export default async function Contacts() {
                   <tr
                     key={item.id}
                     className={
-                      "hidden lg:block shadow-md border-hidden shadow-zinc-400 mb-2"
+                      "hidden lg:block shadow-md border-hidden shadow-zinc-400 mb-2 rounded-lg  hover:shadow-blue-200"
                     }
                   >
                     <td className="p-1">
@@ -77,7 +77,7 @@ ${item.message}
                       <p> {item.message}</p>
                     </td>
 
-                    <td className="p-1">
+                    <td className="p-1 w-[5%]">
                       <ButtonHide contactId={item.id} />
                     </td>
                   </tr>

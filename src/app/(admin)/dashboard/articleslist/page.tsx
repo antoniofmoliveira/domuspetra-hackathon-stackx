@@ -49,7 +49,7 @@ async function ArticlesList(): Promise<JSX.Element> {
             return (
               <tr
                 key={article.id}
-                className=" shadow-lg border-hidden shadow-zinc-400"
+                className="rounded-lg shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200"
               >
                 <td className="p-4">
                   <ArticleSelectInPlace
