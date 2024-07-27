@@ -16,7 +16,7 @@ interface ButtonHideProps {
  * @param {string} props.contactId - The ID of the contact to hide.
  * @return {JSX.Element} The rendered ButtonHide component.
  */
-function ButtonHide({ contactId }: ButtonHideProps) {
+function ButtonHide({ contactId }: ButtonHideProps): JSX.Element {
   const router = useRouter();
   const onClickHide = (contactId: string) => {
     const result = fetch("/dashboard/api/contacthide", {
@@ -27,9 +27,10 @@ function ButtonHide({ contactId }: ButtonHideProps) {
       },
       body: JSON.stringify({ contactId: contactId }),
     }).then(() => {
-      router.refresh();
+      //   router.refresh();
+      router.push(`/dashboard`);
     });
-    // router.refresh();
+    // router.push(`/dashboard`);
   };
   return (
     <Button

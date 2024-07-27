@@ -9,6 +9,7 @@ import "./contact-form.css";
 import { ContactObj } from "@/model/definitions";
 import ContactCard from "./ContactCard";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { z } from "zod";
 
 interface PageProps {
   subject?: string;
@@ -86,16 +87,27 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
   const handleSumitForm = useCallback(
     (e: { preventDefault: () => void }) => {
       e.preventDefault();
-      if (!executeRecaptcha) {
-        console.log("Execute recaptcha not yet available");
-        return;
+      const parsedData = z
+        .object({
+          email: z.string().email(),
+          name: z.string().min(6),
+          message: z.string().min(10),
+        })
+        .safeParse(contact);
+      if (parsedData.success) {
+        if (!executeRecaptcha) {
+          console.log("Execute recaptcha not yet available");
+          return;
+        }
+        executeRecaptcha("contactUsFormSubmit").then((gReCaptchaToken) => {
+          // console.log(gReCaptchaToken, "response Google reCaptcha server");
+          submitForm(gReCaptchaToken);
+        });
+      } else {
+        setResposta("Por favor, preencha todos os campos corretamente.");
       }
-      executeRecaptcha("contactUsFormSubmit").then((gReCaptchaToken) => {
-        // console.log(gReCaptchaToken, "response Google reCaptcha server");
-        submitForm(gReCaptchaToken);
-      });
     },
-    [executeRecaptcha, submitForm]
+    [executeRecaptcha, submitForm, contact]
   );
 
   return (
@@ -120,7 +132,7 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
               id="contact_name"
               name="contact_name"
               className="contact-form-name"
-              placeholder="Seu nome"
+              placeholder="Seu nome (mínimo 6 caracteres)"
               required
               onChange={onChangeInputHandle}
               value={contact.name}
@@ -131,7 +143,7 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
                 id="contact_email"
                 name="contact_email"
                 className="contact-form-email"
-                placeholder="Seu email"
+                placeholder="seuemail@example.com"
                 required
                 onChange={onChangeInputHandle}
                 value={contact.email}
@@ -150,7 +162,7 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
               id="contact_message"
               name="contact_message"
               className="contact-form-message"
-              placeholder="Sua mensagem"
+              placeholder="Sua mensagem (mínimo 10 caracteres)"
               rows={5}
               cols={30}
               onChange={onChangeTextareaHandle}
