@@ -3,6 +3,7 @@ import { UserObj } from "@/model/definitions";
 import { ChangeEventHandler, useState } from "react";
 import { Button } from "./Button";
 import { useRouter } from "next/navigation";
+import { z } from "zod";
 
 /**
  * UserForm component
@@ -49,23 +50,30 @@ export default function UserForm() {
   };
 
   const saveUser = async () => {
-    const response = await fetch(`/dashboard/api/user`, {
-      method: "POST",
-      next: { tags: ["User"], revalidate: 60 },
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    });
-    setUser(new UserObj());
-    router.push(`/dashboard/users`);
+    const parsedCredentials = z
+      .object({ email: z.string().email(), password: z.string().min(6) })
+      .safeParse(user);
+    if (parsedCredentials.success) {
+      const response = await fetch(`/dashboard/api/user`, {
+        method: "POST",
+        next: { tags: ["User"], revalidate: 60 },
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+      setUser(new UserObj());
+      router.push(`/dashboard/users`);
+    } else {
+      alert("Nome ou email inválidos");
+    }
   };
   return (
     <>
       <tr className="">
         <td className="pt-4 font-bold">Cadastre novo usuário</td>
       </tr>
-      <tr className="rounded-lg shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200">
+      <tr className="rounded-lg shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200 text-black">
         <td>
           <p className="m-1">
             Nome:&nbsp;
@@ -78,7 +86,7 @@ export default function UserForm() {
               placeholder="Nome do novo usuário"
             />
           </p>
-          <p className="m-1">
+          <p className="m-1 ">
             Email:&nbsp;&nbsp;
             <input
               id="newEmail"

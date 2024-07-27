@@ -11,7 +11,7 @@ import { Contact } from "@/model/definitions";
  *
  * @return {JSX.Element} The rendered component.
  */
-export default async function Contacts() {
+export default async function Contacts(): Promise<JSX.Element> {
   const headersList = headers();
 
   const domain = `${headersList.get("x-forwarded-proto")}://${headersList.get(

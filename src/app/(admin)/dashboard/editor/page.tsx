@@ -3,6 +3,7 @@ import {
   ChangeEvent,
   ChangeEventHandler,
   SetStateAction,
+  useEffect,
   useRef,
   useState,
 } from "react";
@@ -60,6 +61,30 @@ function MDEditor() {
     }
   };
 
+  const onClickCleanHandler = (): void => {
+    if (confirm("Confirma limpeza?")) {
+      setText("");
+      setChtml("");
+      localStorage.removeItem("texto_em_edicao");
+    }
+  };
+
+  useEffect(() => {
+    try {
+      const text = localStorage.getItem("texto_em_edicao");
+      if (text) setText(text);
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (text) localStorage.setItem("texto_em_edicao", text);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [text]);
+
   return (
     <div>
       <em>#</em>&nbsp; titulo, <em>##</em>&nbsp; subtitulo, <em>*</em>&nbsp;
@@ -71,7 +96,14 @@ function MDEditor() {
       <em>
         <strong>***ambos***</strong>
       </em>
-      <Button onClick={onClickHandler}>Salvar arquivo</Button>
+      <div className="flex flex-col lg:flex-row lgcol-auto w-[90%]  h-full m-3">
+        <Button className="m-1" onClick={onClickHandler}>
+          Salvar arquivo
+        </Button>
+        <Button className="m-1" onClick={onClickCleanHandler}>
+          Limpar Editor
+        </Button>
+      </div>
       <div className="flex flex-col lg:flex-row lgcol-auto w-[90%]  h-full m-3">
         <div className="w-1/2 h-[600px]">
           <textarea

@@ -37,20 +37,10 @@ export class UserObj {
   id: string = "";
   name: string = "";
   email: string = "";
-  password: string = "";
+  password: string = "123456";
   rule: string = "editor";
 }
 
-/**
- * Esta classe define os dados de um usuário do sistema
- *
- * @class
- * @property {string} id - id do usuário
- * @property {string} name - nome do usuário
- * @property {string} email - email do usuário
- * @property {string} password - password do usuário
- * @property {string} rule - papel do usuário no sistema. Os valores possíveis são "admin" e "editor". O padrão é "editor".
- */
 export type Contact = {
   id: string;
   name: string;
