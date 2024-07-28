@@ -53,7 +53,7 @@ export default async function Contacts(): Promise<JSX.Element> {
                     }
                   >
                     <td className="p-1">
-                      <p>
+                      <p className="p-1">
                         {item.name}&nbsp; (&nbsp;
                         <a
                           title="Envie um email"
@@ -74,7 +74,7 @@ ${item.message}
                         </a>
                         &nbsp;)
                       </p>
-                      <p> {item.message}</p>
+                      <p className="p-1"> {item.message}</p>
                     </td>
 
                     <td className="p-1 w-[5%]">
@@ -89,8 +89,8 @@ ${item.message}
                     }
                   >
                     <td colSpan={5}>
-                      <p>Nome: {item.name}</p>
-                      <p>
+                      <p className="p-1">Nome: {item.name}</p>
+                      <p className="p-1">
                         Email:{" "}
                         <a
                           title="Envie um email"
@@ -103,13 +103,13 @@ ${item.message}
                           {item.email}
                         </a>{" "}
                       </p>
-                      <p>
+                      <p className="p-1">
                         Telefone: <a href={`tel:${item.tel}`}>{item.tel}</a>
                       </p>
-                      <p>Mensagem: {item.message}</p>
+                      <p className="p-1">Mensagem: {item.message}</p>
                       <div
                         className={
-                          " flex flex-col content-center w-full items-center"
+                          " flex flex-row content-center w-full items-center p-2"
                         }
                       >
                         <ButtonHide contactId={item.id} />

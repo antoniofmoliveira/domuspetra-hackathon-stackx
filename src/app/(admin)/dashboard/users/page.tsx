@@ -26,7 +26,7 @@ function UserRow({ user }: UserRowProps): JSX.Element {
       className="rounded-lg shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200"
     >
       <td className="p-1">
-        <p>
+        <p className="p-1">
           <em>Id:&nbsp;</em>
           {user.id}
         </p>

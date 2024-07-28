@@ -75,7 +75,7 @@ export default function UserForm() {
       </tr>
       <tr className="rounded-lg shadow-lg border-hidden shadow-zinc-400 hover:shadow-blue-200 text-black">
         <td>
-          <p className="m-1">
+          <p className="m-1 dark:text-white text-black">
             Nome:&nbsp;
             <input
               id="newName"
@@ -86,7 +86,7 @@ export default function UserForm() {
               placeholder="Nome do novo usuário"
             />
           </p>
-          <p className="m-1 ">
+          <p className="m-1 dark:text-white text-black">
             Email:&nbsp;&nbsp;
             <input
               id="newEmail"
@@ -97,7 +97,7 @@ export default function UserForm() {
               placeholder="Email do novo usuário"
             />
           </p>
-          <p className="m-1">
+          <p className="m-1 dark:text-white text-black">
             Autorização:&nbsp;
             <select
               className="m-1 dark:text-black"

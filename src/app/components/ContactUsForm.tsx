@@ -87,25 +87,25 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
   const handleSumitForm = useCallback(
     (e: { preventDefault: () => void }) => {
       e.preventDefault();
-      const parsedData = z
-        .object({
-          email: z.string().email(),
-          name: z.string().min(6),
-          message: z.string().min(10),
-        })
-        .safeParse(contact);
-      if (parsedData.success) {
-        if (!executeRecaptcha) {
-          console.log("Execute recaptcha not yet available");
-          return;
-        }
-        executeRecaptcha("contactUsFormSubmit").then((gReCaptchaToken) => {
-          // console.log(gReCaptchaToken, "response Google reCaptcha server");
-          submitForm(gReCaptchaToken);
-        });
-      } else {
-        setResposta("Por favor, preencha todos os campos corretamente.");
+      if (!executeRecaptcha) {
+        console.log("Execute recaptcha not yet available");
+        return;
       }
+      executeRecaptcha("contactUsFormSubmit").then((gReCaptchaToken) => {
+        // console.log(gReCaptchaToken, "response Google reCaptcha server");
+        const parsedData = z
+          .object({
+            email: z.string().email(),
+            name: z.string().min(6),
+            message: z.string().min(10),
+          })
+          .safeParse(contact);
+        if (parsedData.success) {
+          submitForm(gReCaptchaToken);
+        } else {
+          setResposta("Por favor, preencha todos os campos corretamente.");
+        }
+      });
     },
     [executeRecaptcha, submitForm, contact]
   );
