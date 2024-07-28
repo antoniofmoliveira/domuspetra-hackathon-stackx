@@ -91,6 +91,8 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
         return;
       }
       executeRecaptcha("contactUsFormSubmit").then((gReCaptchaToken) => {
+        console.info(gReCaptchaToken);
+
         submitForm(gReCaptchaToken);
       });
     },
