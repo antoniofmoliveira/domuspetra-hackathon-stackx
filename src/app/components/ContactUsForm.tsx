@@ -107,7 +107,7 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
         // }
       });
     },
-    [executeRecaptcha, submitForm, contact]
+    [executeRecaptcha, submitForm]
   );
 
   return (
