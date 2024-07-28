@@ -86,25 +86,26 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
    */
   const handleSumitForm = useCallback(
     (e: { preventDefault: () => void }) => {
+      // console.log(gReCaptchaToken, "response Google reCaptcha server");
       e.preventDefault();
+      const parsedData = z
+        .object({
+          email: z.string().email(),
+          name: z.string().min(6),
+          message: z.string().min(10),
+        })
+        .safeParse(contact);
+      if (!parsedData.success) {
+        setResposta("Por favor, preencha corretamente.");
+        return;
+      }
+
       if (!executeRecaptcha) {
         console.log("Execute ReCaptcha ainda não disponível");
         return;
       }
       executeRecaptcha("contactUsFormSubmit").then((gReCaptchaToken) => {
-        // console.log(gReCaptchaToken, "response Google reCaptcha server");
-        // const parsedData = z
-        //   .object({
-        //     email: z.string().email(),
-        //     name: z.string().min(6),
-        //     message: z.string().min(10),
-        //   })
-        //   .safeParse(contact);
-        // if (parsedData.success) {
         submitForm(gReCaptchaToken);
-        // } else {
-        //   setResposta("Por favor, preencha todos os campos corretamente.");
-        // }
       });
     },
     [executeRecaptcha, submitForm, contact]
