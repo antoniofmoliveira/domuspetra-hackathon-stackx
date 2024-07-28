@@ -21,7 +21,7 @@ interface PageProps {
  * @param {string} [props.subject=""] - The subject of the contact form
  * @returns {JSX.Element} - The rendered ContactUsForm component
  */
-const ContactUsForm = ({ subject = "" }: PageProps) => {
+const ContactUsForm = ({ subject = "" }: PageProps): JSX.Element => {
   const [contact, setContact] = useState(new ContactObj(subject));
   const [resposta, setResposta] = useState("");
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -71,7 +71,7 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
         },
         body: JSON.stringify({ ...contact, gRecaptchaToken: gReCaptchaToken }),
       }).then((res) => {
-        console.info(res);
+        // console.info(res);
         setResposta("Mensagem recebida. Aguarde contato.");
       });
     },
