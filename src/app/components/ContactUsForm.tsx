@@ -88,7 +88,7 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
     (e: { preventDefault: () => void }) => {
       e.preventDefault();
       if (!executeRecaptcha) {
-        console.log("Execute recaptcha not yet available");
+        console.log("Execute ReCaptcha ainda não disponível");
         return;
       }
       executeRecaptcha("contactUsFormSubmit").then((gReCaptchaToken) => {
