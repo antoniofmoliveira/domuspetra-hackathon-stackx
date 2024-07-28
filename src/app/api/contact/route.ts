@@ -19,7 +19,7 @@ export async function POST(request: Request): Promise<NextResponse> {
       },
       body: `secret=${env.CAPTCHA_SECRET_KEY}&response=${body["gRecaptchaToken"]}`,
     })
-      .then((reCaptchaRes) => reCaptchaRes.json())
+      .then(async (reCaptchaRes) => await reCaptchaRes.json())
       .then(async (reCaptchaRes) => {
         console.log(
           reCaptchaRes,
