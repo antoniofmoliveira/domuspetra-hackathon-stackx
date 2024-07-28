@@ -71,6 +71,7 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
         },
         body: JSON.stringify({ ...contact, gRecaptchaToken: gReCaptchaToken }),
       }).then(() => setResposta("Mensagem recebida. Aguarde contato."));
+      console.info(response);
     },
     [contact]
   );
@@ -86,7 +87,7 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
       e.preventDefault();
 
       if (!executeRecaptcha) {
-        console.log("Execute ReCaptcha ainda não disponível");
+        console.info("Execute ReCaptcha ainda não disponível");
         return;
       }
       executeRecaptcha("contactUsFormSubmit").then((gReCaptchaToken) => {

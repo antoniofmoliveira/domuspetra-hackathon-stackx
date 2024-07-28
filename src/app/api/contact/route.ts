@@ -22,7 +22,7 @@ export async function POST(request: Request): Promise<NextResponse> {
       .then(async (reCaptchaRes) => await reCaptchaRes.json())
       .then(async (reCaptchaRes) => {
         //
-        console.log(
+        console.info(
           reCaptchaRes,
           "Response from Google reCaptcha verification API"
         );
@@ -62,7 +62,7 @@ export async function POST(request: Request): Promise<NextResponse> {
             },
           ]);
           //
-          console.log({ res });
+          console.info({ res });
           //
           return NextResponse.json({
             status: "success",
