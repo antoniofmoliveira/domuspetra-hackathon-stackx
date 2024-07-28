@@ -1,8 +1,10 @@
 "use client";
-import ContactUsForm from "@/app/components/ContactUsForm";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+
+import ContactUsForm from "@/app/components/ContactUsForm";
+
 /**
  * This component renders a contact form with a Google reCAPTCHA.
  * It uses Next.js's `useSearchParams` hook to get the subject from the URL query string

@@ -19,12 +19,14 @@ export async function POST(request: Request): Promise<NextResponse> {
       },
       body: `secret=${env.CAPTCHA_SECRET_KEY}&response=${body["gRecaptchaToken"]}`,
     })
-      .then((reCaptchaRes) => reCaptchaRes.json())
+      .then(async (reCaptchaRes) => await reCaptchaRes.json())
       .then(async (reCaptchaRes) => {
+        //
         console.log(
           reCaptchaRes,
           "Response from Google reCaptcha verification API"
         );
+        //
         if (reCaptchaRes?.score > 0.5) {
           const newContact = await createContact(body);
           //
@@ -59,6 +61,7 @@ export async function POST(request: Request): Promise<NextResponse> {
 `,
             },
           ]);
+          //
           console.log({ res });
           //
           return NextResponse.json({
