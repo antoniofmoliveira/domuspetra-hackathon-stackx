@@ -70,8 +70,10 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ ...contact, gRecaptchaToken: gReCaptchaToken }),
-      }).then(() => setResposta("Mensagem recebida. Aguarde contato."));
-      console.info(response);
+      }).then((res) => {
+        console.info(res);
+        setResposta("Mensagem recebida. Aguarde contato.");
+      });
     },
     [contact]
   );
@@ -91,8 +93,6 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
         return;
       }
       executeRecaptcha("contactUsFormSubmit").then((gReCaptchaToken) => {
-        console.info(gReCaptchaToken);
-
         submitForm(gReCaptchaToken);
       });
     },
