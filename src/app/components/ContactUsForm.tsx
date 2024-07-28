@@ -93,18 +93,18 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
       }
       executeRecaptcha("contactUsFormSubmit").then((gReCaptchaToken) => {
         // console.log(gReCaptchaToken, "response Google reCaptcha server");
-        const parsedData = z
-          .object({
-            email: z.string().email(),
-            name: z.string().min(6),
-            message: z.string().min(10),
-          })
-          .safeParse(contact);
-        if (parsedData.success) {
-          submitForm(gReCaptchaToken);
-        } else {
-          setResposta("Por favor, preencha todos os campos corretamente.");
-        }
+        // const parsedData = z
+        //   .object({
+        //     email: z.string().email(),
+        //     name: z.string().min(6),
+        //     message: z.string().min(10),
+        //   })
+        //   .safeParse(contact);
+        // if (parsedData.success) {
+        submitForm(gReCaptchaToken);
+        // } else {
+        //   setResposta("Por favor, preencha todos os campos corretamente.");
+        // }
       });
     },
     [executeRecaptcha, submitForm, contact]
