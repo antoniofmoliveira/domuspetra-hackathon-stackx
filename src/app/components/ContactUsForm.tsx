@@ -1,7 +1,7 @@
 "use client";
 import React, {
+  ChangeEvent,
   ChangeEventHandler,
-  FormEventHandler,
   useCallback,
   useState,
 } from "react";
@@ -9,7 +9,7 @@ import "./contact-form.css";
 import { ContactObj } from "@/model/definitions";
 import ContactCard from "./ContactCard";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import { z } from "zod";
+// import { z } from "zod";
 
 interface PageProps {
   subject?: string;
@@ -26,22 +26,17 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
   const [contact, setContact] = useState(new ContactObj(subject));
   const [resposta, setResposta] = useState("");
   const { executeRecaptcha } = useGoogleReCaptcha();
-  const onChangeTextareaHandle: ChangeEventHandler<HTMLTextAreaElement> = (
-    event
-  ) => {
-    const value = event.target.value;
-    const element = event.target.id;
-    setContact((prevState) => ({ ...prevState, message: value }));
-  };
 
   /**
-   * Handles the change event of an input element and updates the contact state
+   * Handles the change event of an input or textarea element and updates the contact state
    * based on the element's id.
    *
-   * @param {ChangeEvent<HTMLInputElement>} event - The change event object.
+   * @param {ChangeEvent<HTMLInputElement | HTMLTextAreaElement>} event - The change event object.
    * @return {void}
    */
-  const onChangeInputHandle: ChangeEventHandler<HTMLInputElement> = (event) => {
+  const onChangeInputHandle: ChangeEventHandler<
+    HTMLInputElement | HTMLTextAreaElement
+  > = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const value = event.target.value;
     const element = event.target.id;
     switch (element) {
@@ -53,6 +48,9 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
         break;
       case "contact_telephone":
         setContact((prevState) => ({ ...prevState, tel: value }));
+        break;
+      case "contact_message":
+        setContact((prevState) => ({ ...prevState, message: value }));
         break;
       default:
         break;
@@ -88,17 +86,17 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
     (e: { preventDefault: () => void }) => {
       // console.log(gReCaptchaToken, "response Google reCaptcha server");
       e.preventDefault();
-      const parsedData = z
-        .object({
-          email: z.string().email(),
-          name: z.string().min(6),
-          message: z.string().min(10),
-        })
-        .safeParse(contact);
-      if (!parsedData.success) {
-        setResposta("Por favor, preencha corretamente.");
-        return;
-      }
+      //   const parsedData = z
+      //     .object({
+      //       email: z.string().email(),
+      //       name: z.string().min(6),
+      //       message: z.string().min(10),
+      //     })
+      //     .safeParse(contact);
+      //   if (!parsedData.success) {
+      //     setResposta("Por favor, preencha corretamente.");
+      //     return;
+      //   }
 
       if (!executeRecaptcha) {
         console.log("Execute ReCaptcha ainda não disponível");
@@ -108,7 +106,7 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
         submitForm(gReCaptchaToken);
       });
     },
-    [executeRecaptcha, submitForm, contact]
+    [executeRecaptcha, submitForm] //, contact]
   );
 
   return (
@@ -166,7 +164,7 @@ const ContactUsForm = ({ subject = "" }: PageProps) => {
               placeholder="Sua mensagem (mínimo 10 caracteres)"
               rows={5}
               cols={30}
-              onChange={onChangeTextareaHandle}
+              onChange={onChangeInputHandle}
               value={contact.message}
             ></textarea>
             <button
