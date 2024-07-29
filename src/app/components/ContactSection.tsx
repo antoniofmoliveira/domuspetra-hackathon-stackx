@@ -26,7 +26,7 @@ function ContactSection({ title = "" }: ContactSectionProps) {
   return (
     <div className="flex flex-col content-center w-full items-center">
       <GoogleReCaptchaProvider
-        reCaptchaKey="6LeDjxYqAAAAAH6IpzXGJb0GVWR6KOcJn_HCUzS9"
+        reCaptchaKey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY ?? "NOT DEFINED"}
         scriptProps={{
           async: false,
           defer: false,

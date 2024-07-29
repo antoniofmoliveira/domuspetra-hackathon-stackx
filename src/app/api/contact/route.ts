@@ -1,6 +1,5 @@
 import { createContact } from "@/lib/db";
 import { NextResponse } from "next/server";
-import { env } from "process";
 import { Resend } from "resend";
 
 /**
@@ -17,7 +16,7 @@ export async function POST(request: Request): Promise<NextResponse> {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: `secret=${env.CAPTCHA_SECRET_KEY}&response=${body["gRecaptchaToken"]}`,
+      body: `secret=${process.env.CAPTCHA_SECRET_KEY}&response=${body["gRecaptchaToken"]}`,
     })
       .then(async (reCaptchaRes) => await reCaptchaRes.json())
       .then(async (reCaptchaRes) => {
@@ -30,11 +29,11 @@ export async function POST(request: Request): Promise<NextResponse> {
         if (reCaptchaRes?.score > 0.5) {
           const newContact = await createContact(body);
           //
-          const resend = new Resend(env.RESEND_KEY);
+          const resend = new Resend(process.env.RESEND_KEY);
           const res = await resend.batch.send([
             {
               from: "onboarding@resend.dev",
-              to: `${env.RESEND_EMAIL}`,
+              to: `${process.env.RESEND_EMAIL}`,
               subject: "Novo Contato",
               html: `</p><p>Novo contato</p>
 <p>Nome: ${newContact?.name}</p>
