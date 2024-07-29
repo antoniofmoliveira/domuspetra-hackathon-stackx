@@ -10,6 +10,45 @@ import { Resend } from "resend";
 
 export async function POST(request: Request): Promise<NextResponse> {
   const body = await request.json();
+  if (!process.env.DEVEL) {
+    const newContact = await createContact(body);
+    const resend = new Resend(process.env.RESEND_KEY);
+    const res = await resend.batch.send([
+      {
+        from: "onboarding@resend.dev",
+        to: `${process.env.RESEND_EMAIL}`,
+        subject: "Novo Contato",
+        html: `</p><p>Novo contato</p>
+<p>Nome: ${newContact?.name}</p>
+<p>Email: ${newContact?.email}</p>
+<p>Tel: ${newContact?.tel}</p>
+<p>Mensagem: ${newContact?.message}</p>
+<p>Equipe Oliveiras</p>
+`,
+      },
+      {
+        from: "onboarding@resend.dev",
+        to: `${newContact?.email}`,
+        subject: "Domus Petra recebeu sua mensagem",
+        html: `<p>${newContact?.name},</p>
+            <p></p>Agradecemos seu contato</p>
+<p>"""</p>
+<p>Mensagem: ${newContact?.message}</p>
+<p>"""</p>
+<p></p>
+<p>Em breve daremos retorno</p>
+<p></p>
+<p>Domus Petra</p>
+<p>Equipe Oliveiras</p>
+`,
+      },
+    ]);
+    return NextResponse.json({
+      status: "success",
+      message: "Novo contato registrado",
+    });
+  }
+
   try {
     fetch("https://www.google.com/recaptcha/api/siteverify", {
       method: "POST",
